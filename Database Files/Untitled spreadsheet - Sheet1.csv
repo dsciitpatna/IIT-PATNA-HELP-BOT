@@ -1,0 +1,220 @@
+roll,name,dept,email,tele
+1701CS01,Adarsh Kumar Chaudhary,CSE,Adarsh.cs17,9980113282
+1701CS02,Ajeet Kumar,CSE,Ajeet.cs17,9396501774
+1701CS03,Akshat Jain,CSE,akshat.cs17,9799482504
+1701CS04,Amit Priyankar,CSE,amit.cs17,9981209174
+1701CS05,Ankit Kumar,CSE,Adarsh.cs17,9251729444
+1701CS06,Ankit Singh,CSE,Ajeet.cs17,9961269371
+1701CS07,Ankur Dubey,CSE,akshat.cs17,9914506237
+1701CS08,Anubhav,CSE,amit.cs17,9712176692
+1701CS09,Anuj Shastri,CSE,Adarsh.cs17,9966091466
+1701CS10,Arsh Mahajan,CSE,Ajeet.cs17,9007948225
+1701CS11,Arya Das,CSE,akshat.cs17,9117923391
+1701CS12,Asutosh Swain,CSE,amit.cs17,9290316967
+1701CS13,Atul Upadhyay,CSE,Adarsh.cs17,9192081822
+1701CS14,Bhola Kumar,CSE,Ajeet.cs17,9320055882
+1701CS15,Boppana Dhanvanth,CSE,akshat.cs17,9421622686
+1701CS16,Chandan Kumar,CSE,amit.cs17,9324555772
+1701CS17,Deepanjan Datta,CSE,Adarsh.cs17,9110572105
+1701CS18,Dheeraj Kumar,CSE,Ajeet.cs17,9231582612
+1701CS19,Diksha Bansal,CSE,akshat.cs17,9306381656
+1701CS20,Divyanshu N Singh,CSE,amit.cs17,9205883955
+1701CS21,Gaurav Kumar,CSE,Adarsh.cs17,9408585417
+1701CS22,Gopugari Badrinath Reddy,CSE,Ajeet.cs17,9757410777
+1701CS23,Gurramkonda Hima Sagar,CSE,akshat.cs17,9476758818
+1701CS24,Kanav Ghai,CSE,amit.cs17,9582412161
+1701CS25,Kapil Gupta,CSE,Adarsh.cs17,9487760313
+1701CS26,Manavjeet Gupta,CSE,Ajeet.cs17,9837206939
+1701CS27,Mayank,CSE,akshat.cs17,9021366975
+1701CS28,Mohit Kishore,CSE,amit.cs17,9175330866
+1701CS29,Nayan Raju Thulkar,CSE,Adarsh.cs17,9185144773
+1701CS30,Nenavath Prabhu,CSE,Ajeet.cs17,9938911407
+1701CS31,Nihal Kumar Kharwar,CSE,akshat.cs17,9899700888
+1701CS32,Nikhil Nainan George,CSE,amit.cs17,9862075566
+1701CS33,Piyush Ramsharan Chauhan,CSE,Adarsh.cs17,9595950398
+1701CS34,Praduman,CSE,Ajeet.cs17,9386113100
+1701CS35,Priyanshu Nandan,CSE,akshat.cs17,9583918843
+1701CS36,Rahul Grover,CSE,amit.cs17,9711786230
+1701CS37,Rahul Kumar,CSE,Adarsh.cs17,9760748468
+1701CS38,Rahul Pandey,CSE,Ajeet.cs17,9423012563
+1701CS39,Ravi Kishan,CSE,akshat.cs17,9372454482
+1701CS40,Ritu Raj,CSE,amit.cs17,9448189556
+1701CS41,Rizwan Khan,CSE,Adarsh.cs17,9433691089
+1701CS42,Rohit Kumar,CSE,Ajeet.cs17,9211339120
+1701CS43,Rohit Yadav,CSE,akshat.cs17,9362061467
+1701CS44,Shashi Ranjan,CSE,amit.cs17,9636320630
+1701CS45,Sheetal Gupta,CSE,Adarsh.cs17,9883692317
+1701CS46,Shivansh Shukla,CSE,Ajeet.cs17,9665503102
+1701CS47,Shreyash Vilas Gedkar,CSE,akshat.cs17,9315870555
+1701CS48,Shubhankar Amitabh,CSE,amit.cs17,9742040887
+1701CS49,Snigdh Sinha,CSE,Adarsh.cs17,9697105526
+1701CS50,Sunny Singh,CSE,Ajeet.cs17,9275427548
+1701CS51,Vaibhav Gajbhiye,CSE,akshat.cs17,9697264904
+1701CS52,Vatsal Singhal,CSE,Vatsal.cs17,9097097407
+1701CS53,Vijigiri Vrushank Varma,CSE,Vijigiri.cs17,9848285179
+1701CS54,Vinnakota Sai Sujeeth,CSE,sai.cs17,9840917901
+1701CS55,Vivek Kumar Shaw,CSE,Vivek.cs17,9952855901
+1701EE01,Abhipray Singh,EE,Abhipray.ee17,9717508121
+1701EE02,Addula Saketh Reddy,EE,Addula.ee17,9883522200
+1701EE03,Aditya Gupta,EE,aditya.ee17,9347092743
+1701EE04,Aditya Ranjan,EE,Abhipray.ee17,9722568973
+1701EE05,Aditya Rao,EE,Addula.ee17,9869346196
+1701EE06,Adupa Sri Ranganadh,EE,aditya.ee17,9924194246
+1701EE07,Amgoth Mishanlal,EE,Abhipray.ee17,9047311857
+1701EE08,Aniket Kumar,EE,Addula.ee17,9030824395
+1701EE09,Anshuman Dwivedi,EE,aditya.ee17,9253536505
+1701EE10,Ashish,EE,Abhipray.ee17,9336573383
+1701EE11,Avinash Singh,EE,Addula.ee17,9188203013
+1701EE12,Bommera Nikhil,EE,aditya.ee17,9670025896
+1701EE13,Gude Vignesh Kumar,EE,Abhipray.ee17,9690065376
+1701EE14,Hitvardhan,EE,Addula.ee17,9338585479
+1701EE15,Jay Shankar Pandit,EE,aditya.ee17,9710801809
+1701EE16,Jayesh Gupta,EE,Abhipray.ee17,9926045154
+1701EE17,Karhad Raman Vijayrao,EE,Addula.ee17,9222044730
+1701EE19,Madhav Manish,EE,aditya.ee17,9517916865
+1701EE20,Manoj Kumar,EE,Abhipray.ee17,9692483940
+1701EE21,Md Azam,EE,Addula.ee17,9515118019
+1701EE22,Mudassir Sarwar,EE,aditya.ee17,9631359855
+1701EE23,Nandan Rajendra Shah,EE,Abhipray.ee17,9221215839
+1701EE24,Narendra Meena,EE,Addula.ee17,9256282805
+1701EE25,Naveen Kumar Rathi,EE,aditya.ee17,9102543931
+1701EE26,Neeraj Kumar Meena,EE,Abhipray.ee17,9460170161
+1701EE27,Nelapudi Sandeep,EE,Addula.ee17,9040737639
+1701EE28,Nikhil Bharati,EE,aditya.ee17,9167349208
+1701EE29,Nitin Yadav,EE,Abhipray.ee17,9055806981
+1701EE30,Pedada Sree Harsha,EE,Addula.ee17,9766320269
+1701EE31,Piyush Tiwary,EE,aditya.ee17,9172633449
+1701EE32,Prateek Kumar Rai,EE,Abhipray.ee17,9360725010
+1701EE33,Priyesh Ranjan,EE,Addula.ee17,9148213987
+1701EE34,Rachumallu Yaswant,EE,aditya.ee17,9005758697
+1701EE35,Raghu Vamsi Veerapaneni,EE,Abhipray.ee17,9250185505
+1701EE36,Rahul Anand,EE,Addula.ee17,9200265047
+1701EE37,Rajeshwar Ojha,EE,aditya.ee17,9773870364
+1701EE38,Rapelli Rama Krishna,EE,Abhipray.ee17,9631350023
+1701EE39,Rishab Kumar,EE,Addula.ee17,9365641756
+1701EE40,Rohan Kumar,EE,aditya.ee17,9355457371
+1701EE41,Rohit Shyamkant Chaudhari,EE,Abhipray.ee17,9860792750
+1701EE42,Sadula Niranjan Reddy,EE,Addula.ee17,9225005481
+1701EE43,Saurabh Singh,EE,aditya.ee17,9385905121
+1701EE44,Shaik Shadiq,EE,Abhipray.ee17,9801054643
+1701EE45,Shubham Singh,EE,Addula.ee17,9076182287
+1701EE46,Shubham Swaraj,EE,aditya.ee17,9238846314
+1701EE47,Subham Mondal,EE,Abhipray.ee17,9340184324
+1701EE48,Sumit Sourabh,EE,Addula.ee17,9593844304
+1701EE49,Swadha Pandey,EE,aditya.ee17,9106360330
+1701EE50,Tanuruha Majumdar,EE,Abhipray.ee17,9711152769
+1701EE51,Umang Jain,EE,Addula.ee17,9611814331
+1701EE52,Utkarsh,EE,aditya.ee17,9761548823
+1701EE53,Vaibhav Vatsal,EE,Abhipray.ee17,9763594026
+1701EE54,Vikas Singhal,EE,Addula.ee17,9644141333
+1701EE55,Vikram Patel,EE,aditya.ee17,9901806105
+1701ME01,Abhijeet Manyu,ME,Abhijeet.me17,9850761778
+1701ME02,Abhishek Kumar,ME,abhishek.me17,9423016323
+1701ME03,Aman Deep,ME,aman.me17,9083151118
+1701ME04,Aman Deep,ME,Abhijeet.me17,9448287538
+1701ME05,Aman Mishra,ME,abhishek.me17,9423989027
+1701ME06,Amar Raj,ME,aman.me17,9825071085
+1701ME07,Anshu Kumar,ME,Abhijeet.me17,9320610089
+1701ME08,Badavath Bharath Chandra,ME,abhishek.me17,9783847743
+1701ME09,Bandari Tarun,ME,aman.me17,9070278906
+1701ME10,Bandaru Venkat,ME,Abhijeet.me17,9592391131
+1701ME11,Bandi Loknath,ME,abhishek.me17,9063190310
+1701ME12,Bansal Kumar,ME,aman.me17,9391900011
+1701ME13,Bharadwaj Nayanar,ME,Abhijeet.me17,9299589045
+1701ME14,Chandan Bhat,ME,abhishek.me17,9904742735
+1701ME15,Deep Roshan,ME,aman.me17,9846850895
+1701ME16,Gurpreet Singh,ME,Abhijeet.me17,9983528917
+1701ME17,Harsh Jindal,ME,abhishek.me17,9027951429
+1701ME18,Harshit Singh,ME,aman.me17,9651647844
+1701ME19,Harshith Jaya Sundar Uppada,ME,Abhijeet.me17,9462006044
+1701ME20,Imandi Kanaka Markandeya Venu Gopal,ME,abhishek.me17,9757889416
+1701ME21,Kartik Singh,ME,aman.me17,9228661793
+1701ME22,Komara Devi Charan,ME,Abhijeet.me17,9039520429
+1701ME23,Koshyari Anshul Devendra,ME,abhishek.me17,9659844891
+1701ME24,Kshitij Jain,ME,aman.me17,9932077227
+1701ME25,Mallavarapu Tarun Reddy,ME,Abhijeet.me17,9724133157
+1701ME26,Mukesh Raypuriya,ME,abhishek.me17,9068631349
+1701ME27,Patil Vaibhav Rajaram,ME,aman.me17,9950868804
+1701ME28,Pranil Jayant Kesaralikar,ME,Abhijeet.me17,9030490935
+1701ME29,Prateek,ME,abhishek.me17,9023717162
+1701ME30,Rakshit Bhatt,ME,aman.me17,9514941467
+1701ME31,Rathod Srinivas,ME,Abhijeet.me17,9878000841
+1701ME33,Ritesh Kumar,ME,abhishek.me17,9909058644
+1701ME34,Rohan J Aditya,ME,aman.me17,9574711831
+1701ME35,Rohit Dutta,ME,Abhijeet.me17,9052820358
+1701ME36,Roushan Kumar,ME,abhishek.me17,9749161194
+1701ME37,Sachin Pandey,ME,aman.me17,9256302261
+1701ME38,Sahil Aggarwal,ME,Abhijeet.me17,9786937223
+1701ME39,Saif Ahmad,ME,abhishek.me17,9936893703
+1701ME40,Sharique Nomani,ME,aman.me17,9447991418
+1701ME41,Shashank Shreyaskar,ME,Abhijeet.me17,9361065914
+1701ME42,Shivam Kumar,ME,abhishek.me17,9715675504
+1701ME43,Shreyas Sanjay Taware,ME,aman.me17,9224739246
+1701ME44,Shrish Chandra Sharma,ME,Abhijeet.me17,9606449644
+1701ME45,Shubham Chouksey,ME,abhishek.me17,9265834418
+1701ME46,Shubham Pathak,ME,aman.me17,9343435424
+1701ME47,Sudhir Yadav,ME,Abhijeet.me17,9866878268
+1701ME48,Sujit Justine Barwa,ME,abhishek.me17,9119287207
+1701ME49,Tejas Goyal,ME,aman.me17,9034921130
+1701ME50,Ujjwal Kumar,ME,Abhijeet.me17,9987915700
+1701ME51,Vaibhav Gupta,ME,abhishek.me17,9116485267
+1701ME52,Vaibhav Pandey,ME,aman.me17,9707957350
+1701ME53,Velamala Bharath,ME,Abhijeet.me17,9758405052
+1701ME54,Vibhor Upadhyaya,ME,abhishek.me17,9481705379
+1701ME55,Vijendra Meena,ME,aman.me17,9618465687
+1701ME57,Rajkumar Yadav,ME,yadav.me17,9000294718
+1701CE01,Abhay Kumar,CE,kumar.ce17,9085548664
+1701CE02,Ajay,CE,ajay.ce17,9418673738
+1701CE03,Aman Kumar,CE,aman.ce17,9226027972
+1701CE04,Anuj Kumar,CE,anuj.ce17,9382344010
+1701CE05,Chidara Nagamanikanta Sai,CE,chidara.ce17,9535530201
+1701CE06,Daksh Bhatnagar,CE,kumar.ce17,9942666103
+1701CE07,Dharmendra Kumar Gurjar,CE,ajay.ce17,9062602458
+1701CE08,Ekta,CE,aman.ce17,9700004812
+1701CE09,Gopikrishnan Nair Suresh Kumar,CE,anuj.ce17,9568674759
+1701CE10,Jagdish Kumar,CE,chidara.ce17,9266036229
+1701CE11,Kaushal Kumar Jangir,CE,kumar.ce17,9597936832
+1701CE12,Koushik Mondol,CE,ajay.ce17,9740699214
+1701CE13,Manas Singh,CE,aman.ce17,9417970846
+1701CE14,Md Saifullah Nasim,CE,anuj.ce17,9348709579
+1701CE15,Mohd Jakir,CE,chidara.ce17,9539423748
+1701CE16,Narendranath Gogineni,CE,kumar.ce17,9309057313
+1701CE17,Neeraj Paraliya,CE,ajay.ce17,9978510178
+1701CE18,Pawan Tiwari,CE,aman.ce17,9942886359
+1701CE19,Rajeev Kumar Tilak,CE,anuj.ce17,9153193229
+1701CE20,Rakesh Raushan,CE,chidara.ce17,9625655214
+1701CE21,Rakshit Maheshwari,CE,kumar.ce17,9631590433
+1701CE22,Satyam Singh,CE,ajay.ce17,9514157011
+1701CE23,Shirke Pranav Vinayak,CE,aman.ce17,9224228836
+1701CE24,Shivam Prakash,CE,anuj.ce17,9724128749
+1701CE25,Shristi Shreya Singh,CE,chidara.ce17,9740571765
+1701CE26,Vikas Mishra,CE,kumar.ce17,9386716713
+1701CE27,Vineet Mishra,CE,ajay.ce17,9240743249
+1701CE28,Yash Rawal,CE,aman.ce17,9499525801
+1701CB01,Aashay Harshit,CB,Aashay.cb17,9697179816
+1701CB03,Aftab Ameer Mohideen,CB,aftab.cb17,9828530049
+1701CB04,Anup Purandas Alone,CB,anup.cb17,9545275288
+1701CB05,Ashish Santhosh Jacob,CB,Aashay.cb17,9069548694
+1701CB06,Atharva Rajesh Ekatpure,CB,aftab.cb17,9819799605
+1701CB07,Divya Verma,CB,anup.cb17,9691710390
+1701CB08,Gaurav Mishra,CB,Aashay.cb17,9133447400
+1701CB09,Himanshu Gupta,CB,aftab.cb17,9150377136
+1701CB10,Iragaraju Bhavani Susmitha,CB,anup.cb17,9109405595
+1701CB11,Ketan Bathom,CB,Aashay.cb17,9654043236
+1701CB12,Mayank Singh,CB,aftab.cb17,9501048367
+1701CB13,Mridul Srivastava,CB,anup.cb17,9220051789
+1701CB14,Muppalla Yaswanth Chowdary,CB,Aashay.cb17,9854125814
+1701CB15,Nallam Sai Niranjan,CB,aftab.cb17,9069496332
+1701CB16,Namathabad Sandeep Kumar,CB,anup.cb17,9441083679
+1701CB17,Pothapragada Venkata Sg Krishna Srikar,CB,Aashay.cb17,9344937045
+1701CB18,Prakash Singh,CB,aftab.cb17,9340038387
+1701CB19,Pranshu Chandani,CB,anup.cb17,9928723796
+1701CB20,Prathipati Nithish,CB,Aashay.cb17,9974661588
+1701CB21,Priyansh Singh Rao,CB,aftab.cb17,9678570905
+1701CB22,Riya Ranjan,CB,anup.cb17,9473651211
+1701CB23,Rohit Kumar,CB,Aashay.cb17,9454985232
+1701CB24,Saurabh Gupta,CB,aftab.cb17,9663059853
+1701CB25,Saurodeep Das,CB,anup.cb17,9807248949
+1701CB26,Vikash Prasad Soni,CB,Aashay.cb17,9950616890
+1701CB27,Vivek Garg,CB,aftab.cb17,9416565214
+1701CB28,Rupesh Neekhra,CB,anup.cb17,9393045028

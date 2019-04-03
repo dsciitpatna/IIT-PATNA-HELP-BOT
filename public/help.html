@@ -1,0 +1,743 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<title> HELP </title>
+<script type="text/javascript" src="js/converting.js"></script>
+
+<style type="text/css">
+
+    body{
+        font-family: 'Lato', sans-serif;
+    }
+
+    p {
+        background-color: black;
+        width: 400px;
+        border: 3px white;
+        padding: 25px;
+        margin: 45px;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        line-height: 7em;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    a:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #message {
+        font-size: 18pt;
+        height: 42px;
+        width : 300px;
+    }
+    #container{
+        font-size:2em;
+    }
+    #footer3 {
+        position:fixed;
+        left :88%;
+        top:1%;
+        margin:0;
+        padding:0;
+        width:100%;
+    }
+    .date-circle {
+        width: 10em;
+        height: 10em;
+        bottom: 68.5%;
+        left: 43.10%;
+        position: absolute;
+        background-color: transparent;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 0.125em solid rgba(30,30,30,.4);
+        opacity: .1;
+        -webkit-animation: date-circle-anim 1.2s infinite ease-in-out;
+        -moz-animation: date-circle-anim 1.2s infinite ease-in-out;
+        -ms-animation: date-circle-anim 1.2s infinite ease-in-out;
+        -o-animation: date-circle-anim 1.2s infinite ease-in-out;
+        animation: date-circle-anim 1.2s infinite ease-in-out;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .date.active .date-circle {
+        -webkit-animation: date-circle-anim 1.1s infinite ease-in-out;
+        -moz-animation: date-circle-anim 1.1s infinite ease-in-out;
+        -ms-animation: date-circle-anim 1.1s infinite ease-in-out;
+        -o-animation: date-circle-anim 1.1s infinite ease-in-out;
+        animation: date-circle-anim 1.1s infinite ease-in-out;
+    }
+
+    .date.static .date-circle {
+        -webkit-animation: date-circle-anim 2.2s infinite ease-in-out;
+        -moz-animation: date-circle-anim 2.2s infinite ease-in-out;
+        -ms-animation: date-circle-anim 2.2s infinite ease-in-out;
+        -o-animation: date-circle-anim 2.2s infinite ease-in-out;
+        animation: date-circle-anim 2.2s infinite ease-in-out;
+    }
+
+    .date.green .date-circle {
+        border-color: rgba(0,175,242,1);
+        opacity: .5;
+    }
+
+    .date.gray .date-circle {
+        border-color: rgba(14,129,182,1);
+        opacity: .5;
+    }
+
+    .date-circle-fill {
+        width: 6.25em;
+        height: 6.25em;
+        bottom: 73.4%;
+        left: 45.50%;
+        position: absolute;
+        background-color: #000;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 0.125 solid transparent;
+        opacity: .1;
+        -webkit-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -moz-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -ms-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -o-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .date.active .date-circle-fill {
+        -webkit-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+        -moz-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+        -ms-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+        -o-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+        animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+    }
+
+    .date.static .date-circle-fill {
+        -webkit-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -moz-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -ms-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        -o-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+        opacity: 0;
+    }
+
+    .date.green .date-circle-fill {
+        background-color: rgba(0,175,242,.5);
+        opacity: .75;
+    }
+
+    .date.gray .date-circle-fill {
+        background-color: rgba(14,129,182,.5);
+        opacity: .75;
+    }
+
+    .date-img-circle {
+        width: 3.75em;
+        height: 3.75em;
+        bottom: 76%;
+        left: 46.9%;
+        position: absolute;
+        text-align:center;
+        color:#fff;
+        font-family:bebas;
+        line-height:1.5em;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        border: 0.125em solid transparent;
+        opacity: .7;
+        -webkit-animation: date-circle-img-anim 1s infinite ease-in-out;
+        -moz-animation: date-circle-img-anim 1s infinite ease-in-out;
+        -ms-animation: date-circle-img-anim 1s infinite ease-in-out;
+        -o-animation: date-circle-img-anim 1s infinite ease-in-out;
+        animation: date-circle-img-anim 1s infinite ease-in-out;
+    }
+    @-webkit-keyframes done {
+        0%     {opacity:1;}
+        10.5%  {opacity:1;}
+        12.5%  {opacity:0;}
+        87.5%  {opacity:0;}
+        89.5%  {opacity:1;}
+        100%   {opacity:1;}
+    }
+    @keyframes done {
+        0%     {opacity:1;}
+        10.5%  {opacity:1;}
+        12.5%  {opacity:0;}
+        87.5%  {opacity:0;}
+        89.5%  {opacity:1;}
+        100%   {opacity:1;}
+    }
+
+    @-webkit-keyframes dtwo {
+        0%      {opacity:0;}
+        12.5%   {opacity:0;}
+        14.5%   {opacity:1;}
+        35.5%   {opacity:1;}
+        37.5%   {opacity:0;}
+        100%    {opacity:0;}
+    }
+    @keyframes dtwo {
+        0%      {opacity:0;}
+        12.5%   {opacity:0;}
+        14.5%   {opacity:1;}
+        35.5%   {opacity:1;}
+        37.5%   {opacity:0;}
+        100%    {opacity:0;}
+    }
+
+    @-webkit-keyframes dthree {
+        0%      {opacity:0;}
+        37.5%   {opacity:0;}
+        39.5%   {opacity:1;}
+        60.5%   {opacity:1;}
+        62.5%   {opacity:0;}
+        100%    {opacity:0;}
+    }
+    @keyframes dthree {
+        0%      {opacity:0;}
+        37.5%   {opacity:0;}
+        39.5%   {opacity:1;}
+        60.5%   {opacity:1;}
+        62.5%   {opacity:0;}
+        100%    {opacity:0;}
+    }
+
+    @-webkit-keyframes dfour {
+        0%      {opacity:0;}
+        62.5%   {opacity:0;}
+        64.5%   {opacity:1;}
+        85.5%   {opacity:1;}
+        87.5%   {opacity:0;}
+        100%    {opacity:0;}
+    }
+    @keyframes dfour {
+        0%      {opacity:0;}
+        62.5%   {opacity:0;}
+        64.5%   {opacity:1;}
+        85.5%   {opacity:1;}
+        87.5%   {opacity:0;}
+        100%    {opacity:0;}
+    }
+    .d1{
+        -webkit-animation: done 4.8s infinite;
+        animation: done 4.8s infinite;
+        display:inline;
+    }
+    .d2{
+        -webkit-animation: dtwo 4.8s infinite;
+        animation: dtwo 4.8s infinite;
+        display:inline;
+    }
+    .d3{
+        -webkit-animation: dthree 4.8s infinite;
+        animation: dthree 4.8s infinite;
+        display:inline;
+    }
+    .d4{
+        -webkit-animation: dfour 4.8s infinite;
+        animation: dfour 4.8s infinite;
+        display:inline;
+    }
+
+    .date-img-circle ul{
+        position:relative;
+        font-size:2em;
+        display:block;
+        left:-0.4em;
+    }
+    .date-img-circle li{
+        position:absolute;
+    }
+    .date.active .date-img-circle {
+        -webkit-animation: date-circle-img-anim 1s infinite ease-in-out;
+        -moz-animation: date-circle-img-anim 1s infinite ease-in-out;
+        -ms-animation: date-circle-img-anim 1s infinite ease-in-out;
+        -o-animation: date-circle-img-anim 1s infinite ease-in-out;
+        animation: date-circle-img-anim 1s infinite ease-in-out;
+    }
+
+    .date.static .date-img-circle {
+        -webkit-animation: date-circle-img-anim 0 infinite ease-in-out;
+        -moz-animation: date-circle-img-anim 0 infinite ease-in-out;
+        -ms-animation: date-circle-img-anim 0 infinite ease-in-out;
+        -o-animation: date-circle-img-anim 0 infinite ease-in-out;
+        animation: date-circle-img-anim 0 infinite ease-in-out;
+    }
+
+    .date.green .date-img-circle {
+        background-color: rgba(243,121,42,1);
+    }
+
+    .date.gray .date-img-circle {
+        background-color: rgba(14,129,182,1);
+    }
+
+    @-moz-keyframes date-circle-anim {
+        0% {
+            -moz-transform: rotate(0deg) scale(0.5) skew(1deg);
+            opacity: .1;
+            -moz-opacity: .1;
+            -webkit-opacity: .1;
+            -o-opacity: .1;
+        }
+
+        30% {
+            -moz-transform: rotate(0deg) scale(.7) skew(1deg);
+            opacity: .5;
+            -moz-opacity: .5;
+            -webkit-opacity: .5;
+            -o-opacity: .5;
+        }
+
+        100% {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg);
+            opacity: .6;
+            -moz-opacity: .6;
+            -webkit-opacity: .6;
+            -o-opacity: .1;
+        }
+    }
+
+    @-webkit-keyframes date-circle-anim {
+        0% {
+            -webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
+            -webkit-opacity: .1;
+        }
+
+        30% {
+            -webkit-transform: rotate(0deg) scale(.7) skew(1deg);
+            -webkit-opacity: .5;
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+            -webkit-opacity: .1;
+        }
+    }
+
+    @-o-keyframes date-circle-anim {
+        0% {
+            -o-transform: rotate(0deg) kscale(0.5) skew(1deg);
+            -o-opacity: .1;
+        }
+
+        30% {
+            -o-transform: rotate(0deg) scale(.7) skew(1deg);
+            -o-opacity: .5;
+        }
+
+        100% {
+            -o-transform: rotate(0deg) scale(1) skew(1deg);
+            -o-opacity: .1;
+        }
+    }
+
+    @keyframes date-circle-anim {
+        0% {
+            transform: rotate(0deg) scale(0.5) skew(1deg);
+            opacity: .1;
+        }
+
+        30% {
+            transform: rotate(0deg) scale(.7) skew(1deg);
+            opacity: .5;
+        }
+
+        100% {
+            transform: rotate(0deg) scale(1) skew(1deg);
+            opacity: .1;
+        }
+    }
+
+    @-moz-keyframes date-circle-fill-anim {
+        0% {
+            -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+
+        50% {
+            -moz-transform: rotate(0deg) -moz-scale(1) skew(1deg);
+            opacity: .2;
+        }
+
+        100% {
+            -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+    }
+
+    @-webkit-keyframes date-circle-fill-anim {
+        0% {
+            -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+
+        50% {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+            opacity: .2;
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+    }
+
+    @-o-keyframes date-circle-fill-anim {
+        0% {
+            -o-transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+
+        50% {
+            -o-transform: rotate(0deg) scale(1) skew(1deg);
+            opacity: .2;
+        }
+
+        100% {
+            -o-transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+    }
+
+    @keyframes date-circle-fill-anim {
+        0% {
+            transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+
+        50% {
+            transform: rotate(0deg) scale(1) skew(1deg);
+            opacity: .2;
+        }
+
+        100% {
+            transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+    }
+
+    @keyframes date-circle-img-anim {
+        0% {
+            transform: rotate(0deg) scale(1) skew(1deg);
+        }
+
+        10% {
+            transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        20% {
+            transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        30% {
+            transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        40% {
+            transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        100%,50% {
+            transform: rotate(0deg) scale(1) skew(1deg);
+        }
+    }
+
+    @-moz-keyframes date-circle-img-anim {
+        0% {
+            transform: rotate(0deg) scale(1) skew(1deg);
+        }
+
+        10% {
+            -moz-transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        20% {
+            -moz-transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        30% {
+            -moz-transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        40% {
+            -moz-transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        100%,50% {
+            -moz-transform: rotate(0deg) scale(1) skew(1deg);
+        }
+    }
+
+    @-webkit-keyframes date-circle-img-anim {
+        0% {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+        }
+
+        10% {
+            -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        20% {
+            -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        30% {
+            -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        40% {
+            -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        100%,50% {
+            -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+        }
+    }
+
+    @-o-keyframes date-circle-img-anim {
+        0% {
+            -o-transform: rotate(0deg) scale(1) skew(1deg);
+        }
+
+        10% {
+            -o-transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        20% {
+            -o-transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        30% {
+            -o-transform: rotate(-25deg) scale(1) skew(1deg);
+        }
+
+        40% {
+            -o-transform: rotate(25deg) scale(1) skew(1deg);
+        }
+
+        100%,50% {
+            -o-transform: rotate(0deg) scale(1) skew(1deg);
+        }
+    }
+
+</style>
+<body bgcolor="black">
+    <div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div>
+
+
+    <h1 style="color: white;"><center> Hello! I am here to help you. </center></h1> <br>
+
+    <br>
+    <center>
+        <span id='recordTag'> 
+            <div class="boundary">
+                <div class="date gray show static">
+                    <div class="date-circle"></div>
+                    <div class="date-circle-fill"></div>
+                    <div class="date-img-circle"> <IMG style='margin-top:0.5em' HEIGHT="40" WIDTH="40" SRC="images/mic.png">
+                    </div>
+                </div>
+            </div>
+        </span>  </center>
+        <center>
+            <div id='container' style="height: 50%;width: 50%; top:290px; padding: 1em; color:white;">
+
+            </div> </center>
+            <br>
+
+            <input type="hidden" name="speech-msg" id="speech-msg" x-webkit-speech> 
+
+            <br><br>
+
+            <script type="text/javascript" src="js/converting.js"></script>
+
+            <script>var speechMsgInput = document.getElementById('speech-msg');
+// var voiceSelect = document.getElementById('voice');
+
+function speak(text) {
+  // Create a new instance of SpeechSynthesisUtterance.
+  // Set the text.
+  var msg = new SpeechSynthesisUtterance(text);
+  
+     //msg.rate = 0.7;
+     msg.pitch = 1;
+     
+     window.speechSynthesis.speak(msg);
+ }
+
+ speak("Hello i am here to help you");
+ 
+ var speechRecognizer = new webkitSpeechRecognition();
+ speechRecognizer.continuous = false;
+ speechRecognizer.interimResults = true;
+ speechRecognizer.lang = 'en-IN';
+
+ function startConverting (callback) {
+    
+    if('webkitSpeechRecognition' in window){
+        speechRecognizer.start();
+        console.log("Strarting R");             
+        var finalTranscripts = '';
+
+        speechRecognizer.onresult = function(event){
+            var interimTranscripts = '';
+            for(var i = event.resultIndex; i < event.results.length; i++){
+                var transcript = event.results[i][0].transcript;
+                                //transcript.replace("\n", "<br>");
+                                if(event.results[i].isFinal){
+                                    finalTranscripts += transcript;
+                                    console.log("Got : "+finalTranscripts);
+                                    speechRecognizer.stop();
+                                    callback(finalTranscripts);
+
+                                    return;
+                                }else{
+                                    interimTranscripts += transcript;
+                                }
+                                
+                            }
+                        };
+                        speechRecognizer.onerror = function (event) {
+                            speechRecognizer.stop();
+                            startConverting(callback);
+                        };
+                    }else{
+                        alert('Your browser is not supported. If google chrome, please upgrade!');
+                    }
+                }
+            </script>
+
+            <script>
+                var myVar;
+                console.log("A");
+                myVar = setTimeout(listenToMic, 40000);
+                function sendIt(data) {
+                    $("#container").append("<p class='chatmsg'>Me : "+ data+ "</p>");
+                    
+                    $.post("/help",
+                    {                               
+                        message: data
+                    },
+                    function(data, status){
+                        console.log("Data: " + data + "\nStatus: " + status);
+                        $("#container").append("<p class='chatmsg'>Kiosk : "+ data+ "</p>");
+                        speak(data);
+                        
+
+                    });
+
+                    
+                }
+                function onClickForm() {
+                    var data = document.getElementById('message').value;
+                    document.getElementById('message').value="";
+                    
+                    $('.chatmsg').remove();
+                    sendIt(data);
+
+                }
+                function listenToMic(data) {
+                 
+                    console.log("Asking for audio");
+                    $('#recordTag').show('fast');
+                    startConverting(function(data){
+                        if( data.toUpperCase() === "OKAY" || data.toUpperCase() === "OK") {
+                            location.href = 'faculty';
+                            return;
+                        }
+                        $('.chatmsg').remove();
+
+
+                        if(data!=null && data!="")
+                        {
+                            console.log("Data: " + data + "\nRecordReply: " + status);
+                            sendIt(data);   
+                        }
+                        $('#recordTag').hide('fast');
+                        
+                        setTimeout( function(){ console.log("HERER");    listenToMic(data);},4000 );
+                    });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "http://localhost:4000/",
+        //     data: { },
+        //     // timeout: 10000, // in milliseconds
+        //     success: function(data) {
+        //         // process data here
+        //          console.log("Got Reply");
+        //          $('.chatmsg').remove();
+
+
+        //           if(data!=null && data!="")
+        //             {
+        //                 console.log("Data: " + data + "\nRecordReply: " + status);
+        //                sendIt(data);   
+        //          }
+        //            $('#recordTag').hide('fast');
+        
+        //         setTimeout( function(){ console.log("HERER");    listenToMic(data);},8000 );
+        //     },
+        //     error: function(request, status, err) {
+        //         console.log("Failed");
+        //         setTimeout(  function( ){listenToMic("");},500 );
+        //            $('#recordTag').hide('fast');
+        
+        //     }
+        // });
+        // $.get('http://localhost:4000/', {})
+        // .done(function(msg){   
+        //                       })
+        // .fail(function(xhr, status, error) {
+        //     // error handling
+        //      console.log("Failed");
+        //         setTimeout(15000,   listenToMic() );
+        
+        // })
+        
+
+    }
+    setTimeout(function() {
+        listenToMic("");
+
+    },4000);
+</script>
+
+<div>
+    <!-- <input type="text" name="message" id='message' size="35"> </div> <br> -->
+    
+    <!-- <input type="submit" class="button" value="Submit" onclick="onClickForm();">
+--><!-- <input type="submit" value="Record" onclick="listenToMic();"> -->
+
+<script type="text/javascript">
+    $('#message').keypress(function (e) {
+      if (e.which == 13) {
+        onClickForm();
+        return false;    
+    }
+});
+</script>
+<br>
+
+</body>
+
+</html>

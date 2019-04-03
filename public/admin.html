@@ -1,0 +1,322 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<title> Time Table </title>
+<script type="text/javascript" src="js/converting.js"></script>
+
+<style type="text/css">
+
+    body{
+        font-family: 'Lato', sans-serif;
+        background: url("iit.jpg");
+        background-size: 100% auto;
+    }
+
+    p {
+        background-color: black;
+        width: 400px;
+        border: 3px white;
+        margin: 45px;
+    }
+
+
+    .button {
+        display:inline-block;
+        width: 15em;
+        border: 3px solid green;
+        background: #ffe;
+        border-radius: 5px;
+        display: block;
+        width: 22.5%;
+        line-height: 3em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .button:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #button {
+        width: 19em;
+        border: 2px solid green;
+        background: #ffe;
+        border-radius: 5px;
+    }
+    a {
+        display: block;
+        width: 100%;
+        line-height: 7em;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    a:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #message {
+        font-size: 18pt;
+        height: 42px;
+        width : 300px;
+    }
+    #container{
+        font-size:2em;
+    }
+    #footer3 {
+        position:fixed;
+        left :88%;
+        top:1%;
+        margin:0;
+        padding:0;
+        width:100%;
+    }
+    .b2014 {
+        display:inline-block;
+        width: 15em;
+        border: 3px solid green;
+        background: #ffe;
+        border-radius: 5px;
+        display: block;
+        width: 22.5%;
+        line-height: 3em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .b2014:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #b2014 {
+        width: 20em;
+        height: 7em;
+        border: 5px solid green;
+        background: #ffe;
+        border-radius: 8px;
+        right: 53%;
+        bottom: 60%;
+        position: absolute;
+    }
+    .b2015 {
+        display:inline-block;
+        width: 15em;
+        border: 3px solid green;
+        background: #ffe;
+        border-radius: 5px;
+        display: block;
+        width: 22.5%;
+        line-height: 3em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .b2015:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #b2015 {
+        width: 20em;
+        height: 7em;
+        border: 5px solid green;
+        background: #ffe;
+        border-radius: 8px;
+        right: 28%;
+        bottom: 60%;
+        position: absolute;
+    }
+    .b2016 {
+        display:inline-block;
+        width: 15em;
+        border: 3px solid green;
+        background: #ffe;
+        border-radius: 5px;
+        display: block;
+        width: 22.5%;
+        line-height: 3em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .b2016:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #b2016 {
+        width: 20em;
+        height: 7em;
+        border: 5px solid green;
+        background: #ffe;
+        border-radius: 8px;
+        right: 53%;
+        bottom: 35%;
+        position: absolute;
+    }
+    .b2017 {
+        display:inline-block;
+        width: 15em;
+        border: 3px solid green;
+        background: #ffe;
+        border-radius: 5px;
+        display: block;
+        width: 22.5%;
+        line-height: 3em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .b2017:hover {
+        color: red;
+        background: #eff;
+    }
+
+    #b2017 {
+        width: 20em;
+        height: 7em;
+        border: 5px solid green;
+        background: #ffe;
+        border-radius: 8px;
+        right: 28%;
+        bottom: 35%;
+        position: absolute;
+    }
+
+
+    #b2018 {
+        width: 20em;
+        height: 7em;
+        border: 5px solid green;
+        background: #ffe;
+        border-radius: 8px;
+        right: 53%;
+        bottom: 10%;
+        position: absolute;
+    }
+
+    #b2019 {
+        width: 20em;
+        height: 7em;
+        border: 5px solid green;
+        background: #ffe;
+        border-radius: 8px;
+        right: 28%;
+        bottom: 10%;
+        position: absolute;
+    }
+
+    #pass
+    {
+        text-align: center;
+        font-size: 20px;
+    }
+    #hide
+    {
+        display: none;
+
+    }
+
+</style>
+<body id="body">
+    <div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="../images/iitp.png"></div>
+
+    <br>
+    <h1 id = "iitpatna"><center> INDIAN INSTITUTE OF TECHNOLOGY, PATNA </center></h1> <br>
+
+    <br>
+    <div id="pass">
+      <form name="form" >  
+        Admin Name: 
+        <input type="text" name="Admin" required><br><br> 
+        Enter the password: 
+        <input type="password" name="password" width="100px" required><br><br>
+    </form>
+    <button onclick="showpage()" id="Submit">Submit</button>
+
+    <div id="wrong"></div>
+</div>
+<div id="hide" >
+    
+    <a class="info" href="/carbooking"> <div id="b2014"> Car Booking </div></a>
+    <a class="info" href="/drivert"> <div id="b2015"> Driver Access </div></a>
+    <a class="info" href="/Rtransport"> <div id="b2016"> Refresh Transport Database </div></a>
+    <a class="info" href="/Rcarbooking"> <div id="b2017"> Refresh Car Booking Database </div></a>
+    <a class="info" href="/#"> <div id="b2018">  View Complaints</div></a>
+    <a class="info" href="/mlab"> <div id="b2019"> Visit Database </div></a>
+    
+
+    <div id='container' style="height: 50%;width: 50%; top:200px; padding: 1em; background: rgba(0,0,0,1); color:white;">
+
+    </div> 
+    <br>
+    <input type="hidden" name="speech-msg" id="speech-msg" x-webkit-speech> 
+
+    <br><br>
+</div>
+<script type="text/javascript" src="js/converting.js"></script>
+<script type="text/javascript">
+    var bus;
+
+    function showpage()
+    {
+        var pass="kohinoor";
+        admin = document.forms["form"]["Admin"].value;
+        var Entered = document.forms["form"]["password"].value;
+        if(Entered=="" || bus=="")
+        {
+            alert("Please fill the given field");
+        }
+        else
+            if(Entered == pass && (admin=="Vipin Mavi" || admin=="vipin mavi" || admin=="vkmavi"))
+            {
+                document.getElementById("iitpatna").style.color = "white";
+                document.body.style.background = "black";
+                document.getElementById("hide").style.display = "block";
+                document.getElementById("pass").style.display = "none";
+                speak("Which option do you prefer?");
+                start();
+
+            }
+            else
+            {
+                document.getElementById("wrong").innerHTML = "Incorrect Credentials!";
+                document.forms["form"]["password"].value = "";
+                document.forms["form"]["Admin"].value = "";
+            }    
+        }
+
+        function start() {
+            console.log("before start");
+            startConverting(null,function(msg) {
+                console.log("Started");
+                
+                msg = msg.toUpperCase();
+                if(msg.indexOf("CAR BOOKING")>=0)
+                    $("#cb").click();
+                else if(msg.indexOf("Drive ACCESS")>=0)
+                    $("#da").click();
+                else if(msg.indexOf("REFRESH TRANSPORT DATABASE")>=0)
+                    $("#rtd").click();
+                else if(msg.indexOf("REFRESH CAR BOOKING DATABASE")>=0)
+                    $("#rcb").click();
+                console.log(msg);
+                setTimeout(  function( ){start();},5000 );
+                console.log(msg);
+            });
+        }
+
+
+    </script>
+    <br>
+
+</body>
+
+</html>

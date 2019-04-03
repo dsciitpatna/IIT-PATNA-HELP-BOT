@@ -1,0 +1,530 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<title> Driver </title>
+<script type="text/javascript" src="js/converting.js"></script>
+
+<style type="text/css">
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: black;
+    background: url("iit.jpg");
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    p {
+    background-color: black;
+    width: 400px;
+    border: 3px white;
+    padding: 25px;
+    margin: 45px;
+}
+
+
+.button {
+    display:inline-block;
+     width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+  display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+ }
+ .button:hover {
+    color: red;
+    background: #eff;
+ }
+
+#button {
+    width: 19em;
+    border: 2px solid green;
+    background: #ffe;
+    border-radius: 5px;
+}
+a {
+    display: block;
+    width: 100%;
+    line-height: 1.6em;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a:hover {
+    color: red;
+    background: #eff;
+}
+
+#message {
+    font-size: 18pt;
+    height: 42px;
+    width : 300px;
+}
+#container{
+    font-size:2em;
+}
+#footer3 {
+position:fixed;
+left :88%;
+top:1%;
+margin:0;
+padding:0;
+width:100%;
+}
+.button1 {
+    display:inline-block;
+     width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+  display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+ }
+ .button2:hover {
+    color: red;
+    background: #eff;
+ }
+
+#button1 {
+    width: 10em;
+    height: 1.5em;
+    border: 5px solid green;
+    background: #ffe;
+    border-radius: 8px;
+    right: 50%;
+    bottom: 65%;
+    position: absolute;
+}
+
+#button2 {
+    width: 10em;
+    height: 1.5em;
+    border: 5px solid green;
+    background: #ffe;
+    border-radius: 8px;
+    right: 74%;
+    bottom: 65%;
+    position: absolute;
+}
+
+#button3 {
+    width: 10em;
+    height: 1.5em;
+    border: 5px solid green;
+    background: #ffe;
+    border-radius: 8px;
+    right: 26%;
+    bottom: 65%;
+    position: absolute;
+}
+
+.button2 {
+    display:inline-block;
+     width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+ }
+ .button2:hover {
+    color: red;
+    background: #eff;
+ }
+
+#liveTimer {
+    width: 7em;
+    height: 3.5em;
+    border: 5px solid green;
+    background: #ffe;
+    border-color: darkblue;
+    border-radius: 8px;
+    right: 7.5%;
+    bottom: 63%;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 3.4em;
+}
+
+#list{
+            margin: auto;
+        }
+#list th {
+            text-align: left;
+            background: darkslategrey;
+            height: 50px;
+            padding: 10px;
+        }
+#list tr,td {
+            padding: 10px;
+            background-color: darkslategrey;
+            opacity: 1;
+        }
+
+.hidden{
+    background-color: black;
+    width: 100px;
+}
+
+.show{
+    background-color: darkslategrey;
+    width: 100px;
+}
+
+#red{
+    color: darkorange;
+}
+
+#green{
+    color: lightgreen;
+}
+
+#black{
+    color: black;
+}
+
+#table{
+    position: absolute;
+    bottom: 5%;
+    left: 36%;
+}
+
+.time{
+    width: 80px;
+    border-right:none;
+    border-left:none;
+    border-bottom:none;
+    border-top:none;
+    opacity: 1;
+    color: yellow;
+}
+
+.place{
+    border-right:none;
+    border-left:none;
+    border-bottom:none;
+    border-top:none;
+    opacity: 1;
+}
+
+#pass
+{
+    text-align: center;
+    font-size: 20px;
+}
+#hide
+{
+    display: none;
+
+}
+
+</style>
+<body bgcolor="black" onload="startTime()">
+<div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div>
+
+<br>
+<h1 style="color: darkblue;"><center> INDIAN INSTITUTE OF TECHNOLOGY, PATNA </center></h1> <br>
+
+<br>
+<div id="pass">
+  <form name="form" >  
+    Bus Number: 
+    <input type="text" name="bus_no" required><br><br> 
+    Password: 
+    <input type="password" name="password" width="100px" required><br><br>
+</form>
+   <button onclick="showpage()" id="Submit">Submit</button>
+
+    <div id="wrong"></div>
+</div>
+<div id="hide" >
+   <div id="liveTimer">Live Timer</div>
+   <a class="info"> <div id="button2">START</div> </a>
+   <a class="info"> <div id="button1" disabled >NEXT</div> </a>
+   <a class="info"> <div id="button3">END</div> </a>
+     
+
+<div id='container' style="height: 50%;width: 50%; top:200px; padding: 1em; color:white;"></div>
+
+<div id="table">
+    <table id='list'>
+    <tr><td id="place1" class="place">Girls Hostel</td><td class='time'></td></tr>
+    <tr><td id="place2" class="place">Boys Hostel</td><td class='time'></td></tr>
+    <tr><td id="place3" class="place">Admin Block</td><td class='time'></td></tr>
+    <tr><td id="place4" class="place">Block 3</td><td class='time'></td></tr>
+    <tr><td id="place5" class="place">Block 6</td><td class='time'></td></tr>
+    <tr><td id="place6" class="place">Mechanical Workshop</td><td class='time'></td></tr>
+    <tr><td id="place7" class="place">Tutorial Block</td><td class='time'></td></tr>
+    </table>
+</div>
+<br>
+</div>
+<script type="text/javascript">
+    var bus;
+    var s1;
+    function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    h=h%12;
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById("liveTimer").innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+var e =0;
+var w=0;
+var lambda=0;
+var gama=0;
+
+function showpage()
+{
+    var pass="12345678";
+    bus = document.forms["form"]["bus_no"].value;
+    var Entered = document.forms["form"]["password"].value;
+    if(Entered=="" || bus=="")
+    {
+        alert("Please fill the given field");
+    }
+    else
+        if(Entered == pass)
+        {
+            document.getElementById("hide").style.display = "block";
+            document.getElementById("pass").style.display = "none";
+        }
+        else
+        {
+            document.getElementById("wrong").innerHTML = "Incorrect Password!";
+            document.forms["form"]["password"].value = "";
+        }    
+console.log(bus);
+}
+
+function enablebutton1()
+    {   if(w==0){
+        }
+        e = 1;
+        gama = 0;
+    }
+
+
+var destination="Tutorial Block";
+function swapList()
+{
+            if(w==1){
+            var x = document.getElementsByClassName("place");
+            for(var j=0; j<7 ; j++){
+                x[j].id="red";
+            }}
+            lambda = 0;
+}
+    var i=0;
+    var flag = 0;
+    var time = ["","","","","","",""];
+    var y = document.getElementsByClassName("time");
+    
+$(document).ready(function()
+{   
+        
+    
+    $('#button1').on('click' , function() {
+        var z;
+        var d = new Date(),
+        h = (d.getHours()<10?'0':'') + d.getHours(),
+        m = (d.getMinutes()<10?'0':'') + d.getMinutes(),
+        s=(d.getSeconds()<10?'0':'') + d.getSeconds();
+
+        if(e==1 && w==0)
+        {
+
+        var x = document.getElementsByClassName("place");
+        
+        
+
+        if (flag==0) {
+            x[1].id="green";
+            x[0].id="red";
+            flag=1;
+            i=1;   
+        }
+        
+        if (flag==1 && w==0) {
+        for(var t=0; t<7 ; t++){
+            if (t==i%7) {z=x[t].textContent; x[t].id="green"; time[t]=h%12+":"+m+":"+s; y[t].textContent = time[t];}
+            if (t<i%7) {x[t].id="red"; y[t].textContent = time[t];}
+            if (t>i%7) {x[t].id="black"; y[t].textContent = "        ";}
+        }
+        i++;
+
+        if (i>0 && i<=7) lambda = 1;
+
+        if (i==7) {
+            w = 1;
+            gama = 1;
+        }
+
+        
+            console.log(z);
+            $.ajax({
+            dataType: 'jsonp',
+            jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/nextarrival?RecentPlace="+z+"&bn="+bus
+            });
+            
+        }
+
+        }
+
+    });
+});
+$(document).ready(function()
+{   
+        
+        $('#button3').on('click' , function() {
+            if(gama==1)
+            {
+                swapList();
+                var d = new Date(),
+                h = (d.getHours()<10?'0':'') + d.getHours(),
+                m = (d.getMinutes()<10?'0':'') + d.getMinutes(),
+                s=(d.getSeconds()<10?'0':'') + d.getSeconds();
+                document.getElementById("liveTimer").innerHTML = h + ':' + m + ":" + s;
+                gama = 0;    
+                // make an ajax call
+                 $.ajax({
+                dataType: 'jsonp',
+                jsonpCallback: '_wrapper',
+                type: 'GET',
+                url: "http://localhost:3000/arrived?source=B&dest="+destination+"&h="+h+"&m="+m+"&bn="+bus
+                });
+                console.log(destination);
+
+            }
+        });
+    });
+$(document).ready(function()
+{       
+
+        $('#button2').on('click',function(){
+            var s1="Girls Hostel";
+            if(lambda==0)
+            {
+             enablebutton1();
+            
+             
+             var d = new Date(),
+              h = (d.getHours()<10?'0':'') + d.getHours(),
+              m = (d.getMinutes()<10?'0':'') + d.getMinutes(),
+              s=(d.getSeconds()<10?'0':'') + d.getSeconds();
+
+                for(var k=0;k<7;++k)
+                y[k].textContent = "       ";
+                time[0] = h%12 + ":" + m + ":" + s;
+                y[0].textContent = time[0];
+                document.getElementsByClassName("place")[0].id="green";
+
+             if (w==1) {
+                var x = document.getElementsByClassName("place");
+                for(var k=0;k<7;++k)
+                y[k].textContent = "       ";
+                h = (d.getHours()<10?'0':'') + d.getHours(),
+                m = (d.getMinutes()<10?'0':'') + d.getMinutes(),
+                s=(d.getSeconds()<10?'0':'') + d.getSeconds();
+                time[0] = h%12 + ":" + m + ":" + s;
+                y[0].textContent = time[0];    
+
+                for(var j=0; j<7 ; j++){
+                x[j].id="black";
+                }
+
+                document.getElementsByClassName("place")[0].id="green";
+
+                if (x[0].textContent=="Girls Hostel") 
+                {
+
+                    x[0].textContent="Tutorial Block";
+                    x[1].textContent="Mechanical Workshop";
+                    x[2].textContent="Block 6";
+                    x[3].textContent="Block 3";
+                    x[4].textContent="Admin Block";
+                    x[5].textContent="Boys Hostel";
+                    x[6].textContent="Girls Hostel";
+                    s1 = x[0].textContent;
+                    destination = x[6].textContent;
+                    e=1;
+                    w=0;
+                    i=0;
+                    gama = 0;
+                }
+
+                else if (x[0].textContent=="Tutorial Block") 
+                {
+                    x[6].textContent="Tutorial Block";
+                    x[5].textContent="Mechanical Workshop";
+                    x[4].textContent="Block 6";
+                    x[3].textContent="Block 3";
+                    x[2].textContent="Admin Block";
+                    x[1].textContent="Boys Hostel";
+                    x[0].textContent="Girls Hostel";
+                    s1 = x[0].textContent;
+                    destination = x[6].textContent;
+                    e=1;
+                    w=0;
+                    i=0;
+                    gama = 0;
+                }
+             }
+
+         
+
+    
+        console.log(bus);       
+        // make an ajax call
+        $.ajax({
+            dataType: 'jsonp',
+            jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/departed?source="+s1+"&h="+h+"&m="+m+"&bn="+bus
+            });
+        console.log(d);
+         }
+
+        });
+
+
+
+});
+
+</script>
+</body>
+</html>
+

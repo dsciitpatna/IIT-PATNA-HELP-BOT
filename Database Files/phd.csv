@@ -1,0 +1,109 @@
+name,dept,email,aor,sup,cosup
+Prashant Kapil,CSE,prashant.pcs17,"NLP, Machine Learning",Dr. Asif Ekbal,
+Supriyo Mandal,CSE,supriyo.pcs17,"Complex Networks, Social Networks",Dr. Abyayananda Maiti,
+Sovan Kumar Sahoo,CSE,sovan.pcs17,"NLP, Machine Learning",Dr. Asif Ekbal,
+Yashwant Singh Patel,CSE,yashwant.pcs17,"Cloud Computing, Distributed Algorithm",Dr. Rajiv Misra,
+Anurag Choubey,CSE,anurag.pcs17,,Dr. Rajiv Misra,
+Sourajit Behera,CSE,sourajit.pcs17,,Dr. Rajiv Misra,
+Ramesh Kumar Thakur,CSE,ramesh.pcs17,,Dr. Suman Kumar Maji,
+Dipanjyoti Paul,CSE,dipanjyoti.pcs17,,Dr. Sriparna Saha,Dr. Jimson Mathew
+Neeraj,CSE,neeraj.pcs17,,Dr. Jimson Mathew,Dr. Ranjan Bahera
+Kamal Kumar Gupta,CSE,kamal.pcs17,,Dr. Asif Ekbal,Prof. Pushpak Bhattacharyya
+Saswata Roy,CSE,saswata.pcs17,,Dr. Sourav Kr. Dandapat,
+Manish Bhanu,CSE,manish.mtcs14,,Dr. Joydeep Chandra,
+Pratik Dutta,CSE,pratik.pcs16,"Protein-protein Interaction(PPI) Network, Clustering
+Algorithm",Dr. Sriparna Saha,
+Tirthankar Ghosal,CSE,tirthankar.pcs16,Natural Language Processing,Dr. Asif Ekbal,Prof. Pushpak Bhattacharyya
+Sabyasachi Kamila,CSE,sabysachi.pcs16,Natural Language Processing,Dr. Asif Ekbal,Prof. Pushpak Bhattacharyya
+Deepak Gupta,CSE,deepak.pcs16,"Natural Language Processing, Machine Learning",Dr. Asif Ekbal,Prof. Pushpak Bhattacharyya
+MD IMRAN ALAM,CSE,imran.pcs16,Language-Based Information Flow Security Analysis of Database Application,Dr.Raju Halder,
+KM Pooja,CSE,pooja.pcs16,Data Base and Machine Learning,Dr. Samrat Mondal,Dr. Joydeep Chandra
+Abha Kumari,CSE,abha.pcs16,,Dr. Joydeep Chandra,Dr. Ashok Singh Sairam
+Naveen Saini,CSE,naveen.pcs16,Natural Language Processing,Dr. Sriparna Saha,Prof. Pushpak Bhattacharyya
+Rakesh Kumar Sanodiya,CSE,rakesh.pcs16,"Fault Tolerant, Secure and Scalable IoT-Based Architectures",Dr. Jimson Mathew,Dr. Somanath Tripathy
+Srikanta Pradhan,CSE,srikanta.pcs16,Peer to peer network security and cloud computing,Dr. Somanath Tripathy,
+Abhijit Kumar,CSE,abhijit.pcs16,"NLP, Machine Learning",Dr. Sriparna Saha,
+Alwyn Mathew,CSE,alwyn.pcs16,Computer vision,Dr. Jimson Mathew,
+Rimjhim,CSE,rimjhim.pcs16,,Dr. Sourav Kumar Dandapat,
+Tulika Saha,CSE,tulika.pcs16,,Dr. Sriparna Saha,Prof. Pushpak Bhattacharyya
+Shalini Priya,CSE,shalini.pcs16,,Dr. Joydeep Chandra,Dr. Sourav Kumar Dandapat
+Manish Bhanu,CSE,manish.mtcs14,,Dr. Joydeep Chandra,
+Pranay kumar saha,CSE,pranay.pcs16,,Dr. Arijit Mondal,
+Hazique Aetesam,CSE,hazique.pcs16,,Dr. Suman Kumar Maji,
+Mauajama Firdaus,CSE,mauajama.pcs16,,Dr. Asif Ekbal,Prof. Pushpak Bhattacharyya
+Bhawesh Kumar,CSE,bhawesh.pcs16,,Dr. Raju Halder,Dr. Samrat Mondal
+Sukanta Sen,CSE,sukanta.pcs15,"Machine Translation, Natural Language Processing,
+Machine Learning",Dr. Asif Ekbal,Prof. Pushpak Bhattacharyya
+Suryakanta Panda,CSE,suryakanta.pcs15,Security and Privacy,Dr. Samrat Mondal,
+Niraj Kumar,CSE,niraj.pcs15,Real Time Embedded Systems,Dr. Arijit Mondal,
+Md. Shad Akhtar,CSE,shad.pcs15,Natural Language Processing (NLP) and Machine Learning.,Dr. Asif Ekbal,
+Roshni Chakraborty,CSE,roshni.pcs15,Community Dynamics of Social Networks,Dr. Joydeep Chandra,
+ANITA CHANDRA,CSE,anita.pcs15,"Network Science, Social Network, Sentimental Analysis",Dr. Abyayananda Maiti,
+Vikash Kumar Rai,CSE,vikash.pcs15,"IoT Security, Smart Grid Security",Dr. Somanath Tripathy,Dr. Jimson Mathew
+Dileep Kumar Koshley,CSE,dileep.pcs15,Program verification by using formal methods,Dr. Raju Halder,
+Sayantan Mitra,CSE,sayatan.pcs15,"Pattern recognition, Machine learning",Dr. Sriparna Saha,
+Sapana Rani,CSE,sapana.pcs13,Application of formal methods for information system security,Dr.Raju Halder,
+Sanjeet Kumar Nayak,CSE,sanjeet.pcs13,Cryptography & Network Security,Dr. Somanath Tripathy,
+Angshuman Jana,CSE,ajana.pcs13,Formal Methods,Dr. Raju Halder,
+Akash yadav,CSE,akash.pcs13,"Network Security, Routing in Wireless Networks",Dr. Joydeep Chandra,Dr. Ashok Singh Sairam
+Debajyoty Banik,CSE,debajyoty.pcs13,"Natural Language Processing (NLP) Machine Learning (ML), and Machine Translation (MT)",Prof. Pushpak Bhattacharyya,Dr. Asif Ekbal
+Shweta,CSE,shweta.pcs14,"Natural Language Processing, Multi-Objective Optimization",Dr. Asif Ekbal,Dr. Sriparna Saha
+Ajay Pratap,CSE,ajay.pcs14,Next Generation Wireless Networks,Dr. Rajiv Misra,
+Ram Narayan Yadav,CSE,ram.pcs13,Cognitive Radio Networks,Dr. Rajiv Misra,
+Nilotpal Chakraborty,CSE,nilotpal.pcs14,Smart Grids,Dr. Samrat Mondal,Dr. Arijit Mondal
+Bheemaiah Chikondra,EE,bheemaiah.pee17,"Multi-phase induction motor drives, multilevel inverters.",Dr.Ranjan Kumar Behra,
+Garima Sahu,EE,garima.pee17,Embedded Systems.,Dr. Kailash Chandra Ray,
+Satyam Shukla,EE,satyam.pee17,VLSI Design.,Dr. Kailash Chandra Ray,
+Atul Singh,EE,atul.pee17,Smart metering technique.,Dr Sanjoy Kumar Parida,
+Utkal Ranjan Muduli,EE,utkal.pee17,"Matrix Converter, Direct Torque Control, Five Phase Induction Machine Drives.",Dr.Ranjan Kumar Behra,
+Rashmi Ranjan Kumar,EE,rashmi.pee17,Design Analysis and Fabrication of Optoelectronics Devices,Dr. Saurabh Kumar Pandey,
+Deepak Punetha,EE,deepak.pee17,"Design, fabrication and characterization of Sensor",Dr. Saurabh Kumar Pandey,
+Shiv Bhushan,EE,shiv.pee17,Modeling and Simulation of nanotube MOSFETs,Dr. Pramod Kumar Tiwari,
+Manish Kumar Thakur,ME,manish.pme17,Studies on Magnetorheological Clutch,Dr. Chiranjit Sarkar,
+Dharmveer Agarwal,ME,dharmveer.pme17,,,
+Est Dev Patel,ME,dev.pme17,Heat Pipe for Electronics Cooling,Dr. Subrata Kumar,
+Ashu Garg,ME,ashu.pm16,Manufacturing,Dr. Anirban Bhattacharya,
+Atul Ranjan,ME,atul.pme16,Flow boiling in microchannels,Dr. Manabendra Pathak and Dr. Mohd. Kaleem Khan,
+Madhu Ranjan Gunjan,ME,madhu.pme16,"Droplet dynamics, Condensation",Dr. Rishi Raj,
+Ranajit Kumar Chakrabarti,ME,,,Dr. Somnath Roy,
+Ravi Kumar,ME,ravi.pme16,,Dr. Somnath Sarangi,
+Vijay Kumar,ME,vijay.pme16,Pool Boiling Enhancement,Dr. Manabendra Pathak and Dr. Mohd. Kaleem Khan,
+Piyush Kumar,ME,piyush.pme16,,Dr. Manabendra Pathak,
+Priyabrata sahoo,ME,priyabrata.pme16,Micro milling,Dr. Karali Patra,
+Abhishek,ME,abhishek.pme16,,Dr. Sudhanshu Sekhar Panda and Dr. Subrata Kumar,
+Akash Mukhopadhyay,ME,akash.pme16,,Dr. Probir Saha,
+Rishi Kumar Gupta,ME,rishi.pme16,,Dr. Anirban Mahato and Dr. Anirban Bhattacharya,
+Ashish Kumar,ME,ashish.pme16,In situ analysis of tribology in manufacturing processes,Dr. Anirban Mahato,
+Krishnamurti Singh,ME,krishnamurti.pme16,,Dr. Mayank Tiwari and Dr. Anirban Mahato,
+Bimal Das,ME,bimal.pme16,,Dr. Akhildendra Singh,
+Desireddy Shashidar Reddy,ME,desireddy.pme16,,Dr. Sudheer Siddapureddy and Dr. Mohd. Kaleem Khan,
+Kuldeep Awasthi,ME,kuldeep.pme16,,Dr. Mohd. Kaleem Khan,
+Kumar Nishant Ranjan Sinha,ME,kumar.pme16,,Dr. Rishi Raj,
+Krishan Sharma,ME,krishan.pme16,,Dr. Subrata Kumar,
+Rishikesh Kumar,ME,rishikesh.pme16,,Dr. Manabendra Pathak and Dr. Mohd. Kaleem Khan,
+Shambhu Kumar,ME,shambhu.pme16,Thermo-Mechanical Reliability of Electronic Devices,Dr. Akhildendra Singh and Dr. Mayank Tiwari,
+Anup Sankar Sadangi,ME,anup.pme16,Vibration Based Energy Harvesting,Dr. Karali Patra,
+Sumit Raj,ME,sumitraj.pme15,Bubble dynamics in Flow boiling,"Dr. Manabendra Pathak and
+Dr. Mohd. Kaleem Khan",
+Kartikeya Parmar,ME,kartikeya.pme15,Computational Fluid Dynamics,Dr. Somnath Roy,
+Ajeet Kumar,ME,ajeet.pme15,Dielectric elastomer generators,Dr. Karali Patra,
+Rinku Kumar Gouda,ME,rinku.pme15,Pool Boiling,Dr. Manabendra Pathak and Dr. Mohd. Kaleem Khan,
+Md Shamim Shah,ME,,,Dr. Probir Saha,
+Bathina Chaitanya,ME,bathina.pme15,Condensation on Superhydrophobic and Superhydrophilic coatings,Dr. Rishi Raj and Dr. Ajay D.Thakur,
+Durga Prasad Ghosh,ME,durga.pme15,Multi-phase heat transfer,Dr. Rishi Raj,
+Suraj Kumar,ME,suraj.pme15,"Root canal preparation, Micro machining",Dr. Sudhanshu Sekhar Panda,
+Ashwani Pratap,ME,,,Dr. Karali Patra,
+Ram Bhushan Singh,ME,,Fatigue and failure of materials,Dr. Akhilendra Singh,
+Alok Kumar,ME,alok.pme15,Phase change heat transfer,Dr. Rishi Raj,
+Saloni Mourya,CE,saloni.pce17,Relevant groundwater contaminant treatment,Dr. Trishikhi Raychoudhury,
+Koteswaraarao Jadda,CE,jadda.pce17,Geotechnical Engineering,Dr. Ramakrishna Bag,
+Md. Hanzla,CE,hanzla.pce17,Geotechnical Engineering,Dr. Amarnath Hegde,
+Gundavaram Dinesh,CE,dinesh.pce17,Rail Track Geotechnology,Dr. Syed K. K. Hussaini,
+Saurabh Suman,CE,saurabh.pce17,Structural Engineering,Dr. Avik Samanta,
+Dattatreya Tripathy,CE,dattatreya.pce17,Structural Engineering,Dr. Vaibhav Singhal,
+Sanchari Bhattacharjee,CB,sanchari.pcb16,Molecular Modeling and Simulation,Dr. Sandip Khan,
+Sushma Kumari,CB,sushma.pcb16,,Dr. S. K. Samanta,
+Sandhya Mishra,CB,sandhya.pcb16,,Dr. S. K. Samanta,
+Sashanka Sekhar Mandal,CB,sashanka.pcb16,Molecular Modeling and Simulation,,
+Rakesh Kumar Sinha,CB,rakesh.pcb16,"Process Integration, Production Planning",,
+Priyanshu Verma,CB,priyanshu.pcb14,"Medical Waste Treatment & Management, Photocatalysis, Microwave assisted AOPs",Dr. Sujoy Kumar Samanta,

@@ -1,0 +1,611 @@
+
+<html>
+<head>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKfMPWhBH93AehdArEUKrpVYBsqkLw7UM"
+    async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>Booking Form</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <style>
+        #iit{
+            font-size: 50px;
+            text-align: center;
+            padding: 5px;
+            font-family: monospace;
+            font-style: italic;
+        }
+        .dropbtn {
+            background-color: white;
+            color: black;
+            width:200px;
+            padding: 10px;
+            padding-left:00px;
+            color: gray;
+            padding-right:00px;
+            font-size: 27px;
+            border: none;
+            border-radius:8px;
+            opacity:1;
+
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            opacity:1;
+            border-radius: 8px;
+            font-size: 20px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        dropdown::-ms-expand { /* for IE 11 */
+            display: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            padding-left:0px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }    
+    </style>
+</head>
+<body>
+ <div id="iit"> Indian Institute of Technology, Patna</div>
+ <div id="nav">
+  <div style="text-align: center;">Transport Booking Form</div>
+  <p style="color: red; font-size: 18px; margin-bottom: -10px;">* All fields are mandatory </p>
+  <form name="form" action="#" method="post">
+    <input type="text" placeholder="Name" name="name" style="width: 90%;"><br>
+    <input type="text" placeholder="Email" name="email" style="width: 90%;"><br>
+    <input type="text" placeholder="Mobile No" name="mob"><br><br>
+    <select name="designation" class="dropdown">
+        <option value="" disabled selected>Catagory</option>
+        <option value="student">Student</option>
+        <option value="faculty">Faculty</option>
+        <option value="staff">Staff</option>
+        <option value="managment">Management</option>
+        <option value="others">Others</option>
+    </select>
+    <input type="date" name="date" /><br>
+    Start Time: <input name="stime" type="time"><br><br>
+    End Time: <input name="etime" type="time"><br><br>
+    <select name="purpose" placeholder="Purpose" class="dropdown" onchange="showothers()">
+        <option value="" style="color: gray;" disabled selected>Purpose</option>
+        <option value="Pickup from Airport" >Pickup from Airport</option>
+        <option value="Pickup from Patna Junction" >Pickup from Patna Junction</option>
+        <option value="Drop to Airport" >Drop to Airport</option>
+        <option value="Drop to Patna Junction" >Drop to Patna Junction</option>
+        <option value="others" >Others</option><br>
+    </select>  
+    <div id="showothers" style="display: none;">
+        <input type="text" placeholder="Pickup" id="otherpickup"><br>
+        <input type="text" placeholder="Drop" id="otherdrop"><br>
+    </div>
+    <div><br></div>
+    <select name="car_type" placeholder="Car Type" class="dropdown" style="width: 40%;" onchange="showothers()" >
+        <option value = "" style="color: grey;" disabled selected>Car Type</option>
+        <option value = "Hatchback" >Hatchback</option>
+        <option value = "Sedan" >Sedan</option>
+        <option value = "Van" >Van</option>
+        <option value = "SUV" >SUV</option>
+        <option value = "Coupe" >Coupe</option>
+    </select>
+    <button id="avail" >CHECK AVAILABILITY</button><br>
+    <br>
+    <select name="car_ac" class="dropdown" style="width: 40%;" onchange="showothers()" >
+        <option value="" style="color: gray;" disabled selected>Class</option>   
+        <option value="ac" >AC</option>
+        <option value="nonac">Non-AC</option>
+    </select>
+    <input type="checkbox" name="journey" value="way"> Two way journey </input>
+    <br><div id="Price" style="color: white; float: right;"></div>
+    <!--<input value="Submit" name="reg" onclick="validateForm()">-->
+</form>
+<br>
+<div id="old_submit">
+    <button id="reg">SUBMIT</button>
+</div>
+<br>
+<input type="text" placeholder="Enter your OTP here" id="otp" style="display: none; margin-left:28%;"><br>
+<button id="reg1" style="display: none;">SUBMIT</button><br>
+</div>
+</body>
+<script type="text/javascript">
+    var price;    
+    var names = ["name", "email", "mob", "designation", "date", "stime", "purpose", "car_type"];
+    var input = ["","","","","","","","",""];
+    var otherdrop, Distance=0, otherpickup;
+    var flag = 0, flag2=0;
+    var filtermail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var filtername = /^([a-zA-Z ])+$/;
+    var filtermob = /^([0-9])+$/;
+    var filterpurpose = /^([a-zA-Z0-9_ ])+$/;
+    var date = new Date();
+    var today = date.getFullYear()+"-"+((date.getMonth()+1)<10?"0":"")+(date.getMonth()+1)+"-"+((date.getDate())<10?"0":"")+date.getDate();
+    var p="",v = 0;
+    var source="", destination="";
+    var hour, minute, add=4, Price, etime="", car_type, journey="";
+    var type_add=0, ac="",e,id;
+    var otp=0, otp_start;
+
+    var name,email,mob,designation,date,stime,purpose;
+
+    function showprice()
+    {
+        car_type = document.forms['form']['car_type'].value;
+        ac = document.forms['form']['car_ac'].value;
+        journey = document.forms['form']['journey'].value;
+        if(car_type=="Hatchback")
+            type_add=0;
+        else if(car_type=="Sedan")
+            type_add=200;
+        else if(car_type=="Van")
+            type_add=400;
+        else if(car_type=="SUV")
+            type_add=600;
+        else if(car_type=="Coupe")
+            type_add=800;
+        var dist;
+        if(ac=="ac")
+            type_add+=500;
+        source = document.getElementById("otherpickup").value;
+        destination = document.getElementById("otherdrop").value;
+        var origin1 = source;
+        var destinationA = destination;
+        var service = new google.maps.DistanceMatrixService();
+        service.getDistanceMatrix(
+        {
+            origins: [origin1],
+            destinations: [destinationA],
+            travelMode: 'DRIVING',
+            avoidHighways: false,
+            avoidTolls: false,
+        }, callback);
+
+        function callback(response, status) {
+          if (status == 'OK') {
+            var origins = response.originAddresses;
+            var destinations = response.destinationAddresses;
+
+            for (var i = 0; i < origins.length; i++) {
+              var results = response.rows[i].elements;
+              for (var j = 0; j < results.length; j++) {
+                var element = results[j];
+                if(element.distance==undefined)
+                {
+                    alert("The enterd loction is not valid.");
+                }
+                else
+                {
+                    var distance = element.distance.value;
+                }
+                
+                var from = origins[i];
+                var to = destinations[j];
+                console.log(distance);
+                var Distance = typeof(distance);
+                Distance = Math.floor(distance/1000);
+            }
+        }
+        if(Distance!=0) {
+            Price = Distance*6 + type_add;
+            if(journey=="way")
+                Price*=2;
+            document.getElementById("Price").innerHTML = "<br>Price: Rs."+String(Price)+"<br>";
+        }
+        else 
+         document.getElementById("Price").innerHTML = "<br>Price: Rs.0<br>";
+ }
+ else
+ {
+    alert("The enterd loction is not valid.");
+}
+}
+}
+
+function showcars() {
+
+    car_type = document.forms['form']['car_type'].value;
+    ac = document.forms['form']['car_ac'].value;
+    journey = document.forms['form']['journey'].value;
+    etime = document.forms['from']['etime'].value;
+    if(car_type=="Hatchback")
+        type_add=0;
+    else if(car_type=="Sedan")
+        type_add=200;
+    else if(car_type=="Van")
+        type_add=400;
+    else if(car_type=="SUV")
+        type_add=600;
+    else if(car_type=="Coupe")
+        type_add=800;
+
+    if(ac=="ac")
+        type_add+=500;
+    
+    for(var l=4;l<8;++l)
+    { 
+        input[l] = document.forms["form"][names[l]].value;
+        if (input[l] == "") 
+            flag++;
+        console.log(input[l]);
+    }
+    if(etime=="")
+        flag++;
+    console.log(etime);
+    if(input[6]=="Pickup from Airport")
+    {
+        source = "Airport";
+        destination = "IIT Patna";
+        Price = 1200;
+    }
+    else if(input[6]=="Pickup from Patna Junction") 
+    {   
+        source = "Patna Junction";
+        destination = "IIT Patna";
+        Price = 700;
+    }
+    else if(input[6]=="Drop to Airport")
+    {
+        source = "IIT Patna";
+        destination = "Airport";
+        Price = 1000; 
+    }
+    else if(input[6]=="Drop to Patna Junction")
+    {
+        source = "IIT Patna";
+        destination = "Patna Junction";
+        Price = 700;
+    }
+    else if(input[6]=="others")
+    {
+        source = document.getElementById("otherpickup").value;
+        destination = document.getElementById("otherdrop").value;
+        if(source!="" && destination!="")
+        {
+            if(Distance==0)
+                flag++;
+        }
+    }
+
+    Price+=type_add;
+
+    if(journey=="way")
+        Price*=2;
+
+    if(ac=="")
+    {
+        flag++;
+    }
+    console.log(etime);
+    if(flag!=0)
+        alert("Please fill the required data");
+    else
+    {
+        if(input[4]<today)
+        {
+            alert("Please enter a proper date");
+            flag2++;
+        }
+        if(input[5]==etime)
+        {
+            alert("Enter proper Start and End Time");
+            flag2++;
+        }
+        flag=0;
+        if(flag2==0)
+        {
+            // to take entry from front to back yo yo!! and send back to meeeee!!!!
+            $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/checkavail?date="+input[4]+"&stime="+input[5]+"&etime="+etime+"&purpose="+input[6]+"&cart="+input[7]+"&ac="+ac,
+            success : function(data) {
+                if(data.trim()=="error")
+                    window.alert("This type of car is not available for the specified date and time.");
+                else
+                    window.alert(data.trim());
+            },
+            error: function(error){
+                window.alert("This type of car is not available for the specified time and date.");
+            }
+        });
+        }
+    }
+    
+    flag2=0;
+    flag=0;
+}
+
+function showothers() {
+
+    car_type = document.forms['form']['car_type'].value;
+    ac = document.forms['form']['car_ac'].value;
+    if(car_type=="Hatchback" || car_type=="")
+        type_add=0;
+    else if(car_type=="Sedan")
+        type_add=200;
+    else if(car_type=="Van")
+        type_add=400;
+    else if(car_type=="SUV")
+        type_add=600;
+    else type_add=800;    
+
+    if(ac=="ac")
+        type_add+=500;
+    
+    if(document.forms['form']['purpose'].value=="others" && (document.getElementById('otherpickup').value=="" || document.getElementById('otherdrop').value==""))
+    {
+        document.getElementById('showothers').style.display = 'block';
+        document.getElementById("Price").innerHTML = "<br>Price: Rs.0<br>";
+    }
+    else if(document.forms['form']['purpose'].value=="others" )
+        {showprice();}
+    else
+    {
+        p = document.forms['form']['purpose'].value;
+        if(p=="Pickup from Airport")
+            Price = 1200;
+        else if(p=="Pickup from Patna Junction") 
+            Price = 700;
+        else if(p=="Drop to Airport")
+            Price = 1000; 
+        else if(p=="Drop to Patna Junction")
+            Price = 700;
+        Price+=type_add;
+        document.getElementById("Price").innerHTML = "<br>Price: Rs."+Price+"<br>";
+        document.getElementById('showothers').style.display = "none";
+    }        
+}
+
+function validateForm(){
+
+    for(var i=0;i<8;++i)
+    { 
+        input[i] = document.forms["form"][names[i]].value;
+        if (input[i] == "") 
+            flag++;
+        console.log(input[i]);
+    }
+        if(input[6]=="Pickup from Airport")
+    {
+        source = "Airport";
+        destination = "IIT Patna";
+    }
+    else if(input[6]=="Pickup from Patna Junction") 
+    {   
+        source = "Patna Junction";
+        destination = "IIT Patna";
+    }
+    else if(input[6]=="Drop to Airport")
+    {
+        source = "IIT Patna";
+        destination = "Airport";
+    }
+    else if(input[6]=="Drop to Patna Junction")
+    {
+        source = "IIT Patna";
+        destination = "Patna Junction";
+    }
+    else if(input[6]=="others")
+    {
+        console.log(Distance);
+        source = document.getElementById("otherpickup").value;
+        destination = document.getElementById("otherdrop").value;
+        if(source=="" || destination=="")
+        {
+            hour = (parseInt(input[5][0]))*10 + parseInt(input[5][1]);
+            minute = (parseInt(input[5][3]))*10 + parseInt(input[5][4]); 
+            etime = ((hour+add)%24<10?"0":"")+String((hour + add)%24)+":"+(minute<10?"0":"")+String(minute);
+        }        
+        else
+        {
+            add=2;
+        }
+    }
+    console.log(flag);
+    if(ac=="")
+    {
+        flag++;
+    }
+    if(flag!=0)
+    {
+        alert("All fields must be filled out");
+        flag2++;
+    }
+    else 
+    {
+        if(add==4)
+        {
+            hour = (parseInt(input[5][0]))*10 + parseInt(input[5][1]);
+            minute = (parseInt(input[5][3]))*10 + parseInt(input[5][4]);
+            etime = ((hour+add)%24<10?"0":"")+String((hour + add)%24)+":"+(minute<10?"0":"")+String(minute);                
+        }
+        if(!filtername.test(input[0]))
+        {
+            alert("Name cannot have anything except alphabets!");
+            flag2++;
+        }
+        if(!filtermail.test(input[1]))
+        { 
+         alert("Please provide a valid email id");
+         flag2++;
+     }   
+     if(!filtermob.test(input[2]))
+     {
+        alert("Mobile number should only contain digits");
+        flag2++;
+    }
+    if(input[2].length!=10)
+    {
+        alert("Mobile number should be of 10 digits");
+        flag2++;
+    }
+    if(input[4]<today)
+    {
+        alert("Please enter a proper date");
+        flag2++;
+    }
+    if(input[5]==etime )
+    {
+        alert("Enter proper Start and End Time");
+        flag2++;
+    }
+    if(!filterpurpose.test(input[6]))
+    {
+        alert("Enter proper purpose");
+        flag2++;
+    }
+} 
+flag = 0;
+if(flag2==0)
+{
+    done=0;
+    name = input[0];
+    email = input[1];
+    mob = input[2];
+    designation = input[3];
+    date = input[4];
+    stime = input[5];
+    purpose = input[6];
+    id = Math.floor(Math.random() * 1000000);
+    
+    otp = Math.floor(Math.random() * 10000);                            
+    otp = otp*Math.pow(10,(3-Math.floor(Math.log(otp)/Math.log(10))))     
+
+    ac = document.forms['form']['car_ac'].value;
+    
+    for(var j=0;j<7;++j)
+    console.log("price"+Price);
+    console.log(etime);
+    console.log(source);
+    console.log(destination);
+    console.log(Price);
+    console.log(car_type);
+    console.log(etime); 
+    $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/otp?name="+name+"&email="+email+"&mob="+mob+"&designation="+designation+"&date="+date+"&stime="+stime+"&etime="+etime+"&purpose="+purpose+"&source="+source+"&destination="+destination+"&price="+Price+"&cart="+car_type+"&ac="+ac+"&id="+id+"&otp="+otp,
+            success : function(data) {
+                if(data.trim()=="error")
+                    window.alert("Car not available for the specified date and time.");
+                else
+                { 
+
+                    console.log("success");
+                    otp_start = (new Date()).getTime();
+                    document.getElementById('reg1').style.display = 'block';
+                    document.getElementById('otp').style.display = 'block';
+                    document.getElementById('old_submit').style.display = 'none';
+                    window.alert(data.trim());  }
+                },
+                error: function(error){
+
+                    window.alert("Car not available for the specified time and date.");
+                }
+            });
+
+    
+}
+flag2=0;
+}
+
+function finalsubmit()
+{
+    var otp_input = document.getElementById("otp").value;
+    if(otp_input=="")
+    {
+        alert("Enter the OTP within "+Math.floor(5-(((new Date()).getTime()-otp_start)/60000))+" minutes "+Math.floor(300-(((new Date()).getTime()-otp_start)/1000))%60+" seconds\n Check inbox( "+input[1]+" ) for the OTP");
+    }
+    else if(otp_input==otp)
+    {
+
+        $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/formval?name="+name+"&email="+email+"&mob="+mob+"&designation="+designation+"&date="+date+"&stime="+stime+"&etime="+etime+"&purpose="+purpose+"&source="+source+"&destination="+destination+"&price="+Price+"&cart="+car_type+"&ac="+ac+"&id="+id+"&otp="+0,
+            success : function(data) {
+                if(data.trim()=="error")
+                    window.alert("Car not available for the specified date and time.");
+                else
+                    window.alert(data.trim());
+            },
+            error: function(error){
+
+                window.alert("Car not available for the specified time and date.");
+            }
+        });
+
+        document.getElementById('reg1').style.display = 'none';
+        document.getElementById('otp').style.display = 'none';
+        document.getElementById('old_submit').style.display = 'block';
+        for(var i=0;i<8;++i)
+        { 
+            document.forms["form"][names[i]].value="";
+        }
+        document.forms["form"]["car_ac"].value="";
+        document.getElementById("otp").value="";
+        document.getElementById("otherpickup").value="";
+        document.getElementById("otherdrop").value="";
+        document.getElementById("endtime").value="";
+    }
+    else
+    {
+        alert(" Wrong OTP!\n Enter the OTP within "+Math.floor(5-(((new Date()).getTime()-otp_start)/60000))+" minutes "+Math.floor(300-(((new Date()).getTime()-otp_start)/1000))%60+" seconds\n Check inbox( "+input[1]+" ) for the OTP");
+    }
+    
+}
+
+$(document).ready(function(){
+    for(var i=0;i<8;++i)
+    { 
+        document.forms["form"][names[i]].value="";
+    }
+    document.forms["form"]["car_ac"].value="";
+    document.getElementById("otp").value="";
+});
+
+$(document).on("click keypress", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "reg") {
+    e.preventDefault();  
+    validateForm();
+} else if (e.type === "keypress" && e.keyCode === 13 && document.getElementById('reg1').style.display=='none') {   
+    e.preventDefault();  
+    validateForm();
+}
+});
+
+$(document).on("click keypress", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "reg1" && document.getElementById('old_submit').style.display=='none') {
+    e.preventDefault();  
+    finalsubmit();
+} else if (e.type === "keypress" && e.keyCode === 13 && document.getElementById('old_submit').style.display=='none') {   
+    e.preventDefault();  
+    finalsubmit();
+}
+});
+
+$(document).on("click", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "avail") {
+    e.preventDefault();  
+    showcars();
+}
+});
+
+$("#Distance").bind('keyup mouseup', function () {
+    showprice();            
+});
+
+</script>
+</html>

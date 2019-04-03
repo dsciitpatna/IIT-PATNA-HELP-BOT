@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>Booking Form</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <style>
+
+        #iit{
+            font-size: 50px;
+            text-align: center;
+            padding: 5px;
+            font-family: monospace;
+            font-style: italic;
+        }
+        body{
+            background:black;
+            background:url(iit.jpg);
+            background-size: 100% 270%;
+            padding-top:5px;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+        #nav{
+            color:white;
+            padding-top:10px;
+            padding-left:60px;
+            padding-right: 60px;
+            font-size:30px;
+            margin:auto;
+            background:black;
+            width:500px;
+            border-radius:10px;
+            opacity:.8;        
+        }
+        #nav input{
+           margin-top:30px;
+           width:220px;
+           height:35px;
+           font-size:20px;
+           border-radius:5px;
+       }
+       #nav input[name="email1"]{
+        width:400px;
+    }
+    #nav input[name="sex1"]{
+        margin-top:12px;
+        width:25px;
+    }
+    #nav input[name="date"]{
+        margin-top:12px;
+        width:400px;}
+        #nav input[name="time"]{
+            margin-top:12px;
+            width:400px;
+        }
+        #reg {
+            margin:10px;
+            width:150px;
+            border-radius:50px;
+            margin-left:175px;
+            height:50px;
+            background:green;
+            color:white;
+            font-weight:bold;
+        }
+        #reg:hover{
+           
+            background:white;
+            color:green;
+            
+        }
+
+    </style>
+</head>
+<body>
+ <div id="iit"> Indian Institute of Technology, Patna</div>
+ <div id="nav">
+  <div style="text-align: center;">Transport Cancellation Form</div>
+  <form name="form"action="#" method="post">
+    <input type="text" placeholder="Name" name="name" style="width: 90%;"><br>
+    <input type="text" placeholder="Booking ID" name="id" style="width: 90%;"><br>
+    <input type="text" placeholder="Reason" id="reason" name="email" style="width: 90%;  overflow: scroll;"><br>
+
+    <button id="reg" >SUBMIT</button>
+</div>
+</body>
+<script type="text/javascript">
+
+    var names = ["name", "id", "email"];
+    var input = ["","",""];
+
+    var flag = 0, flag2=0;
+    
+    function validateForm(){
+
+        for(var i=0;i<3;++i)
+        { 
+            input[i] = document.forms["form"][names[i]].value;
+            if (input[i] == "") 
+                flag++;
+        }
+        var name = input[0];
+        var id = input[1];
+        var reason  = input[2];
+        if(flag!=0)
+        {
+            console.log(12);
+            alert("All fields must be filled out");
+            flag2++;
+        }
+        else if(confirm("Do you really want to Cancel the Booking?"))
+        {
+            console.log(name);
+            console.log(id);
+            console.log(reason);
+            $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/formcancel?name="+name+"&id="+id+"&reason="+reason,
+            success : function(data) {
+                if(data.trim()=="aa")
+                    window.alert("Cancellation Successful!!!");
+                else if(data.trim()=="errr")
+                    window.alert("No record found!!!");
+            },
+            error: function(error){
+                
+                window.alert("Car not available for the specified time and date.");
+            }
+        });
+        }
+        flag=0;
+    }
+
+    $(document).on("click keypress", function (e) {      
+      if (e.type === "click" && e.target && e.target.id === "reg") {
+        e.preventDefault();  
+        validateForm();
+        console.log(14);
+    } else if (e.type === "keypress" && e.keyCode === 13 && e.target.id!="reason"){   
+        e.preventDefault();  
+        validateForm();
+    }
+});
+
+</script>
+</html>

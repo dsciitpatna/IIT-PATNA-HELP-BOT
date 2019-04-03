@@ -1,0 +1,15 @@
+busn,source,sourcetime,destination1,destination1time,destination2,destination2time,destination3,destination3time,destination4,destination4time,destination5,destination5time,destination6,destination6time
+1,Girls Hostel,06:00:00,Boys Hostel,06:02:00,Admin Block,06:04:00,Block 3,06:06:00,Block 6,06:08:00,Mechanical Workshop,06:10:00,Tutorial Block,06:12:00
+2,Tutorial Block,06:30:00,Mechanical Workshop,06:32:00,Block 6,06:34:00,Block 3,06:36:00,Admin Block,06:38:00,Boys Hostel,06:40:00,Girls Hostel,06:42:00
+3,Girls Hostel,08:00:00,Boys Hostel,08:02:00,Admin Block,08:04:00,Block 3,08:08:00,Block 6,08:08:00,Mechanical Workshop,08:10:00,Tutorial Block,08:12:00
+4,Tutorial Block,08:30:00,Mechanical Workshop,08:32:00,Block 6,08:34:00,Block 3,08:36:00,Admin Block,08:38:00,Boys Hostel,08:40:00,Girls Hostel,08:42:00
+1,Girls Hostel,09:00:00,Boys Hostel,09:02:00,Admin Block,09:04:00,Block 3,09:06:00,Block 6,09:08:00,Mechanical Workshop,09:10:00,Tutorial Block,09:12:00
+2,Tutorial Block,09:30:00,Mechanical Workshop,09:32:00,Block 6,09:34:00,Block 3,09:39:00,Admin Block,09:38:00,Boys Hostel,09:40:00,Girls Hostel,09:42:00
+3,Girls Hostel,10:00:00,Boys Hostel,10:02:00,Admin Block,10:04:00,Block 3,10:10:00,Block 6,10:08:00,Mechanical Workshop,10:10:00,Tutorial Block,10:12:00
+4,Tutorial Block,10:30:00,Mechanical Workshop,10:32:00,Block 6,10:34:00,Block 3,10:36:00,Admin Block,10:38:00,Boys Hostel,10:40:00,Girls Hostel,10:42:00
+1,Girls Hostel,13:00:00,Boys Hostel,13:02:00,Admin Block,13:04:00,Block 3,13:13:00,Block 6,13:08:00,Mechanical Workshop,13:10:00,Tutorial Block,13:12:00
+2,Tutorial Block,13:30:00,Mechanical Workshop,13:32:00,Block 6,13:34:00,Block 3,13:36:00,Admin Block,13:38:00,Boys Hostel,13:40:00,Girls Hostel,13:42:00
+3,Girls Hostel,17:00:00,Boys Hostel,17:02:00,Admin Block,17:04:00,Block 3,17:17:00,Block 6,17:08:00,Mechanical Workshop,17:10:00,Tutorial Block,17:12:00
+4,Tutorial Block,17:30:00,Mechanical Workshop,17:32:00,Block 6,17:34:00,Block 3,17:36:00,Admin Block,17:38:00,Boys Hostel,17:40:00,Girls Hostel,17:42:00
+1,Girls Hostel,19:00:00,Boys Hostel,19:02:00,Admin Block,19:04:00,Block 3,19:19:00,Block 6,19:08:00,Mechanical Workshop,19:10:00,Tutorial Block,19:12:00
+2,Tutorial Block,19:30:00,Mechanical Workshop,19:32:00,Block 6,19:34:00,Block 3,19:36:00,Admin Block,19:38:00,Boys Hostel,19:40:00,Girls Hostel,19:42:00

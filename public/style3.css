@@ -1,0 +1,76 @@
+
+
+body{
+    background:black;
+    background:url(iit.jpg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    padding-top:5px;
+    
+}
+#nav{
+    color:white;
+    padding-top:10px;
+    padding-left:60px;
+    padding-right: 60px;
+    font-size:30px;
+    margin:auto;
+    background:black;
+    width:500px;
+    border-radius:10px;
+    opacity:.8;        
+}
+#nav input{
+ margin-top:30px;
+ width:220px;
+ height:35px;
+ font-size:20px;
+ border-radius:5px;
+}
+#nav input[name="email1"]{
+    width:400px;
+}
+#nav input[name="sex1"]{
+    margin-top:12px;
+    width:25px;
+}
+#nav input[name="date"]{
+    margin-top:12px;
+    width:400px;}
+    #nav input[name="time"]{
+        margin-top:12px;
+        width:400px;
+    }
+    #reg, #reg1 {
+        margin:20px;
+        width:150px;
+        border-radius:50px;
+        margin-left:175px;
+        height:50px;
+        background:green;
+        color:white;
+        font-weight:bold;
+    }
+
+    #avail {
+        margin-top: -20px;
+        width:150px;
+        margin-left:30px;
+        height:67px;
+        background:green;
+        color:white;
+        font-weight:bold;
+    }
+    #reg:hover{
+     
+        background:white;
+        color:green;
+        
+    }
+
+    #reg1:hover{
+     
+        background:white;
+        color:green;
+        
+    }

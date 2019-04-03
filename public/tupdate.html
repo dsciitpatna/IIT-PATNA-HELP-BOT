@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>Booking Form</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <style>
+        #iit{
+            font-size: 50px;
+            text-align: center;
+            padding: 5px;
+            margin-bottom: 15px;
+            font-family: monospace;
+            font-style: italic;
+        }
+
+        body
+        {
+            background-size: 100% auto;
+        }
+        .dropbtn {
+            background-color: white;
+            color: black;
+            width:200px;
+            padding: 10px;
+            padding-left:00px;
+            color: gray;
+            padding-right:00px;
+            font-size: 27px;
+            border: none;
+            border-radius:8px;
+            opacity:1;
+
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            opacity:1;
+            border-radius: 8px;
+            font-size: 20px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        dropdown::-ms-expand { /* for IE 11 */
+            display: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            padding-left:0px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+ <div id="iit"> Indian Institute of Technology, Patna</div>
+ <div id="nav">
+  <div style="text-align: center;">Transport Updatation Form</div>
+  <form name="form"action="#" method="post">
+    <input type="text" placeholder="Name" name="name" style="width: 90%;"><br>
+    <input type="text" placeholder="ID" name="id" style="width: 90%;"><br><br>
+    <select name="car_type_old" class="dropdown" style="width: 40%; margin-right: 5%;" >
+        <option value="" disabled selected>Current type of car</option>
+        <option value="Hatchback" >Hatchback</option>
+        <option value="Sedan" >Sedan</option>
+        <option value="Van" >Van</option>
+        <option value="SUV" >SUV</option>
+        <option value="Coupe" >Coupe</option>
+    </select>      
+    <select name="car_type_new" placeholder="Car Type" class="dropdown" style="width: 40%;" >
+        <option value="" disabled selected>New Type of Car</option>
+        <option value="Hatchback" >Hatchback</option>
+        <option value="Sedan" >Sedan</option>
+        <option value="Van" >Van</option>
+        <option value="SUV" >SUV</option>
+        <option value="Coupe" >Coupe</option>
+    </select>
+    <br><br>
+    <input type="date" name="date" /><br>
+    Start Time: <input name="stime" type="time" style="width: 25%;">
+    <button id="avail" >CHECK AVAILABILITY</button>
+</form>
+<br>
+<button id="reg" >SUBMIT</button>
+</div>
+</body>
+<script type="text/javascript">
+    
+    var names = ["name", "id", "date", "stime", "car_type_old", "car_type_new"];
+    var input = ["","","","","",""];
+    var flag = 0, flag2 = 0;
+    var filtername = /^([a-zA-Z ])+$/;
+    var filtermob = /^([0-9])+$/;
+    var date = new Date();
+    var today = date.getFullYear()+"-"+((date.getMonth()+1)<10?"0":"")+(date.getMonth()+1)+"-"+((date.getDate())<10?"0":"")+date.getDate();
+    var p="",v=0;
+    var hour, minute, add=4, etime="";
+
+    function showcars() {
+
+        for(var l=0;l<6;++l)
+        { 
+            input[l] = document.forms["form"][names[l]].value;
+            if (input[l] == "") 
+                flag++;
+            console.log(input[l]);
+        }
+        
+        hour = (parseInt(input[3][0]))*10 + parseInt(input[3][1]);
+        minute = (parseInt(input[3][3]))*10 + parseInt(input[3][4]);
+        etime = ((hour+add)%24<10?"0":"")+String((hour + add)%24)+":"+(minute<10?"0":"")+String(minute);                
+        
+        console.log(etime);
+        if(flag!=0)
+            alert("Please fill the required data");
+        else
+        {
+            if(!filtername.test(input[0]))
+            {
+                alert("Name cannot have anything except alphabets!");
+                flag2++;
+            }
+            if(!filtermob.test(input[1]))
+            { 
+             alert("Please provide a valid id");
+             flag2++;
+         }
+         if(input[2]<today)
+         {
+            alert("Please enter a proper date");
+            flag2++;
+        }
+        if(flag2==0)
+        {
+            // to take entry from front to back yo yo!! and send back to meeeee!!!!
+            $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/checkavail?name="+input[0]+"&id="+input[1]+"&date="+input[2]+"&stime="+input[3]+"&etime="+etime+"&ocar="+input[4]+"&cart="+input[5],
+            success : function(data) {
+                if(data.trim()=="error")
+                    window.alert("This type of car is not available for the specified date and time.");
+                else
+                    window.alert(data.trim());
+            },
+            error: function(error){
+                window.alert("This type of car is not available for the specified time and date.");
+            }
+        });
+        }
+    }
+    flag=0;
+    flag2=0;
+}
+
+function validateForm(){
+
+    for(var i=0;i<6;++i)
+    { 
+        input[i] = document.forms["form"][names[i]].value;
+        if (input[i] == "") 
+            flag++;
+        console.log(input[i]);
+    }
+    if(flag!=0)
+    {
+        alert("All fields must be filled out");
+        flag2++;
+    }
+    else 
+    {
+        hour = (parseInt(input[3][0]))*10 + parseInt(input[3][1]);
+        minute = (parseInt(input[3][3]))*10 + parseInt(input[3][4]);
+        etime = ((hour+add)%24<10?"0":"")+String((hour + add)%24)+":"+(minute<10?"0":"")+String(minute);                
+
+        if(!filtername.test(input[0]))
+        {
+            alert("Name cannot have anything except alphabets!");
+            flag2++;
+        }
+        if(!filtermob.test(input[1]))
+        { 
+         alert("Please provide a valid id");
+         flag2++;
+     }
+     if(input[4]<today)
+     {
+        alert("Please enter a proper date");
+        flag2++;
+    }
+} 
+flag = 0;
+if(flag2==0 && confirm("Do you really want to Cancel the Booking?"))
+{
+
+    var name = input[0];
+    var id = input[1];
+    var date = input[2];
+    var stime = input[3];
+    var car_type_old = input[4];
+    var car_type_new = input[5];
+
+    for(var j=0;j<6;++j)
+        console.log(input[j]);
+    $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/formupdate?name="+name+"&id="+id+"&date="+date+"&stime="+stime+"&etime="+etime+"&ocar="+car_type_old+"&ncar="+car_type_new,
+            success : function(data) {
+                if(data.trim()=="aa")
+                    window.alert("Updatation Successful");
+                else
+                    window.alert("No recod found!!!");
+            },
+            error: function(error){
+                
+                window.alert("Car not available for the specified time and date.");
+            }
+        });
+}
+flag2=0;
+}
+$(document).on("click keypress", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "reg") {
+    e.preventDefault();  
+    validateForm();
+} else if (e.type === "keypress" && e.keyCode === 13) {   
+    e.preventDefault();  
+    validateForm();
+}
+});
+
+$(document).on("click", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "avail") {
+    e.preventDefault();  
+    showcars();
+}
+});
+
+$("#Distance").bind('keyup mouseup', function () {
+    showprice();            
+});
+</script>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Battambang' rel='stylesheet'>
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<title>
+		CSE FACULTY
+	</title>
+	<style>
+		#design-cast {
+			position: relative;
+			overflow: hidden;
+		}
+
+		#back{
+			background-color: rgba(100,100,100,0.8);
+			color: blue;
+			border-radius: 50%;
+		}
+		a.but{
+			display: table;
+			width: 100px;
+			height: 100px;
+			top: 3%;
+			left: 1%;
+		}
+
+		#ch{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		html, body{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+
+		}
+		canvas{
+			background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+			background-color: #000;
+		}
+
+		.member {
+			float: left;
+			width: 22%;
+			margin: 1% 1% 45px 1%;
+			text-align: center;
+		}
+
+		.name {
+			position: relative;
+			text-align: center;
+		}
+
+		.member img {
+			width: 100%;
+			display: block;
+		}
+		.caption {
+			display: block;
+		}
+		#footer3 {
+			position:fixed;
+			left :88%;
+			top:1%;
+			margin:0;
+			padding:0;
+			width:100%;
+		}
+		.date-circle {
+			width: 10em;
+			height: 10em;
+			bottom: 65.5%;
+			left: 42.5%;
+			position: absolute;
+			background-color: transparent;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			border: 0.125em solid rgba(30,30,30,.4);
+			opacity: .1;
+			-webkit-animation: date-circle-anim 1.2s infinite ease-in-out;
+			-moz-animation: date-circle-anim 1.2s infinite ease-in-out;
+			-ms-animation: date-circle-anim 1.2s infinite ease-in-out;
+			-o-animation: date-circle-anim 1.2s infinite ease-in-out;
+			animation: date-circle-anim 1.2s infinite ease-in-out;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+		}
+
+		.date.active .date-circle {
+			-webkit-animation: date-circle-anim 1.1s infinite ease-in-out;
+			-moz-animation: date-circle-anim 1.1s infinite ease-in-out;
+			-ms-animation: date-circle-anim 1.1s infinite ease-in-out;
+			-o-animation: date-circle-anim 1.1s infinite ease-in-out;
+			animation: date-circle-anim 1.1s infinite ease-in-out;
+		}
+
+		.date.static .date-circle {
+			-webkit-animation: date-circle-anim 2.2s infinite ease-in-out;
+			-moz-animation: date-circle-anim 2.2s infinite ease-in-out;
+			-ms-animation: date-circle-anim 2.2s infinite ease-in-out;
+			-o-animation: date-circle-anim 2.2s infinite ease-in-out;
+			animation: date-circle-anim 2.2s infinite ease-in-out;
+		}
+
+		.date.green .date-circle {
+			border-color: rgba(0,175,242,1);
+			opacity: .5;
+		}
+
+		.date.gray .date-circle {
+			border-color: rgba(14,129,182,1);
+			opacity: .5;
+		}
+
+		.date-circle-fill {
+			width: 6.5em;
+			height: 6.5em;
+			bottom: 70%;
+			left: 44.85%;
+			position: absolute;
+			background-color: #000;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			border: 0.125 solid transparent;
+			opacity: .1;
+			-webkit-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-moz-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-ms-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-o-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+		}
+
+		.date.active .date-circle-fill {
+			-webkit-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+			-moz-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+			-ms-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+			-o-animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+			animation: date-circle-fill-anim 1.7s infinite ease-in-out;
+		}
+
+		.date.static .date-circle-fill {
+			-webkit-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-moz-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-ms-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			-o-animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			animation: date-circle-fill-anim 2.3s infinite ease-in-out;
+			opacity: 0;
+		}
+
+		.date.green .date-circle-fill {
+			background-color: rgba(0,175,242,.5);
+			opacity: .75;
+		}
+
+		.date.gray .date-circle-fill {
+			background-color: rgba(14,129,182,.5);
+			opacity: .75;
+		}
+
+		.date-img-circle {
+			width: 3.75em;
+			height: 3.75em;
+			bottom: 73%;
+			left: 46.35%;
+			position: absolute;
+			text-align:center;
+			color:#fff;
+			font-family:bebas;
+			line-height:1.5em;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			border: 0.125em solid transparent;
+			opacity: .7;
+			-webkit-animation: date-circle-img-anim 1s infinite ease-in-out;
+			-moz-animation: date-circle-img-anim 1s infinite ease-in-out;
+			-ms-animation: date-circle-img-anim 1s infinite ease-in-out;
+			-o-animation: date-circle-img-anim 1s infinite ease-in-out;
+			animation: date-circle-img-anim 1s infinite ease-in-out;
+		}
+		@-webkit-keyframes done {
+			0%     {opacity:1;}
+			10.5%  {opacity:1;}
+			12.5%  {opacity:0;}
+			87.5%  {opacity:0;}
+			89.5%  {opacity:1;}
+			100%   {opacity:1;}
+		}
+		@keyframes done {
+			0%     {opacity:1;}
+			10.5%  {opacity:1;}
+			12.5%  {opacity:0;}
+			87.5%  {opacity:0;}
+			89.5%  {opacity:1;}
+			100%   {opacity:1;}
+		}
+
+		@-webkit-keyframes dtwo {
+			0%      {opacity:0;}
+			12.5%   {opacity:0;}
+			14.5%   {opacity:1;}
+			35.5%   {opacity:1;}
+			37.5%   {opacity:0;}
+			100%    {opacity:0;}
+		}
+		@keyframes dtwo {
+			0%      {opacity:0;}
+			12.5%   {opacity:0;}
+			14.5%   {opacity:1;}
+			35.5%   {opacity:1;}
+			37.5%   {opacity:0;}
+			100%    {opacity:0;}
+		}
+
+		@-webkit-keyframes dthree {
+			0%      {opacity:0;}
+			37.5%   {opacity:0;}
+			39.5%   {opacity:1;}
+			60.5%   {opacity:1;}
+			62.5%   {opacity:0;}
+			100%    {opacity:0;}
+		}
+		@keyframes dthree {
+			0%      {opacity:0;}
+			37.5%   {opacity:0;}
+			39.5%   {opacity:1;}
+			60.5%   {opacity:1;}
+			62.5%   {opacity:0;}
+			100%    {opacity:0;}
+		}
+
+		@-webkit-keyframes dfour {
+			0%      {opacity:0;}
+			62.5%   {opacity:0;}
+			64.5%   {opacity:1;}
+			85.5%   {opacity:1;}
+			87.5%   {opacity:0;}
+			100%    {opacity:0;}
+		}
+		@keyframes dfour {
+			0%      {opacity:0;}
+			62.5%   {opacity:0;}
+			64.5%   {opacity:1;}
+			85.5%   {opacity:1;}
+			87.5%   {opacity:0;}
+			100%    {opacity:0;}
+		}
+		.d1{
+			-webkit-animation: done 4.8s infinite;
+			animation: done 4.8s infinite;
+			display:inline;
+		}
+		.d2{
+			-webkit-animation: dtwo 4.8s infinite;
+			animation: dtwo 4.8s infinite;
+			display:inline;
+		}
+		.d3{
+			-webkit-animation: dthree 4.8s infinite;
+			animation: dthree 4.8s infinite;
+			display:inline;
+		}
+		.d4{
+			-webkit-animation: dfour 4.8s infinite;
+			animation: dfour 4.8s infinite;
+			display:inline;
+		}
+
+		.date-img-circle ul{
+			position:relative;
+			font-size:2em;
+			display:block;
+			left:-0.4em;
+		}
+		.date-img-circle li{
+			position:absolute;
+		}
+		.date.active .date-img-circle {
+			-webkit-animation: date-circle-img-anim 1s infinite ease-in-out;
+			-moz-animation: date-circle-img-anim 1s infinite ease-in-out;
+			-ms-animation: date-circle-img-anim 1s infinite ease-in-out;
+			-o-animation: date-circle-img-anim 1s infinite ease-in-out;
+			animation: date-circle-img-anim 1s infinite ease-in-out;
+		}
+
+		.date.static .date-img-circle {
+			-webkit-animation: date-circle-img-anim 0 infinite ease-in-out;
+			-moz-animation: date-circle-img-anim 0 infinite ease-in-out;
+			-ms-animation: date-circle-img-anim 0 infinite ease-in-out;
+			-o-animation: date-circle-img-anim 0 infinite ease-in-out;
+			animation: date-circle-img-anim 0 infinite ease-in-out;
+		}
+
+		.date.green .date-img-circle {
+			background-color: rgba(243,121,42,1);
+		}
+
+		.date.gray .date-img-circle {
+			background-color: rgba(14,129,182,1);
+		}
+
+		@-moz-keyframes date-circle-anim {
+			0% {
+				-moz-transform: rotate(0deg) scale(0.5) skew(1deg);
+				opacity: .1;
+				-moz-opacity: .1;
+				-webkit-opacity: .1;
+				-o-opacity: .1;
+			}
+
+			30% {
+				-moz-transform: rotate(0deg) scale(.7) skew(1deg);
+				opacity: .5;
+				-moz-opacity: .5;
+				-webkit-opacity: .5;
+				-o-opacity: .5;
+			}
+
+			100% {
+				-moz-transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .6;
+				-moz-opacity: .6;
+				-webkit-opacity: .6;
+				-o-opacity: .1;
+			}
+		}
+
+		@-webkit-keyframes date-circle-anim {
+			0% {
+				-webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
+				-webkit-opacity: .1;
+			}
+
+			30% {
+				-webkit-transform: rotate(0deg) scale(.7) skew(1deg);
+				-webkit-opacity: .5;
+			}
+
+			100% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg);
+				-webkit-opacity: .1;
+			}
+		}
+
+		@-o-keyframes date-circle-anim {
+			0% {
+				-o-transform: rotate(0deg) kscale(0.5) skew(1deg);
+				-o-opacity: .1;
+			}
+
+			30% {
+				-o-transform: rotate(0deg) scale(.7) skew(1deg);
+				-o-opacity: .5;
+			}
+
+			100% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg);
+				-o-opacity: .1;
+			}
+		}
+
+		@keyframes date-circle-anim {
+			0% {
+				transform: rotate(0deg) scale(0.5) skew(1deg);
+				opacity: .1;
+			}
+
+			30% {
+				transform: rotate(0deg) scale(.7) skew(1deg);
+				opacity: .5;
+			}
+
+			100% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .1;
+			}
+		}
+
+		@-moz-keyframes date-circle-fill-anim {
+			0% {
+				-moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+
+			50% {
+				-moz-transform: rotate(0deg) -moz-scale(1) skew(1deg);
+				opacity: .2;
+			}
+
+			100% {
+				-moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+		}
+
+		@-webkit-keyframes date-circle-fill-anim {
+			0% {
+				-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+
+			50% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .2;
+			}
+
+			100% {
+				-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+		}
+
+		@-o-keyframes date-circle-fill-anim {
+			0% {
+				-o-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+
+			50% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .2;
+			}
+
+			100% {
+				-o-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+		}
+
+		@keyframes date-circle-fill-anim {
+			0% {
+				transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+
+			50% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .2;
+			}
+
+			100% {
+				transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2;
+			}
+		}
+
+		@keyframes date-circle-img-anim {
+			0% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+			}
+
+			10% {
+				transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			20% {
+				transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			30% {
+				transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			40% {
+				transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			100%,50% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+			}
+		}
+
+		@-moz-keyframes date-circle-img-anim {
+			0% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+			}
+
+			10% {
+				-moz-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			20% {
+				-moz-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			30% {
+				-moz-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			40% {
+				-moz-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			100%,50% {
+				-moz-transform: rotate(0deg) scale(1) skew(1deg);
+			}
+		}
+
+		@-webkit-keyframes date-circle-img-anim {
+			0% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg);
+			}
+
+			10% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			20% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			30% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			40% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			100%,50% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg);
+			}
+		}
+
+		@-o-keyframes date-circle-img-anim {
+			0% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg);
+			}
+
+			10% {
+				-o-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			20% {
+				-o-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			30% {
+				-o-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+
+			40% {
+				-o-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+
+			100%,50% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg);
+			}
+		}
+		.boundary {
+
+		}
+
+	</style>
+	<script type="text/javascript" src="js/converting.js"></script>
+</head>
+
+<body bgcolor="black">
+	<body bgcolor="black">
+		<canvas id="nokey" width="800" height="800" style="position: absolute; z-index: -10"></canvas>
+		<div  id="footer3" style="position: absolute; z-index: 10; float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div>
+		<center> <font size="4">
+			<h1 style="color: blue;"> FACULTY OF COMPUTER SCIENCE DEPARTMENT </h1> </font></center>
+			<a href="/department" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+			<center>
+				<span id='recordTag'> 
+					<div class="boundary">
+						<div class="date gray show static">
+							<div class="date-circle"></div>
+							<div class="date-circle-fill"></div>
+							<div class="date-img-circle"> <IMG style='margin-top:0.5em' HEIGHT="40" WIDTH="40" SRC="images/mic.png">
+							</div>
+						</div>
+					</div> 
+				</span>  </center>
+				<br><br><br><br><br><br><br><br><br><br><br><br>
+				<div id="design-cast">
+
+
+					<div id='prof1' class="member"><a href="http://localhost:3000/samrat">
+						<img src="images/cse_faculty/Dr. SAMRAT MONDAL.jpg" height="238" width="216" /> <br>
+						<figcaption class="caption"><font color="red"> DR. SAMRAT MONDAL </font></figcaption></a>
+					</div> 
+
+					<div id='prof2' class="member"><a href="http://localhost:3000/samrat">
+						<img src="images/cse_faculty/arijit.jpg" height="238" width="216" hspace="20"/> <br>
+						<figcaption class="caption"><font color="red">DR. ARIJIT MONDAL </font></figcaption></a>
+					</div>
+					<div id='prof3' class="member">
+						<img src="images/cse_faculty/asif.jpg" height="238" width="216" hspace="40"/><br>
+						<figcaption class="caption"><font color="red">DR. ASIF IQBAL  </font></figcaption>
+					</div>
+					<div class="member">
+						<img src="images/cse_faculty/jimson.jpg" height="238" width="216" hspace="60" /><br>
+						<figcaption class="caption"><font color="red">DR. JIMSON MATHEW </font></figcaption>
+					</div> 
+					<div class="member">
+						<img src="images/cse_faculty/maiti.jpg"  height="238" width="216"/>
+						<br>   <figcaption class="caption"><font color="red">DR. ABYAYANDA MAITI </font></figcaption>
+					</div>
+					<div class="member">
+						<img src="images/cse_faculty/sourav.jpg"  height="238" width="216" hspace="20"/><br>
+						<figcaption class="caption"><font color="red">DR. SOURAV DANDAPAT </font></figcaption>
+					</div>
+					<div class="member">
+						<img src="images/cse_faculty/sriparna.jpg" height="238" width="216" hspace="40"/><br>
+						<figcaption class="caption"><font color="red">DR. SRIPARNA SAHA </font></figcaption>
+					</div>
+					<div class="member">
+						<img src="images/cse_faculty/joydeep.jpg" height="238" width="216" hspace="60" /><br>
+						<figcaption class="caption"><font color="red"> DR. JOYDEEP CHANDRA </font></figcaption>
+					</div>
+
+
+				</div>
+				<script type="text/javascript">
+
+					var canvas = document.getElementById('nokey'),
+					can_w = parseInt(canvas.getAttribute('width')),
+					can_h = parseInt(canvas.getAttribute('height')),
+					ctx = canvas.getContext('2d');
+
+// console.log(typeof can_w);
+
+var ball = {
+	x: 0,
+	y: 0,
+	vx: 0,
+	vy: 0,
+	r: 0,
+	alpha: 1,
+	phase: 0
+},
+ball_color = {
+	r: 207,
+	g: 255,
+	b: 4
+},
+R = 2,
+balls = [],
+alpha_f = 0.03,
+alpha_phase = 0,
+
+// Line
+link_line_width = 0.8,
+dis_limit = 260,
+add_mouse_point = true,
+mouse_in = false,
+mouse_ball = {
+	x: 0,
+	y: 0,
+	vx: 0,
+	vy: 0,
+	r: 0,
+	type: 'mouse'
+};
+
+// Random speed
+function getRandomSpeed(pos){
+	var  min = -1,
+	max = 1;
+	switch(pos){
+		case 'top':
+		return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+		break;
+		case 'right':
+		return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+		break;
+		case 'bottom':
+		return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+		break;
+		case 'left':
+		return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+		break;
+		default:
+		return;
+		break;
+	}
+}
+function randomArrayItem(arr){
+	return arr[Math.floor(Math.random() * arr.length)];
+}
+function randomNumFrom(min, max){
+	return Math.random()*(max - min) + min;
+}
+console.log(randomNumFrom(0, 10));
+// Random Ball
+function getRandomBall(){
+	var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
+	switch(pos){
+		case 'top':
+		return {
+			x: randomSidePos(can_w),
+			y: -R,
+			vx: getRandomSpeed('top')[0],
+			vy: getRandomSpeed('top')[1],
+			r: R,
+			alpha: 1,
+			phase: randomNumFrom(0, 10)
+		}
+		break;
+		case 'right':
+		return {
+			x: can_w + R,
+			y: randomSidePos(can_h),
+			vx: getRandomSpeed('right')[0],
+			vy: getRandomSpeed('right')[1],
+			r: R,
+			alpha: 1,
+			phase: randomNumFrom(0, 10)
+		}
+		break;
+		case 'bottom':
+		return {
+			x: randomSidePos(can_w),
+			y: can_h + R,
+			vx: getRandomSpeed('bottom')[0],
+			vy: getRandomSpeed('bottom')[1],
+			r: R,
+			alpha: 1,
+			phase: randomNumFrom(0, 10)
+		}
+		break;
+		case 'left':
+		return {
+			x: -R,
+			y: randomSidePos(can_h),
+			vx: getRandomSpeed('left')[0],
+			vy: getRandomSpeed('left')[1],
+			r: R,
+			alpha: 1,
+			phase: randomNumFrom(0, 10)
+		}
+		break;
+	}
+}
+function randomSidePos(length){
+	return Math.ceil(Math.random() * length);
+}
+
+// Draw Ball
+function renderBalls(){
+	Array.prototype.forEach.call(balls, function(b){
+		if(!b.hasOwnProperty('type')){
+			ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+			ctx.beginPath();
+			ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+			ctx.closePath();
+			ctx.fill();
+		}
+	});
+}
+
+// Update balls
+function updateBalls(){
+	var new_balls = [];
+	Array.prototype.forEach.call(balls, function(b){
+		b.x += b.vx;
+		b.y += b.vy;
+
+		if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
+			new_balls.push(b);
+		}
+
+        // alpha change
+        b.phase += alpha_f;
+        b.alpha = Math.abs(Math.cos(b.phase));
+        // console.log(b.alpha);
+    });
+
+	balls = new_balls.slice(0);
+}
+
+// loop alpha
+function loopAlphaInf(){
+
+}
+
+// Draw lines
+function renderLines(){
+	var fraction, alpha;
+	for (var i = 0; i < balls.length; i++) {
+		for (var j = i + 1; j < balls.length; j++) {
+
+			fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+
+			if(fraction < 1){
+				alpha = (1 - fraction).toString();
+
+				ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
+				ctx.lineWidth = link_line_width;
+
+				ctx.beginPath();
+				ctx.moveTo(balls[i].x, balls[i].y);
+				ctx.lineTo(balls[j].x, balls[j].y);
+				ctx.stroke();
+				ctx.closePath();
+			}
+		}
+	}
+}
+
+// calculate distance between two points
+function getDisOf(b1, b2){
+	var  delta_x = Math.abs(b1.x - b2.x),
+	delta_y = Math.abs(b1.y - b2.y);
+
+	return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
+}
+
+// add balls if there a little balls
+function addBallIfy(){
+	if(balls.length < 100){
+		balls.push(getRandomBall());
+	}
+}
+
+// Render
+function render(){
+	ctx.clearRect(0, 0, can_w, can_h);
+
+	renderBalls();
+
+	renderLines();
+
+	updateBalls();
+
+	addBallIfy();
+
+	window.requestAnimationFrame(render);
+}
+
+// Init Balls
+function initBalls(num){
+	for(var i = 1; i <= num; i++){
+		balls.push({
+			x: randomSidePos(can_w),
+			y: randomSidePos(can_h),
+			vx: getRandomSpeed('top')[0],
+			vy: getRandomSpeed('top')[1],
+			r: R,
+			alpha: 1,
+			phase: randomNumFrom(0, 10)
+		});
+	}
+}
+// Init Canvas
+function initCanvas(){
+	canvas.setAttribute('width', window.innerWidth);
+	canvas.setAttribute('height', window.innerHeight);
+
+	can_w = parseInt(canvas.getAttribute('width'));
+	can_h = parseInt(canvas.getAttribute('height'));
+}
+window.addEventListener('resize', function(e){
+	console.log('Window Resize...');
+	initCanvas();
+});
+
+function goMovie(){
+	initCanvas();
+	initBalls(20);
+	window.requestAnimationFrame(render);
+}
+goMovie();
+
+// Mouse effect
+canvas.addEventListener('mouseenter', function(){
+	console.log('mouseenter');
+	mouse_in = true;
+	balls.push(mouse_ball);
+});
+canvas.addEventListener('mouseleave', function(){
+	console.log('mouseleave');
+	mouse_in = false;
+	var new_balls = [];
+	Array.prototype.forEach.call(balls, function(b){
+		if(!b.hasOwnProperty('type')){
+			new_balls.push(b);
+		}
+	});
+	balls = new_balls.slice(0);
+});
+canvas.addEventListener('mousemove', function(e){
+	var e = e || window.event;
+	mouse_ball.x = e.pageX;
+	mouse_ball.y = e.pageY;
+    // console.log(mouse_ball);
+});
+
+function start() {
+	console.log("before start");
+	startConverting(null,function(msg) {
+      //  console.log("abc");
+
+      msg = msg.toUpperCase();
+
+      if(msg.indexOf("BACK")>=0 || msg.indexOf("PREVIOUS PAGE")>=0)
+      	$("#ch").click();
+      if(msg.indexOf("DONE")>=0 || msg.indexOf("FINISH")>=0 || msg.indexOf("TERMINATE")>=0 || msg.indexOf("END")>=0)
+      	window.location.href = '/';
+      if(msg.indexOf("SAMRAT")>=0) {
+      	localStorage.setItem('name', 'Samrat Mondal'); 
+      	document.location.href="http://localhost:3000/samrat";
+      } else if(msg.indexOf("ARIJIT")>=0) {
+
+      	localStorage.setItem('name', 'Arijit Mondal'); 
+      	document.location.href="http://localhost:3000/arijit";    		
+      }else if(msg.indexOf("PROFESSIONAL")>=0) {
+      	alert("Hello Hi");
+      	$(".aaa").hide();
+      	$("#prof3").show();
+
+      }else if(msg.indexOf("TEACHING")>=0) {
+      	alert("Hello Hi");
+      	$(".aaa").hide();
+      	$("#prof4").show();
+
+      }
+      else {
+      	alert("Hi");
+      }
+
+      setTimeout(  function( ){start();},5000 );
+
+
+  });
+}
+start();
+
+</script>
+
+</body>
+</html>

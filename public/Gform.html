@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>Sports Ground Reservation Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <style>
+        #iit{
+            font-size: 50px;
+            text-align: center;
+            padding: 5px;
+            font-family: monospace;
+            font-style: italic;
+        }
+        .dropbtn {
+            background-color: white;
+            color: black;
+            width:200px;
+            padding: 10px;
+            padding-left:00px;
+            color: gray;
+            padding-right:00px;
+            font-size: 27px;
+            border: none;
+            border-radius:8px;
+            opacity:1;
+
+        }
+
+        #back{
+          background-color: rgba(100,100,100,0.8);
+          color: blue;
+          border-radius: 50%;
+      }
+
+      a.but{
+          display: table;
+          width: 100px;
+          height: 100px;
+          top: 45%;
+          left: 1%;
+      }
+
+      #ch{
+          display: table-cell;
+          vertical-align: middle;
+      }
+
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        padding: 10px;
+        opacity:1;
+        border-radius: 8px;
+        font-size: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    dropdown::-ms-expand { /* for IE 11 */
+        display: none;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        padding-left:0px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1; 
+    }    
+</style>
+</head>
+<body>
+   <div id="iit"> Indian Institute of Technology, Patna</div>
+   <div id="nav">
+    <a href="/spbooking" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+
+    <div style="text-align: center;">Sports Ground Reservation Form</div>
+    <form name="form" action="#" method="post">
+        <input type="text" placeholder="Name" name="name" style="width: 90%;"><br>
+        <input type="text" placeholder="Email" name="email" style="width: 90%;"><br>
+        <input type="text" placeholder="Mobile No" name="mob"><br>
+        <input type="text" placeholder="Roll No/Employee ID" name="roll"><br><br>
+        <select name="designation" class="dropdown">
+            <option value="" disabled selected>Category</option>
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+            <option value="staff">Staff</option>
+            <option value="managment">Management</option>
+            <option value="others">Others</option>
+        </select><br>
+        Date:<input type="date" name="date" /><br>
+        Start Time: <input name="stime" type="time"><br>
+        End Time:<input name="etime" type="time" ><br><br>
+        <select name="ground" placeholder="Ground/Court" class="dropdown">
+            <option value="" disabled selected>Ground/Court</option>
+            <option value="Cricket Ground" >Cricket Ground</option>
+            <option value="Football Ground" >Football Ground</option>
+            <option value="Basketball Court" >Basketball Court</option>
+            <option value="Tennis Court" >Tennis Court</option>
+            <option value="Volleyball Court" >Volleyball Court</option>
+            <option value="Badminton Court" >Badminton Court</option>
+            <option value="Table Tennis Table" >Table Tennis Table</option>
+        </select>
+        <button id="avail">CHECK AVAILABILITY</button>
+        <br><div id="Price" style="color: white; float: right;"></div>
+        <!--<input value="Submit" name="reg" onclick="validateForm()">-->
+    </form>
+    <button id="reg" >SUBMIT</button>
+</div>
+</body>
+<script type="text/javascript">  
+    var names = ["name", "email", "mob", "roll","designation", "date", "stime", "etime","ground"];
+    var input = ["","","","","","","",""];
+
+    var flag = 0, flag2=0;
+    var filtermail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var filtername = /^([a-zA-Z ])+$/;
+    var filtermob = /^([0-9])+$/;
+    
+    function showcars()
+    {
+     for(var i=0;i<9;++i)
+     { 
+        input[i] = document.forms["form"][names[i]].value;
+        if (input[i] == "") 
+            flag++;
+    }
+    if(!filtername.test(input[0]))
+    {
+        alert("Name cannot have anything except alphabets!");
+        flag2++;
+    }
+    if(!filtermail.test(input[1]))
+    { 
+       alert("Please provide a valid email id");
+       flag2++;
+   }   
+   if(!filtermob.test(input[2]))
+   {
+    alert("Mobile number should only contain digits");
+    flag2++;
+}
+if(input[2].length!=10)
+{
+    alert("Mobile number should be of 10 digits");
+    flag2++;
+} 
+if(flag!=0)
+{
+    alert("All fields must be filled out");
+    flag2++;
+}
+else 
+{
+    if(!filtername.test(input[0]))
+    {
+        alert("Name cannot have anything except alphabets!");
+        flag2++;
+    }
+    if(!filtermail.test(input[1]))
+    { 
+       alert("Please provide a valid email id");
+       flag2++;
+   }   
+   if(!filtermob.test(input[2]))
+   {
+    alert("Mobile number should only contain digits");
+    flag2++;
+}
+if(input[2].length!=10)
+{
+    alert("Mobile number should be of 10 digits");
+    flag2++;
+}
+}    
+flag = 0;    if(flag2==0)
+{
+
+    var name = input[0];
+    var email = input[1];
+    var mob = input[2];
+    var roll = input[3];
+    var designation = input[4];
+    var date = input[5];
+    var stime = input[6];
+    var etime = input[7];
+    var ground = input[8];
+
+    $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/gcheckavail?name="+name+"&email="+email+"&mob="+mob+"&roll="+roll+"&designation="+designation+"&date="+date+"&stime="+stime+"&etime="+etime+"&ground="+ground,
+            success : function(data) {
+                if(data.trim()=="error")
+                    window.alert(ground+" is not available for the specified date and time.");
+                else
+                    window.alert("The "+ground+" is available");
+            },
+            error: function(error){
+
+                window.alert("Sports Equipment not available for the specified date and time.");
+            }
+        });
+    
+    
+    
+}
+flag2=0;    
+}
+function validateForm(){
+
+ for(var i=0;i<9;++i)
+ { 
+     input[i] = document.forms["form"][names[i]].value;
+     if (input[i] == "") 
+         flag++;
+ }
+ if(!filtername.test(input[0]))
+ {
+    alert("Name cannot have anything except alphabets!");
+    flag2++;
+}
+if(!filtermail.test(input[1]))
+{ 
+   alert("Please provide a valid email id");
+   flag2++;
+}   
+if(!filtermob.test(input[2]))
+{
+    alert("Mobile number should only contain digits");
+    flag2++;
+}
+if(input[2].length!=10)
+{
+    alert("Mobile number should be of 10 digits");
+    flag2++;
+} 
+if(flag!=0)
+{
+    alert("All fields must be filled out");
+    flag2++;
+}
+else 
+{
+    if(!filtername.test(input[0]))
+    {
+        alert("Name cannot have anything except alphabets!");
+        flag2++;
+    }
+    if(!filtermail.test(input[1]))
+    { 
+       alert("Please provide a valid email id");
+       flag2++;
+   }   
+   if(!filtermob.test(input[2]))
+   {
+    alert("Mobile number should only contain digits");
+    flag2++;
+}
+if(input[2].length!=10)
+{
+    alert("Mobile number should be of 10 digits");
+    flag2++;
+}
+}    
+flag = 0;    if(flag2==0)
+{
+
+    var name = input[0];
+    var email = input[1];
+    var mob = input[2];
+    var roll = input[3];
+    var designation = input[4];
+    var date = input[5];
+    var stime = input[6];
+    var etime = input[7];
+    var ground = input[8];
+
+    $.ajax({
+            //dataType: 'jsonp',
+            //jsonpCallback: '_wrapper',
+            type: 'GET',
+            url: "http://localhost:3000/Gbooking?name="+name+"&email="+email+"&mob="+mob+"&roll="+roll+"&designation="+designation+"&date="+date+"&stime="+stime+"&etime="+etime+"&ground="+ground,
+            success : function(data) {
+                if(data.trim()=="error")
+                    window.alert(ground+" not available for the specified date and time.");
+                else
+                    window.alert(data.trim());
+            },
+            error: function(error){
+
+                window.alert(ground+" not available for the specified date and time.");
+            }
+        });
+    
+    
+    
+}
+flag2=0;
+}
+
+$(document).on("click keypress", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "reg") {
+    e.preventDefault();  
+    validateForm();
+} else if (e.type === "keypress" && e.keyCode === 13) {   
+    e.preventDefault();  
+    validateForm();
+}
+});
+$(document).on("click", function (e) {      
+  if (e.type === "click" && e.target && e.target.id === "avail") {
+    e.preventDefault();  
+    showcars();
+}
+});
+
+$("#Distance").bind('keyup mouseup', function () {
+    showprice();            
+});
+
+</script>
+</html>

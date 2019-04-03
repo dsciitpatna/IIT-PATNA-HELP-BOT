@@ -1,0 +1,622 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="button_animate.css">
+</head>
+<title> FACULTY </title>
+<script type="text/javascript" src="js/converting.js"></script>
+
+<style type="text/css">
+
+  p {
+    background-color: blacktra;
+    width: 400px;
+    border: 3px white;
+    padding: 25px;
+    margin: 45px;
+  }
+
+  #back{
+    background-color: rgba(100,100,100,0.8);
+    color: blue;
+    border-radius: 50%;
+  }
+
+  a.but{
+    display: table;
+    width: 100px;
+    height: 100px;
+    top: 45%;
+    left: 1%;
+  }
+
+  #ch{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+
+  }
+  canvas{
+   background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+ }
+
+ .button {
+  display:inline-block;
+  width: 15em;
+  border: 3px solid green;
+  background: #ffe;
+  border-radius: 5px;
+  display: block;
+  width: 22.5%;
+  line-height: 3em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.button:hover {
+  color: red;
+  background: #eff;
+}
+
+#button {
+  width: 19em;
+  border: 2px solid green;
+  background: #ffe;
+  border-radius: 5px;
+}
+a {
+  display: block;
+  width: 100%;
+  line-height: 7em;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  border-radius: 5px;
+}
+a:hover {
+  color: red;
+  background: #eff;
+}
+
+#message {
+  font-size: 18pt;
+  height: 42px;
+  width : 300px;
+}
+#container{
+  font-size:2em;
+}
+#footer3 {
+  position:fixed;
+  left :88%;
+  top:1%;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+.button1 {
+  display:inline-block;
+  width: 15em;
+  border: 3px solid green;
+  background: #ffe;
+  border-radius: 5px;
+  display: block;
+  width: 22.5%;
+  line-height: 3em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.button2:hover {
+  color: red;
+  background: #eff;
+}
+
+#button1 {
+  width: 12em;
+  height: 7em;
+  right: 57%;
+  bottom: 43%;
+  position: absolute;
+}
+#button11 {
+  width: 12em;
+  height: 7em;
+  right: 57%;
+  bottom: 43%;
+  position: absolute;
+}
+.button2 {
+  display:inline-block;
+  width: 15em;
+  border: 3px solid green;
+  background: #ffe;
+  border-radius: 5px;
+  display: block;
+  width: 22.5%;
+  line-height: 3em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.button2:hover {
+  color: red;
+  background: #eff;
+}
+
+#button2 {
+  width: 12em;
+  height: 7em;
+  right: 30%;
+  bottom: 43%;
+  position: absolute;
+}
+#button21 {
+  width: 12em;
+  height: 7em;
+  right: 30%;
+  bottom: 43%;
+  position: absolute;
+}
+
+</style>
+<body bgcolor="black">
+  <canvas id="nokey" width="800" height="800" style="position: absolute; z-index: -10;"></canvas>
+  <div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div>
+  <a href="/home" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+  <br><br>
+  <h1 style="color: white;"><center> INDIAN INSTITUTE OF TECHNOLOGY, PATNA </center></h1> <br>
+  <br>
+  <div class="button-container-1">
+    <a class="info" href="/help"><span class="mas" id="button1">HELP</span>
+      <div id='button11' type="button" name="Hover">HELP</div></a>
+    </div>
+    <div class="button-container-1">
+      <a class="info" href="/department"><span class="mas" id="button2">DEPARTMENTS</span>
+        <div id='button21' type="button" name="Hover">DEPARTMENTS</div></a>
+      </div>   
+
+      <div id='container' style="height: 50%;width: 50%; top:200px; padding: 1em; background: rgba(0,0,0,1); position: absolute; z-index: -20; color:white;">
+
+      </div> 
+      <script type="text/javascript">
+        function start() {
+          console.log("before start");
+          startConverting(null,function(msg) {
+            console.log("abc");
+            msg = msg.toUpperCase();
+            if(msg.indexOf("BACK")>=0 || msg.indexOf("PREVIOUS PAGE")>=0)
+              $("#ch").click();
+            if(msg.indexOf("DONE")>=0 || msg.indexOf("FINISH")>=0 || msg.indexOf("TERMINATE")>=0 || msg.indexOf("END")>=0)
+              window.location.href = '/home';
+            $("#back").click();
+            var alloptions = $('.info');
+            var matchedHref = '-1';
+            for (var i = 0; i < alloptions.length; i++) {
+              var href = alloptions[i].href;
+              var tag = href.split('.')[0].split('/');
+              tag = tag[tag.length-1];
+              console.log("Tag is "+tag);
+              if(msg.indexOf(tag.toUpperCase()) !== -1 ) {
+                console.log("Found Match "+tag);
+                if(matchedHref === '-1')
+                  matchedHref = href;
+                else {
+                  matchedHref = '-1';
+                  break;
+                }
+              }
+            }
+            console.log("MREF "+matchedHref);
+            if(matchedHref !== '-1') {
+              location.href= matchedHref;
+
+            }
+            setTimeout(  function( ){start();},5000 );
+
+          });
+        }
+        start();
+
+      </script>
+      <br>
+      <input type="hidden" name="speech-msg" id="speech-msg" x-webkit-speech> 
+
+      <br><br>
+
+      <script type="text/javascript" src="js/converting.js"></script>
+
+      <script>var speechMsgInput = document.getElementById('speech-msg');
+// var voiceSelect = document.getElementById('voice');
+
+
+
+var canvas = document.getElementById('nokey'),
+can_w = parseInt(canvas.getAttribute('width')),
+can_h = parseInt(canvas.getAttribute('height')),
+ctx = canvas.getContext('2d');
+
+// console.log(typeof can_w);
+
+var ball = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  r: 0,
+  alpha: 1,
+  phase: 0
+},
+ball_color = {
+ r: 207,
+ g: 255,
+ b: 4
+},
+R = 2,
+balls = [],
+alpha_f = 0.03,
+alpha_phase = 0,
+
+// Line
+link_line_width = 0.8,
+dis_limit = 260,
+add_mouse_point = true,
+mouse_in = false,
+mouse_ball = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  r: 0,
+  type: 'mouse'
+};
+
+// Random speed
+function getRandomSpeed(pos){
+  var  min = -1,
+  max = 1;
+  switch(pos){
+    case 'top':
+    return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+    break;
+    case 'right':
+    return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+    break;
+    case 'bottom':
+    return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+    break;
+    case 'left':
+    return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+    break;
+    default:
+    return;
+    break;
+  }
+}
+function randomArrayItem(arr){
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+function randomNumFrom(min, max){
+  return Math.random()*(max - min) + min;
+}
+console.log(randomNumFrom(0, 10));
+// Random Ball
+function getRandomBall(){
+  var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
+  switch(pos){
+    case 'top':
+    return {
+      x: randomSidePos(can_w),
+      y: -R,
+      vx: getRandomSpeed('top')[0],
+      vy: getRandomSpeed('top')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+    case 'right':
+    return {
+      x: can_w + R,
+      y: randomSidePos(can_h),
+      vx: getRandomSpeed('right')[0],
+      vy: getRandomSpeed('right')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+    case 'bottom':
+    return {
+      x: randomSidePos(can_w),
+      y: can_h + R,
+      vx: getRandomSpeed('bottom')[0],
+      vy: getRandomSpeed('bottom')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+    case 'left':
+    return {
+      x: -R,
+      y: randomSidePos(can_h),
+      vx: getRandomSpeed('left')[0],
+      vy: getRandomSpeed('left')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+  }
+}
+function randomSidePos(length){
+  return Math.ceil(Math.random() * length);
+}
+
+// Draw Ball
+function renderBalls(){
+  Array.prototype.forEach.call(balls, function(b){
+   if(!b.hasOwnProperty('type')){
+     ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+     ctx.beginPath();
+     ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+     ctx.closePath();
+     ctx.fill();
+   }
+ });
+}
+
+// Update balls
+function updateBalls(){
+  var new_balls = [];
+  Array.prototype.forEach.call(balls, function(b){
+    b.x += b.vx;
+    b.y += b.vy;
+    
+    if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
+     new_balls.push(b);
+   }
+   
+        // alpha change
+        b.phase += alpha_f;
+        b.alpha = Math.abs(Math.cos(b.phase));
+        // console.log(b.alpha);
+      });
+  
+  balls = new_balls.slice(0);
+}
+
+// loop alpha
+function loopAlphaInf(){
+  
+}
+
+// Draw lines
+function renderLines(){
+  var fraction, alpha;
+  for (var i = 0; i < balls.length; i++) {
+    for (var j = i + 1; j < balls.length; j++) {
+     
+     fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+     
+     if(fraction < 1){
+       alpha = (1 - fraction).toString();
+
+       ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
+       ctx.lineWidth = link_line_width;
+       
+       ctx.beginPath();
+       ctx.moveTo(balls[i].x, balls[i].y);
+       ctx.lineTo(balls[j].x, balls[j].y);
+       ctx.stroke();
+       ctx.closePath();
+     }
+   }
+ }
+}
+
+// calculate distance between two points
+function getDisOf(b1, b2){
+  var  delta_x = Math.abs(b1.x - b2.x),
+  delta_y = Math.abs(b1.y - b2.y);
+  
+  return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
+}
+
+// add balls if there a little balls
+function addBallIfy(){
+  if(balls.length < 100){
+    balls.push(getRandomBall());
+  }
+}
+
+// Render
+function render(){
+  ctx.clearRect(0, 0, can_w, can_h);
+  
+  renderBalls();
+  
+  renderLines();
+  
+  updateBalls();
+  
+  addBallIfy();
+  
+  window.requestAnimationFrame(render);
+}
+
+// Init Balls
+function initBalls(num){
+  for(var i = 1; i <= num; i++){
+    balls.push({
+      x: randomSidePos(can_w),
+      y: randomSidePos(can_h),
+      vx: getRandomSpeed('top')[0],
+      vy: getRandomSpeed('top')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    });
+  }
+}
+// Init Canvas
+function initCanvas(){
+  canvas.setAttribute('width', window.innerWidth);
+  canvas.setAttribute('height', window.innerHeight);
+  
+  can_w = parseInt(canvas.getAttribute('width'));
+  can_h = parseInt(canvas.getAttribute('height'));
+}
+window.addEventListener('resize', function(e){
+  console.log('Window Resize...');
+  initCanvas();
+});
+
+function goMovie(){
+  initCanvas();
+  initBalls(20);
+  window.requestAnimationFrame(render);
+}
+goMovie();
+
+// Mouse effect
+canvas.addEventListener('mouseenter', function(){
+  console.log('mouseenter');
+  mouse_in = true;
+  balls.push(mouse_ball);
+});
+canvas.addEventListener('mouseleave', function(){
+  console.log('mouseleave');
+  mouse_in = false;
+  var new_balls = [];
+  Array.prototype.forEach.call(balls, function(b){
+    if(!b.hasOwnProperty('type')){
+      new_balls.push(b);
+    }
+  });
+  balls = new_balls.slice(0);
+});
+canvas.addEventListener('mousemove', function(e){
+  var e = e || window.event;
+  mouse_ball.x = e.pageX;
+  mouse_ball.y = e.pageY;
+    // console.log(mouse_ball);
+  });
+ function speak(text) {
+  // Create a new instance of SpeechSynthesisUtterance.
+  // Set the text.
+  if(gloablLangTranslate=="en")
+  {
+    console.log("ENGLISH IS SPEAKING");
+    var msg = new SpeechSynthesisUtterance(text);
+
+     //msg.rate = 0.7;
+     msg.pitch = 1;
+
+     window.speechSynthesis.speak(msg);
+   }
+   else
+   {
+     var key = 'trnsl.1.1.20180316T153624Z.aed7f6778b28a5d9.b8a39a8fcf82d53d2357c2f26e595a9946a05793';
+      var msgToConvert=text;
+      var url1 = "https://translate.yandex.net/api/v1.5/tr.json/translate?key="+key+"&lang="+"en"+"-hi&text=" + encodeURI(msgToConvert);
+      var result;
+      $.ajax({
+        type: 'GET',
+        url: url1,
+        cache:false,
+        async:false,
+        success: function(response) {
+          var response_msg = response;
+          if(response_msg["code"]!= "200"){
+            alert("Unable to translate");
+          }
+          else{
+            var translatedMsg = response_msg["text"];
+            if(translatedMsg.constructor === Array){
+              result = translatedMsg[0];
+            }
+            else if(typeof translatedMsg=== 'string'){
+              result = translatedMsg;
+            }
+            console.log(result)
+            var msg = new SpeechSynthesisUtterance(result);
+                     msg.pitch = 1;
+                  msg.lang="hi";
+                 window.speechSynthesis.speak(msg);
+          }
+        },
+        error: function(){
+          alert("Error in Translation");
+        }
+      });
+
+   }
+   }
+   if(gloablLangTranslate!="en")
+   {
+    translate("button1");
+    translate("button2");
+    translate("button11");
+    translate("button21");
+   }
+   
+   speak("Do you want help or move to departments?");
+
+   var speechRecognizer = new webkitSpeechRecognition();
+   speechRecognizer.continuous = false;
+   speechRecognizer.interimResults = true;
+   speechRecognizer.lang = 'en-IN';
+
+   function startConverting (callback) {
+    
+    if('webkitSpeechRecognition' in window){
+      speechRecognizer.start();
+      console.log("Strarting R");             
+      var finalTranscripts = '';
+
+      speechRecognizer.onresult = function(event){
+        var interimTranscripts = '';
+        for(var i = event.resultIndex; i < event.results.length; i++){
+          var transcript = event.results[i][0].transcript;
+                                //transcript.replace("\n", "<br>");
+                                if(event.results[i].isFinal){
+                                  finalTranscripts += transcript;
+                                  console.log("Got : "+finalTranscripts);
+                                  speechRecognizer.stop();
+                                  callback(finalTranscripts);
+
+                                  return;
+                                }else{
+                                  interimTranscripts += transcript;
+                                }
+                                
+                              }
+                            };
+                            speechRecognizer.onerror = function (event) {
+                              speechRecognizer.stop();
+                              startConverting(callback);
+                            };
+                          }else{
+                            alert('Your browser is not supported. If google chrome, please upgrade!');
+                          }
+                        }
+                      </script>
+                      <br>
+
+                    </body>
+
+                    </html>

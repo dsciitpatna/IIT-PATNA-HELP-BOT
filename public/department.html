@@ -1,0 +1,702 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="button_animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<title> DEPARTMENTS </title>
+<script type="text/javascript" src="js/converting.js"></script>
+
+<style type="text/css">
+
+    body{
+        font-family: 'Lato', sans-serif;
+    }
+
+    #back{
+      background-color: rgba(100,100,100,0.8);
+      color: blue;
+      border-radius: 50%;
+  }
+  a.but{
+      display: table;
+      width: 100px;
+      height: 100px;
+      top: 45%;
+      left: 1%;
+  }
+
+  #ch{
+      display: table-cell;
+      vertical-align: middle;
+  }
+
+  p {
+    background-color: black;
+    width: 400px;
+    border: 3px white;
+    padding: 25px;
+    margin: 45px;
+}
+
+
+.button {
+    display:inline-block;
+    width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    color: red;
+    background: #eff;
+}
+
+#button {
+    width: 19em;
+    border: 2px solid green;
+    background: #ffe;
+    border-radius: 5px;
+}
+a {
+    display: block;
+    width: 100%;
+    line-height: 7em;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a:hover {
+    color: red;
+    background: #eff;
+}
+
+#message {
+    font-size: 18pt;
+    height: 42px;
+    width : 300px;
+}
+#container{
+    font-size:2em;
+}
+#footer3 {
+    position:fixed;
+    left :88%;
+    top:1%;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+.button1 {
+    display:inline-block;
+    width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button2:hover {
+    color: red;
+    background: #eff;
+}
+
+#button1 {
+    width: 12em;
+    height: 7em;
+    right: 67%;
+    bottom: 53%;
+    position: absolute;
+}
+#button11 {
+    width: 12em;
+    height: 7em;
+    right: 67%;
+    bottom: 53%;
+    position: absolute;
+}
+.button2 {
+    display:inline-block;
+    width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button2:hover {
+    color: red;
+    background: #eff;
+}
+
+#button2 {
+    width: 12em;
+    height: 7em;
+    right: 40.5%;
+    bottom: 53%;
+    position: absolute;
+}
+#button21{
+    width: 12em;
+    height: 7em;
+    right: 40.5%;
+    bottom: 53%;
+    position: absolute;
+}
+.button3 {
+    display:inline-block;
+    width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button3:hover {
+    color: red;
+    background: #eff;
+}
+
+#button3 {
+    width: 12em;
+    height: 7em;
+    right: 14%;
+    bottom: 53%;
+    position: absolute;
+}
+#button31 {
+    width: 12em;
+    height: 7em;
+    right: 14%;
+    bottom: 53%;
+    position: absolute;
+}
+.button4 {
+    display:inline-block;
+    width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button4:hover {
+    color: red;
+    background: #eff;
+}
+
+#button4 {
+    width: 12em;
+    height: 7em;
+    right: 67%;
+    bottom: 28%;
+    position: absolute;
+}
+#button41 {
+    width: 12em;
+    height: 7em;
+    right: 67%;
+    bottom: 28%;
+    position: absolute;
+}
+.button5 {
+   width: 15em;
+   height: 7em;
+   border: 3px solid green;
+   background: #ffe;
+   border-radius: 5px;
+   display: block;
+   text-align: center;
+   vertical-align: middle;
+   line-height: 7em; 
+   text-decoration: none;
+}
+.button5:hover {
+    color: red;
+    background: #eff;
+}
+
+#button5 {
+    width: 12em;
+    height: 7em;
+    right: 40.5%;
+    bottom: 28%;
+    position: absolute;
+}
+#button51 {
+    width: 12em;
+    height: 7em;
+    right: 40.5%;
+    bottom: 28%;
+    position: absolute;
+}
+.button6 {
+   width: 15em;
+   height: 7em;
+   border: 3px solid green;
+   background: #ffe;
+   border-radius: 5px;
+   display: block;
+   text-align: center;
+   vertical-align: middle;
+   line-height: 7em; 
+   text-decoration: none;
+}
+.button6:hover {
+    color: red;
+    background: #eff;
+}
+
+#button6 {
+    width: 12em;
+    height: 7em;
+    right: 14%;
+    bottom: 28%;
+    position: absolute;
+}
+#button61 {
+    width: 12em;
+    height: 7em;
+    right: 14%;
+    bottom: 28%;
+    position: absolute;
+}
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+canvas{
+ background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+ background-color: #000;
+}
+
+</style>
+<body bgcolor="black">
+    <canvas id="nokey" width="800" height="800" style="position: absolute; z-index: -10;"></canvas>
+    <div  id="footer3" style="float: left; top: 10px;"><br><br><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div>
+
+
+    <h1 style="color: white; position: absolute; top: 10px; width: 100%; text-align: center; margin-top: 80px; z-index: 50; font-size: 2.6em;"><center> INDIAN INSTITUTE OF TECHNOLOGY, PATNA </center></h1></br
+    <br>
+
+    <a href="/faculty" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+
+    <div class="button-container-1"> 
+        <a class="info" href="/computer"><span class="mas" id="button1">COMPUTER SCIENCE</span>
+            <div id='button11' type="button" name="Hover">COMPUTER SCIENCE</div></a>
+        </div>
+        <div class="button-container-1">
+            <a class="info" href="/mechanical"><span class="mas" id="button2">MECHANICAL ENGG.</span>
+                <div id='button21' type="button" name="Hover">MECHANICAL ENGG.</div></a>
+            </div>
+            <div class="button-container-1"> 
+                <a class="info" href="/electrical"><span class="mas" id="button3">ELECTRICAL ENGG.</span>
+                    <div id='button31' type="button" name="Hover">ELECTRICAL ENGG.</div></a>
+                </div>
+                <div class="button-container-1">  
+                    <a class="info" href="/emergency"><span class="mas" id="button4">CIVIL ENGG.</span>
+                        <div id='button41' type="button" name="Hover">CIVIL ENGG.</div></a>
+                    </div>
+                    <div class="button-container-1">  
+                        <a class="info" href="/emergency"><span class="mas" id="button5">CHEMICAL ENGG.</span>
+                            <div id='button51' type="button" name="Hover">CHEMICAL ENGG.</div></a>
+                        </div>
+                        <div class="button-container-1">  
+                            <a class="info" href="/emergency"><span class="mas" id="button6">PHYSICS</span>
+                                <div id='button61' type="button" name="Hover">PHYSICS</div></a>
+                            </div>
+
+
+                            <script type="text/javascript">
+                                function start() {
+                                    console.log("before start");
+                                    startConverting(null,function(msg) {
+                                        console.log("abc");
+                                        msg = msg.toUpperCase();
+                                        if(msg.indexOf("BACK")>=0)
+                                            $("#back").click();
+                                        var alloptions = $('.info');
+                                        var matchedHref = '-1';
+                                        for (var i = 0; i < alloptions.length; i++) {
+                                            var href = alloptions[i].href;
+                                            var tag = href.split('.')[0].split('/');
+                                            tag = tag[tag.length-1];
+                                            console.log("Tag is "+tag);
+                                            if(msg.indexOf(tag.toUpperCase()) !== -1 ) {
+                                                console.log("Found Match "+tag);
+                                                if(matchedHref === '-1')
+                                                    matchedHref = href;
+                                                else {
+                                                    matchedHref = '-1';
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        console.log("MREF "+matchedHref);
+                                        if(matchedHref !== '-1') {
+                                            location.href= matchedHref;
+
+                                        }
+                                        setTimeout(  function( ){start();},500 );
+
+                                    });
+                                }
+                                start();
+
+                            </script>
+                            <br>
+                            <input type="hidden" name="speech-msg" id="speech-msg" x-webkit-speech> 
+                            <br><br>
+                            <script type="text/javascript" src="js/converting.js"></script>
+                            <script>
+
+                                var speechMsgInput = document.getElementById('speech-msg');
+// var voiceSelect = document.getElementById('voice');
+
+
+
+var canvas = document.getElementById('nokey'),
+can_w = parseInt(canvas.getAttribute('width')),
+can_h = parseInt(canvas.getAttribute('height')),
+ctx = canvas.getContext('2d');
+var ball = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  r: 0,
+  alpha: 1,
+  phase: 0
+},
+ball_color = {
+ r: 207,
+ g: 255,
+ b: 4
+},
+R = 2,
+balls = [],
+alpha_f = 0.03,
+alpha_phase = 0,
+
+// Line
+link_line_width = 0.8,
+dis_limit = 260,
+add_mouse_point = true,
+mouse_in = false,
+mouse_ball = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  r: 0,
+  type: 'mouse'
+};
+
+// Random speed
+function getRandomSpeed(pos){
+    var  min = -1,
+    max = 1;
+    switch(pos){
+        case 'top':
+        return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+        break;
+        case 'right':
+        return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+        break;
+        case 'bottom':
+        return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+        break;
+        case 'left':
+        return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+        break;
+        default:
+        return;
+        break;
+    }
+}
+function randomArrayItem(arr){
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+function randomNumFrom(min, max){
+    return Math.random()*(max - min) + min;
+}
+function getRandomBall(){
+    var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
+    switch(pos){
+        case 'top':
+        return {
+            x: randomSidePos(can_w),
+            y: -R,
+            vx: getRandomSpeed('top')[0],
+            vy: getRandomSpeed('top')[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10)
+        }
+        break;
+        case 'right':
+        return {
+            x: can_w + R,
+            y: randomSidePos(can_h),
+            vx: getRandomSpeed('right')[0],
+            vy: getRandomSpeed('right')[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10)
+        }
+        break;
+        case 'bottom':
+        return {
+            x: randomSidePos(can_w),
+            y: can_h + R,
+            vx: getRandomSpeed('bottom')[0],
+            vy: getRandomSpeed('bottom')[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10)
+        }
+        break;
+        case 'left':
+        return {
+            x: -R,
+            y: randomSidePos(can_h),
+            vx: getRandomSpeed('left')[0],
+            vy: getRandomSpeed('left')[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10)
+        }
+        break;
+    }
+}
+function randomSidePos(length){
+    return Math.ceil(Math.random() * length);
+}
+
+// Draw Ball
+function renderBalls(){
+    Array.prototype.forEach.call(balls, function(b){
+     if(!b.hasOwnProperty('type')){
+         ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+         ctx.beginPath();
+         ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+         ctx.closePath();
+         ctx.fill();
+     }
+ });
+}
+
+// Update balls
+function updateBalls(){
+    var new_balls = [];
+    Array.prototype.forEach.call(balls, function(b){
+        b.x += b.vx;
+        b.y += b.vy;
+        
+        if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
+         new_balls.push(b);
+     }
+
+     b.phase += alpha_f;
+     b.alpha = Math.abs(Math.cos(b.phase));
+ });
+    
+    balls = new_balls.slice(0);
+}
+function loopAlphaInf(){
+
+}
+function renderLines(){
+    var fraction, alpha;
+    for (var i = 0; i < balls.length; i++) {
+        for (var j = i + 1; j < balls.length; j++) {
+
+         fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+
+         if(fraction < 1){
+             alpha = (1 - fraction).toString();
+
+             ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
+             ctx.lineWidth = link_line_width;
+
+             ctx.beginPath();
+             ctx.moveTo(balls[i].x, balls[i].y);
+             ctx.lineTo(balls[j].x, balls[j].y);
+             ctx.stroke();
+             ctx.closePath();
+         }
+     }
+ }
+}
+function getDisOf(b1, b2){
+    var  delta_x = Math.abs(b1.x - b2.x),
+    delta_y = Math.abs(b1.y - b2.y);
+    
+    return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
+}
+
+function addBallIfy(){
+    if(balls.length < 100){
+        balls.push(getRandomBall());
+    }
+}
+function render(){
+    ctx.clearRect(0, 0, can_w, can_h);
+    
+    renderBalls();
+    
+    renderLines();
+    
+    updateBalls();
+    
+    addBallIfy();
+    
+    window.requestAnimationFrame(render);
+}
+function initBalls(num){
+    for(var i = 1; i <= num; i++){
+        balls.push({
+            x: randomSidePos(can_w),
+            y: randomSidePos(can_h),
+            vx: getRandomSpeed('top')[0],
+            vy: getRandomSpeed('top')[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10)
+        });
+    }
+}
+function initCanvas(){
+    canvas.setAttribute('width', window.innerWidth);
+    canvas.setAttribute('height', window.innerHeight);
+    
+    can_w = parseInt(canvas.getAttribute('width'));
+    can_h = parseInt(canvas.getAttribute('height'));
+}
+window.addEventListener('resize', function(e){
+    console.log('Window Resize...');
+    initCanvas();
+});
+
+function goMovie(){
+    initCanvas();
+    initBalls(20);
+    window.requestAnimationFrame(render);
+}
+goMovie();
+
+// Mouse effect
+canvas.addEventListener('mouseenter', function(){
+    console.log('mouseenter');
+    mouse_in = true;
+    balls.push(mouse_ball);
+});
+canvas.addEventListener('mouseleave', function(){
+    console.log('mouseleave');
+    mouse_in = false;
+    var new_balls = [];
+    Array.prototype.forEach.call(balls, function(b){
+        if(!b.hasOwnProperty('type')){
+            new_balls.push(b);
+        }
+    });
+    balls = new_balls.slice(0);
+});
+canvas.addEventListener('mousemove', function(e){
+    var e = e || window.event;
+    mouse_ball.x = e.pageX;
+    mouse_ball.y = e.pageY;
+    // console.log(mouse_ball);
+});
+
+if (gloablLangTranslate!='en') 
+{
+    translate("button1");
+    translate("button2");
+    translate("button3");
+    translate("button4");
+    translate("button5");
+    translate("button6");
+    translate("button11");
+    translate("button21");
+    translate("button31");
+    translate("button41");
+    translate("button51");
+    translate("button61");
+}
+
+speak("WHICH DEPARTMENT YOU WANT TO GO?");
+
+var speechRecognizer = new webkitSpeechRecognition();
+speechRecognizer.continuous = false;
+speechRecognizer.interimResults = true;
+speechRecognizer.lang = 'en-IN';
+
+function startConverting (callback) {
+
+    if('webkitSpeechRecognition' in window){
+        speechRecognizer.start();
+        console.log("Strarting R");             
+        var finalTranscripts = '';
+
+        speechRecognizer.onresult = function(event){
+            var interimTranscripts = '';
+            for(var i = event.resultIndex; i < event.results.length; i++){
+                var transcript = event.results[i][0].transcript;
+                                //transcript.replace("\n", "<br>");
+                                if(event.results[i].isFinal){
+                                    finalTranscripts += transcript;
+                                    console.log("Got : "+finalTranscripts);
+                                    speechRecognizer.stop();
+                                    callback(finalTranscripts);
+
+                                    return;
+                                }else{
+                                    interimTranscripts += transcript;
+                                }
+
+                            }
+                        };
+                        speechRecognizer.onerror = function (event) {
+                            speechRecognizer.stop();
+                            startConverting(callback);
+                        };
+                    }else{
+                        alert('Your browser is not supported. If google chrome, please upgrade!');
+                    }
+                }
+            </script>
+
+
+            <br>
+
+        </body>
+
+        </html>

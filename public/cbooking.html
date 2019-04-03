@@ -1,0 +1,615 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="button_animate.css">
+</head>
+<title> Transportation </title>
+<script type="text/javascript" src="js/converting.js"></script>
+
+<style type="text/css">
+  body{
+    font-family: 'Lato', sans-serif;
+    background-size: 100% auto;
+  }
+
+  p {
+    background-color: black;
+    width: 400px;
+    border: 3px white;
+    padding: 25px;
+    margin: 45px;
+  }
+  .button {
+    display:inline-block;
+    width: 15em;
+    border: 3px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    display: block;
+    width: 22.5%;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .button:hover {
+    color: red;
+    background: #eff;
+  }
+
+  #button {
+    width: 19em;
+    border: 2px solid green;
+    background: #ffe;
+    border-radius: 5px;
+  }
+  a {
+
+    width: 100%;
+    line-height: 7em;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  a:hover {
+    color: red;
+    background: #eff;
+  }
+
+  #message {
+    font-size: 18pt;
+    height: 42px;
+    width : 300px;
+  }
+  #container{
+    font-size:2em;
+  }
+  #footer3 {
+    position:fixed;
+    left :88%;
+    top:1%;
+    margin:0;
+    padding:0;
+    width:100%;
+  }
+
+  #bookcar {
+    width: 13%;
+    height: 15%;
+    right: 62%;
+    bottom: 49%;
+    vertical-align: center;
+    position: absolute;
+  }
+
+  #editbook {
+    width: 13%;
+    height: 15%;
+    right: 42%;
+    bottom: 34%;
+    vertical-align: center;
+    position: absolute;
+  }
+
+  #cancelbook {
+    width: 13%;
+    height: 15%;
+    right: 22%;
+    bottom: 19%;
+    vertical-align: center;
+    position: absolute;
+  }
+  #bookcar1 {
+    width: 13%;
+    height: 15%;
+    right: 62%;
+    bottom: 49%;
+    vertical-align: center;
+    position: absolute;
+  }
+
+  #editbook1 {
+    width: 13%;
+    height: 15%;
+    right: 42%;
+    bottom: 34%;
+    vertical-align: center;
+    position: absolute;
+  }
+
+  #cancelbook1 {
+    width: 13%;
+    height: 15%;
+    right: 22%;
+    bottom: 19%;
+    vertical-align: center;
+    position: absolute;
+  }
+  #design1_r{
+
+    width: 40%;
+    height: 1%;
+    right: 22%;
+    bottom: 63%;
+    position: absolute;
+    background-color: rgb(0,191,0);
+    mask: none;
+    -webkit-mask: none;
+  }
+
+  #button1:hover #design1_r{
+    background-color: white;
+    -webkit-animation: anim 0.7s steps(22) forwards;
+    animation: anim 0.7s steps(22) forwards;
+  }
+
+  #design2_r {
+
+    width: 20%;
+    height: 1%;
+    right: 22%;
+    bottom: 48%;
+    position: absolute;
+    background-color: rgb(0,191,0);
+    mask: none;
+    -webkit-mask: none;
+  }
+
+  #design2_l{
+
+    width: 20%;
+    height: 1%;
+    right: 55%;
+    bottom: 34%;
+    position: absolute;
+    background-color: rgb(0,191,0);
+    mask: none;
+    -webkit-mask: none;
+  }
+
+  #button2:hover #design2_r{
+    background-color: white;
+    -webkit-animation: anim 0.7s steps(22) forwards;
+    animation: anim 0.7s steps(22) forwards;
+  }
+
+  #design3_l{
+
+    width: 40%;
+    height: 1%;
+    right: 35%;
+    bottom: 19%;
+    position: absolute;
+    background-color: rgb(0,191,0);
+    mask: none;
+    -webkit-mask: none;
+  }
+
+  #button3:hover #design3_l {
+    background-color: white;
+    -webkit-animation: anim 0.7s steps(22) forwards;
+    animation: anim 0.7s steps(22) forwards;
+  }
+
+  @keyframes anim{
+    0% {background:rgb(0,191,0); }
+    
+    100% {background: rgb(255,255,255); }
+  }
+
+  @-webkit-keyframes anim{
+   0% {background:rgb(0,191,0); }
+   100% {background: rgb(255,255,255); }
+ }
+
+
+ #button2:hover #design2_l{
+  background-color: white;
+  -webkit-animation: anim 0.7s steps(22) forwards;
+  animation: anim 0.7s steps(22) forwards;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+canvas{
+ background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+ background-color: #000;
+}
+
+#back{
+  background-color: rgba(100,100,100,0.8);
+  color: blue;
+  border-radius: 50%;
+}
+
+a.but{
+  display: table;
+  width: 100px;
+  height: 100px;
+  top: 45%;
+  left: 1%;
+}
+
+#ch{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+</style>
+<body bgcolor="black">
+  <canvas id="nokey" width="800" height="800"></canvas>
+  <h1 style="color: white; position: absolute; top: 10px; width: 100%; text-align: center; margin-top: 80px; z-index: 50; font-size: 2.6em;"><center> INDIAN INSTITUTE OF TECHNOLOGY, PATNA </center></h1>
+  <a href="/transport" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+  <div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="../images/iitp.png"></div>
+
+  <br>
+
+
+  <br>
+  <div class="button-container-1" id="button1">
+    <a class="info" href="/tform"><span class="mas" id="bookcar1">Book A Car</span>
+      <div id='bookcar' type="button" name="Hover">Book A Car</div></a><div id="design1_r"></div></div>
+      <div class="button-container-1" id="button2">
+        <div id="design2_l"></div> 
+        <a  class="info" href="/tupdate"><span class="mas" id="editbook1">Edit booking</span>
+          <div id='editbook' type="button" name="Hover">Edit Booking</div></a><div id="design2_r"></div></div>
+          <div class="button-container-1" id="button3"> 
+            <div id="design3_l"></div>   
+            <a class="info" href="/tcancel"><span class="mas" id="cancelbook1">Cancel Booking</span>
+              <div id='cancelbook' type="button" name="Hover">Cancel Booking</div></a></div>
+
+              <div id='container' style="height: 50%;width: 50%; top:200px; padding: 1em; background: rgba(0,0,0,1); color:white;">
+
+              </div> 
+              <br>
+              <input type="hidden" name="speech-msg" id="speech-msg" x-webkit-speech> 
+
+              <br><br>
+              <script type="text/javascript" src="js/converting.js"></script>
+              <script type="text/javascript">
+
+
+                var canvas = document.getElementById('nokey'),
+                can_w = parseInt(canvas.getAttribute('width')),
+                can_h = parseInt(canvas.getAttribute('height')),
+                ctx = canvas.getContext('2d');
+
+// console.log(typeof can_w);
+
+var ball = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  r: 0,
+  alpha: 1,
+  phase: 0
+},
+ball_color = {
+ r: 207,
+ g: 255,
+ b: 4
+},
+R = 2,
+balls = [],
+alpha_f = 0.03,
+alpha_phase = 0,
+
+// Line
+link_line_width = 0.8,
+dis_limit = 260,
+add_mouse_point = true,
+mouse_in = false,
+mouse_ball = {
+  x: 0,
+  y: 0,
+  vx: 0,
+  vy: 0,
+  r: 0,
+  type: 'mouse'
+};
+
+// Random speed
+function getRandomSpeed(pos){
+  var  min = -1,
+  max = 1;
+  switch(pos){
+    case 'top':
+    return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+    break;
+    case 'right':
+    return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+    break;
+    case 'bottom':
+    return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+    break;
+    case 'left':
+    return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+    break;
+    default:
+    return;
+    break;
+  }
+}
+function randomArrayItem(arr){
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+function randomNumFrom(min, max){
+  return Math.random()*(max - min) + min;
+}
+console.log(randomNumFrom(0, 10));
+// Random Ball
+function getRandomBall(){
+  var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
+  switch(pos){
+    case 'top':
+    return {
+      x: randomSidePos(can_w),
+      y: -R,
+      vx: getRandomSpeed('top')[0],
+      vy: getRandomSpeed('top')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+    case 'right':
+    return {
+      x: can_w + R,
+      y: randomSidePos(can_h),
+      vx: getRandomSpeed('right')[0],
+      vy: getRandomSpeed('right')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+    case 'bottom':
+    return {
+      x: randomSidePos(can_w),
+      y: can_h + R,
+      vx: getRandomSpeed('bottom')[0],
+      vy: getRandomSpeed('bottom')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+    case 'left':
+    return {
+      x: -R,
+      y: randomSidePos(can_h),
+      vx: getRandomSpeed('left')[0],
+      vy: getRandomSpeed('left')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    }
+    break;
+  }
+}
+function randomSidePos(length){
+  return Math.ceil(Math.random() * length);
+}
+
+// Draw Ball
+function renderBalls(){
+  Array.prototype.forEach.call(balls, function(b){
+   if(!b.hasOwnProperty('type')){
+     ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+     ctx.beginPath();
+     ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+     ctx.closePath();
+     ctx.fill();
+   }
+ });
+}
+
+// Update balls
+function updateBalls(){
+  var new_balls = [];
+  Array.prototype.forEach.call(balls, function(b){
+    b.x += b.vx;
+    b.y += b.vy;
+
+    if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
+     new_balls.push(b);
+   }
+
+        // alpha change
+        b.phase += alpha_f;
+        b.alpha = Math.abs(Math.cos(b.phase));
+        // console.log(b.alpha);
+      });
+
+  balls = new_balls.slice(0);
+}
+
+// loop alpha
+function loopAlphaInf(){
+
+}
+
+// Draw lines
+function renderLines(){
+  var fraction, alpha;
+  for (var i = 0; i < balls.length; i++) {
+    for (var j = i + 1; j < balls.length; j++) {
+
+     fraction = getDisOf(balls[i], balls[j]) / dis_limit;
+
+     if(fraction < 1){
+       alpha = (1 - fraction).toString();
+
+       ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
+       ctx.lineWidth = link_line_width;
+
+       ctx.beginPath();
+       ctx.moveTo(balls[i].x, balls[i].y);
+       ctx.lineTo(balls[j].x, balls[j].y);
+       ctx.stroke();
+       ctx.closePath();
+     }
+   }
+ }
+}
+
+// calculate distance between two points
+function getDisOf(b1, b2){
+  var  delta_x = Math.abs(b1.x - b2.x),
+  delta_y = Math.abs(b1.y - b2.y);
+
+  return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
+}
+
+// add balls if there a little balls
+function addBallIfy(){
+  if(balls.length < 100){
+    balls.push(getRandomBall());
+  }
+}
+
+// Render
+function render(){
+  ctx.clearRect(0, 0, can_w, can_h);
+
+  renderBalls();
+
+  renderLines();
+
+  updateBalls();
+
+  addBallIfy();
+
+  window.requestAnimationFrame(render);
+}
+
+// Init Balls
+function initBalls(num){
+  for(var i = 1; i <= num; i++){
+    balls.push({
+      x: randomSidePos(can_w),
+      y: randomSidePos(can_h),
+      vx: getRandomSpeed('top')[0],
+      vy: getRandomSpeed('top')[1],
+      r: R,
+      alpha: 1,
+      phase: randomNumFrom(0, 10)
+    });
+  }
+}
+// Init Canvas
+function initCanvas(){
+  canvas.setAttribute('width', window.innerWidth);
+  canvas.setAttribute('height', window.innerHeight);
+
+  can_w = parseInt(canvas.getAttribute('width'));
+  can_h = parseInt(canvas.getAttribute('height'));
+}
+window.addEventListener('resize', function(e){
+  console.log('Window Resize...');
+  initCanvas();
+});
+
+function goMovie(){
+  initCanvas();
+  initBalls(20);
+  window.requestAnimationFrame(render);
+}
+goMovie();
+
+// Mouse effect
+canvas.addEventListener('mouseenter', function(){
+  console.log('mouseenter');
+  mouse_in = true;
+  balls.push(mouse_ball);
+});
+canvas.addEventListener('mouseleave', function(){
+  console.log('mouseleave');
+  mouse_in = false;
+  var new_balls = [];
+  Array.prototype.forEach.call(balls, function(b){
+    if(!b.hasOwnProperty('type')){
+      new_balls.push(b);
+    }
+  });
+  balls = new_balls.slice(0);
+});
+canvas.addEventListener('mousemove', function(e){
+  var e = e || window.event;
+  mouse_ball.x = e.pageX;
+  mouse_ball.y = e.pageY;
+    // console.log(mouse_ball);
+  });
+function start() {
+  if(setlang == "hi" ||  gloablLangTranslate!="en")
+  {
+    console.log(document.getElementById("bookcar").innerHTML);
+    translate("bookcar");
+    translate("cancelbook");
+    translate("editbook");
+    translate("bookcar1");
+    translate("cancelbook1");
+    translate("editbook1");
+
+  }
+  console.log("before start");
+  startConverting(null,function(msg) {
+    console.log("Started");
+
+    msg = msg.toUpperCase();
+    if(msg.indexOf("BACK")>=0 || msg.indexOf("PREVIOUS PAGE")>=0)
+      $("#ch").click();
+    if(msg.indexOf("DONE")>=0 || msg.indexOf("FINISH")>=0 || msg.indexOf("TERMINATE")>=0 || msg.indexOf("END")>=0)
+      window.location.href = '/';
+    if(msg.indexOf("UPDATE")>=0 || msg.indexOf("UPDATE BOOKING")>=0)
+      $("#editbook").click();
+    else if(msg.indexOf("CANCEL")>=0 || msg.indexOf("CANCEL BOOKING")>=0)
+      $("#cancelbook").click();
+    else if(msg.indexOf("BOOK A CAR")>=0 || msg.indexOf("CAR BOOKING")>=0)
+      $("#bookcar").click();
+    else
+    {
+
+    }     
+    console.log(msg);
+    setTimeout(  function( ){start();},5000 );
+    console.log(msg);
+  });
+}
+speak("Which page do you want to see?");
+setTimeout(function()
+{
+
+}, 1000);
+start();
+
+/* button sides animation ------------------------------------------------------------------------------------*/
+
+$(function() {
+  $('#editbook').hover(function() {
+    $('#design2_r').css('background-color', 'white');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#design2_r').css('background-color', 'green');
+  });
+});
+
+</script>
+<br>
+
+</body>
+
+</html>

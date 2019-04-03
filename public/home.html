@@ -1,0 +1,157 @@
+<html>
+<head>
+    <meta charset="UTF-16">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <title>IIT PATNA</title>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="star_back.css" rel="stylesheet" type="text/css">
+    <style>
+        body 
+        {
+            padding: 0px;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        div.circle 
+        {
+            position: relative;
+            width: 0px;
+            height: 0px;
+            top: 50px;
+            left: 50px;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-property: all;
+            -webkit-transition-timing-function: ease-in-out;
+            text-align: center;
+            background: red;
+            color: white;
+            border-radius: 100%;
+            padding: 20px;
+            overflow: hidden;
+            font-family: sans-serif;  /* Just 'cos */
+        }
+        div.open {
+            top: 100px;
+            left: 250px;
+            width: 200px;
+            height: 200px;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-property: all;
+            -webkit-transition-timing-function: ease-in-out;
+        }
+        #bubbleContainer {
+            position: relative;
+            margin-top: 50px;
+            float: right;
+            width: 100%;
+            height:500px;
+        }
+        .bubble {
+           text-align: center;vertical-align: middle;line-height: 120px;
+           position: absolute;
+           width: 120px;
+           height: 120px;
+           border-radius: 100%;
+           background: url("bubble.jpg");
+           background-size: 125% 125%;
+           background-position: center;
+           color: black;
+           font-size: 110%;
+       }
+       #footer3 {
+        position:absolute;
+        left :90%;
+        top:2%;
+        margin:0;
+        padding:0;
+        width:100%
+    }
+    .content
+    {
+        z-index: 4;
+    }
+
+    h1
+    {
+        padding-top: 20px;
+        left: 30px;
+    }
+
+</style>
+</head>
+<script type="text/javascript" src="js/converting.js"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit(lan) {
+      new google.translate.TranslateElement({pageLanguage: lan}, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<body >
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="content">
+        <div  id="footer3" style="float: left;"><IMG HEIGHT="100" WIDTH="100" SRC="images/iitp.png"></div>
+
+        <center> <font size="5"><h1 style="color: white;"> WELCOME TO IIT PATNA </h1> </font></center>
+
+        <!-- <h1>jQuery bubbles.js Plugin Demo</h1> -->
+        <div id="bubbleContainer">
+            <div class="bubble">
+                
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="bubbles.js"></script>
+        <font size="2">  <h2> <p style="color: white; right: 00px; bottom: 0px; width:100%; text-align: center;"> <font color=" white"> 
+            Copyright & copy IITP. All rights reserved.</font> 
+        </p> </h1> </font>
+
+
+
+        <script type="text/javascript">
+            var FLAG=0,str="";
+            function start() {
+                var key = 'trnsl.1.1.20180316T153624Z.aed7f6778b28a5d9.b8a39a8fcf82d53d2357c2f26e595a9946a05793';
+                if(gloablLangTranslate!="en" && document.getElementById("trn6"))
+                {
+                    translate("trn1");
+                    translate("trn2");
+                    translate("trn3");
+                    translate("trn4");
+                    translate("trn5");
+                    translate("trn6");
+                }
+                console.log("before start");
+
+                startConverting(null,function(msg) {
+                    console.log("startConverting started");
+
+                    msg = msg.toUpperCase();
+                    
+                    if(msg.indexOf("FACULTY")>=0) {
+                        $("#trn1").click();
+                    } else if(msg.indexOf("TRANSPORT")>=0) {
+                        $("#trn2").click();
+                    }else if(msg.indexOf("SPORTS")>=0) {
+                        $("#trn3").click();
+                    }else if(msg.indexOf("STUDENT")>=0) {
+                        $("#trn4").click();
+                    }
+                    else if(msg.indexOf("EMERGENCY")>=0) {
+                        $("#trn6").click();
+                    }
+                    else if(msg.indexOf("HOSPITAL")>=0) {
+                        $("#trn5").click();
+                    }
+                            //console.log("MREF "+matchedHref);
+                            setTimeout(  function( ){start();},500 );       
+                        });
+            }
+            setTimeout(function( ){start();},1000 );
+        </script>
+    </div>
+
+    <div class="clouds"></div>
+</body>
+</html>

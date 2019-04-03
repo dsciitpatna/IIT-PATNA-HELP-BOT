@@ -1,0 +1,258 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function fetch_details(name) {
+    /////////////////////////////////////////////
+    $.ajax({
+      type: "POST",
+      url: "getdetails",
+      data: {
+        name:name,
+        
+      },
+            // timeout: 10000, // in milliseconds
+            success: function(data) {
+              data= JSON.parse(data);
+              console.log(data);
+              document.getElementById("pname").innerHTML = data['name'];
+              document.getElementById("phd_students_count").innerHTML = data['phd'];
+              document.getElementById("teaching").innerHTML = data['teaching'];
+              document.getElementById("research").innerHTML = data['research'];
+              document.getElementById("journal").innerHTML = data['journal'];
+
+               //FILL HERE
+               // speak("You are already registered",null);
+                // setTimeout(function() {
+
+                //   location.href = '/thankyou';
+                //   return ;
+                // },3000);
+
+              },
+              error: function(request, status, err) {
+                console.log("Failed To Fetch");
+                
+              }
+            });
+  }
+
+</script>
+<script type="text/javascript" src="js/converting.js"></script>
+<style>
+  #footer3 {
+    position:absolute;
+    left :84%;
+    top:6%;
+    margin:0;
+    padding:0;
+    width:100%;
+  }
+  #footer2 {
+    position:absolute;
+    left :4%;
+    top:3%;
+    margin:0;
+    padding:0;
+    width:100%;
+  }
+  #footer4 {
+    position:absolute;
+    left :1%;
+    margin:0;
+    padding:0;
+    width:100%;
+  }
+
+  div.container {
+    display:inline-block;
+  }
+
+  p {
+    text-align:center;
+  }
+
+
+</style>
+</head>
+
+<body>
+  <script>
+    var name = localStorage.getItem('name');
+    console.log(name);
+    if(name!=null){
+      fetch_details(name);
+    }
+    else{
+      document.location.href="http://localhost:3000/error";
+    }
+    
+  </script>
+
+  <!-- <div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div> -->
+  <!-- <div  id="footer2" style="float: left;"><IMG HEIGHT="240" WIDTH="240" SRC="images/cse_faculty/samrat.jpg" ></div> -->
+  <div id="pname">
+    <strong> Name:</strong> 
+<!-- <center> <font size="4"><h1 style="color: black;" > DR. SAMRAT MONDAL </h1> </font>
+Asst. Professor <br>
+Ph.D, IIT Kharagpur <br> 
+Ph: +91-612-302 8163 <br>
+Fax: +91-612-227 7383 <br> 
+samrat@iitp.ac.in, samratm@ieee.org
+</center> -->
+</div>
+<br><br><br><br><br><br><font size="4">
+<div  id="footer4" style="float: left;">
+	<div id='prof1' class='aaa'>
+    <strong> Research Areas: </strong> 
+    <strong id='research'></strong> 
+ <!--  <li>Security & Privacy and Database Systems </li>
+</ul>  -->
+</div> <br>
+<div id='prof2' class='aaa'>
+  <strong> No. of Ph.D Students:</strong> 
+  <strong id='phd_students_count'></strong> 
+<!-- <div class="image123"><br>
+     <div class="container">
+        <img src="images/arijit.jpg" height="100" width="100"/>
+        <p>Smita roy</p>
+    </div>
+     <div class="container">
+        <img src="images/arijit.jpg"/ height="100" width="100"/>
+        <p>Nilesh </p>
+    </div>
+     <div class="container">
+         <img src="images/arijit.jpg"/ height="100" width="100"/>
+        <p>Nilotpal </p>
+    </div>
+
+     <div class="container">
+         <img src="images/arijit.jpg"/ height="100" width="100"/>
+        <p>Suryakanta </p>
+    </div>
+     <div class="container">
+         <img src="images/arijit.jpg"/ height="100" width="100"/>
+        <p>KM Pooja</p>
+    </div>
+  </div> --></div><br>
+  <div id='prof3' class='aaa'>
+
+<!-- <strong> Professional Experience: </strong> 
+<ul>
+  <li>Assistant Professor at DAIICT Gandhinagar from Dec 2009 to Dec 2010.</li>
+  <li>Visiting Scholar at NSC Santa Clara, CA, US from July 2007 to Nov 2007.</li>
+  <li>Lecturer in CSE Dept. of Jalpaiguri Govt. Engg. College from Dec 2001 to Jul 2004.</li>
+</ul>  --> 
+</div>
+
+<div id='prof4' class='aaa'>
+  <strong> Teaching: </strong> 
+  <strong id='teaching'></strong> 
+<!-- <ul>
+  <li>CS241: Software Engineering</li>
+  <li>CS242: System Programming Laboratory</li>
+  <li>CS344: Database</li>
+  <li>CS345: Database Laboratory</li>
+  <li>CS221: Digital Design</li>
+  <li>CS301: Formal Language and Automata</li>
+  <li>CS542: Software Testing</li>
+  <li>CS513: Computer Systems Lab - 2</li>
+  <li>CS201: OOPs and Data Structure Lab</li>
+</ul>  --> 
+</div>
+<br> 
+
+<div id='prof5' class='aaa'>
+<!-- <strong> Awards & Honours: </strong> 
+<ul>
+  <li>Gold medal winner MTech 2006 batch </li>
+</ul>  --> 
+</div>
+<div id='prof6' class='aaa'>
+  <!--<strong> Invited Talk: </strong> -->
+<!-- <ul>
+  <li>On "Password Security", at Muthoot Institute of Technology & Science,Kochi, 8th Sep 2016.</li>
+  <li>On "Security and Usability Issues of Password Based Authentication Scheme", at Albertian Institute of Science and Technology, Kochi, 7th Sep 2016.</li>
+  <li>On "Technology Enabled Teaching Learning", at Hotel Vijay Shree Delux, Exhibition Road, Patna, Organized By ICFAI University Jharkhand, 4th Mar 2014.</li>
+  <li>"Password Based Authentication Schemes: Safety and Usability Analysis", presented at the 8th International Conference on Information and Systems Security (ICISS 2012), IIT Guwahati, December 2012.</li>
+  <li>"Access Control Systems", at Faculty of Technology Management, CEPT University, Ahmedabad, 2nd Oct 2010.</li>
+</ul>  --> 
+</div>
+<div id='prof7' class='aaa'>
+  <strong> Journal Publications: </strong> 
+  <strong id='journal'></strong> 
+<!-- <ul>
+  <li>"Improved Solution to the Non-Domination Level Update Problem"- Sumit Mishra, Samrat Mondal and Sriparna Saha, Elsevier Applied Soft Computing, Vol: 60, pp: 336-362, 2017.</li>
+  <li>"Intelligent Scheduling of Thermostatic Devices for Efficient Energy Management in Smart Grid", Nilotpal Chakraborty, Arijit Mondal and Samrat Mondal, IEEE Transactions on Industrial Informatics, Vol: PP, Issue: 99, Apr 2017, DOI: 10.1109/TII.2017.2695241.</li>
+  <li>"On Designing A Modied-UI Based Honeyword Generation Approach For Overcoming The Existing Limitations", Nilesh Chakraborty and Samrat Mondal, Computers & Security, Vol: 66, pp. 155-168, 2017.</li>
+  <li>"GAEMTBD: Genetic Algorithm based Entity Matching Techniques for Bibliographic Databases", Sumit Mishra, Sriparna Saha and Samrat Mondal, Springer Applied Intelligence, Volume:47, No. 1, pp. 197-230, 2017.</li>
+  <li>"A Multiobjective Optimization based Entity Matching Technique for Bibliographic Databases", Sumit Mishra, Sriparna Saha and Samrat Mondal, Elsevier Expert Systems with Applications, Vol: 65, pp. 100-115, 2016.</li>
+  <li>"Sensitivity- An Important Facet of Cluster Validation Process for Entity Matching Technique", Sumit Mishra, Samrat Mondal and Sriparna Saha, Transactions on Large-Scale Data and Knowledge-Centered Systems, Vol: 29, pp. 1-39, 2016.</li>
+  <li>"HoneyString : An Improved Methodology Over Tag Digit Based Honeypot To Detect Shoulder Surng Attack", Nilesh Chakraborty and Samrat Mondal, International Journal of Trust Management in Computing and Communications, Volume 3, No.2, pp.93 - 114, 2015.</li>
+  <li>"I-SLASS : An Improved Login Approach Over SLASS", Nilesh Chakraborty and Samrat Mondal, International Journal of Trust Management in Computing and Communications, Volume: 2, No. 4, pp. 309-329, 2014.</li>
+  <li>"Security Analysis of GTRBAC and its Variants using Model Checking", Samrat Mondal, Shamik Sural and Vijayalakshmi Atluri, Computers and Security, Volume: 30, Issues: 2-3, pp. 128-147, March 2011.</li>
+  <li>"Security Analysis of RBAC with Temporal Constraints - A Model Checking Approach", Samrat Mondal and Shamik Sural, Journal of Information Assurance and Security (Special issue on Access Control and Protocols), Volume: 4, Issue: 4, pp. 319-328, July 2009.</li>
+  <li>"Role Based Access Control with Spatiotemporal Context for Mobile Applications", Subhendu Aich, Samrat Mondal, Shamik Sural and Arun Kumar Majumdar, Transactions on Computational Science (Special Issue in Security in Computing), Springer, Volume: 4, pp. 177-199, April 2009.</li>
+  <li>"Integrated Procedure Automating Test Chip Layout, Place and Route, and Test Plan Development for Efficient Parametric Device and Process Designs," Ann Gabrys, Wendy Greig, Andrew J. West, Philipp lindorfer, William French, Samrat Mondal, Devjyoti Patra, Kalyan Goswami, Shamik Sural and Timothy Crandle, IEEE Transactions on Semiconductor Manufacturing, Volume: 22, Issue: 1, pp. 110-118, February 2009.</li>
+</ul>   -->
+</div>
+
+</div> 
+
+
+</font>
+
+<script type="text/javascript">
+  function start() {
+    console.log("before start");
+    startConverting(null,function(msg) {
+      //  console.log("abc");
+      
+      msg = msg.toUpperCase();
+      if(msg.indexOf("BACK")>=0)
+        $("#back").click();
+      if(msg.indexOf("RESEARCH")>=0) {
+        $(".aaa").hide();
+        $("#prof1").show();
+      } else if(msg.indexOf("STUDENTS")>=0) {
+        $(".aaa").hide();
+        $("#prof2").show();
+        
+      }else if(msg.indexOf("PROFESSIONAL")>=0) {
+        $(".aaa").hide();
+        $("#prof3").show();
+        
+      }else if(msg.indexOf("TEACHING")>=0) {
+        $(".aaa").hide();
+        $("#prof4").show();
+        
+      }else if(msg.indexOf("AWARDS")>=0) {
+        $(".aaa").hide();
+        $("#prof5").show();
+        
+      }else if(msg.indexOf("INVITED")>=0) {
+        $(".aaa").hide();
+        $("#prof6").show();
+        
+      }else if(msg.indexOf("JOURNAL")>=0) {
+        $(".aaa").hide();
+        $("#prof7").show();
+        
+      }
+
+
+      else {
+        alert("Hi");
+      }
+      
+      setTimeout(  function( ){start();},5000 );
+      
+
+    });
+  }
+  start();
+
+</script>
+</body>
+
+</html>
