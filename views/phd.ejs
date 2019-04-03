@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        body {
+            background-color: black;
+            color: white;
+        }
+        #list{
+            margin: auto;
+        }
+        #list th {
+            text-align: left;
+            background: darkslategrey;
+            height: 50px;
+            padding: 10px;
+        }
+        #list tr,td {
+            padding: 10px;
+        }
+        #list tr:nth-child(odd){background-color: dimgrey;}
+        #list tr:nth-child(even){background-color: slategray;}
+        
+        #logo {
+            width: 100px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+
+
+        #back{
+          background-color: rgba(100,100,100,0.8);
+          color: blue;
+          border-radius: 50%;
+      }
+
+      a.but{
+          display: table;
+          width: 100px;
+          height: 100px;
+          top: 45%;
+          left: 1%;
+      }
+
+      #ch{
+          display: table-cell;
+          vertical-align: middle;
+      }
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/converting.js"></script>
+</head>
+
+<body>
+
+
+
+
+    <a href="/students" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+    <h1 style="display: table; margin: auto; padding: 20px"><%= title %></h1>
+    <table id='list'>
+        <tr><th>Name</th><th>Dept.</th><th>Email</th><th>Area of Research</th><th>Supervisor</th><th>Co-supervisor</th></tr>
+        <% students.forEach(function(row) { %>
+        <tr class='<%= row.dept %> <%= row.name %> <%= row.nameai %> hide'>
+            <td><%= row.name %></td><td><%= row.dept %></td>
+            <td><%= row.email %></td><td><%= row.aor %></td>
+            <td><%= row.sup %></td><td><%= row.cosup %></td></tr>
+            <% }); %>
+        </table>
+        <img src="../images/iitp.png"/ id="logo">
+        
+        <script type="text/javascript">
+            function start() {
+                changelang("en-US");
+                console.log("before start");
+                startConverting(null,function(msg) {
+                  msg = msg.toUpperCase();
+                  if(msg.indexOf("BACK")>=0 || msg.indexOf("PREVIOUS PAGE")>=0)
+                    $("#ch").click();
+                if(msg.indexOf("DONE")>=0 || msg.indexOf("FINISH")>=0 || msg.indexOf("TERMINATE")>=0 || msg.indexOf("END")>=0)
+                    window.location.href = '/';
+                $("#back").click();  
+                if(msg.indexOf("CS")>=0 || msg.indexOf("COMPUTER")>=0) {
+                    $(".hide").hide();
+                    $(".CSE").show();
+                }
+                else if(msg.indexOf("EE")>=0 || msg.indexOf("ELECTRICAL")>=0) {
+                    $(".hide").hide();
+                    $(".EE").show();
+                }
+                else if(msg.indexOf("ALL")>=0) {
+                    $(".hide").show();
+                }
+                else if(msg.indexOf("ME")>=0 || msg.indexOf("MECHANICAL")>=0) {
+                    $(".hide").hide();
+                    $(".ME").show();
+                }
+                else if(msg.indexOf("CB")>=0 || msg.indexOf("CHEMICAL")>=0) {
+                    $(".hide").hide();
+                    $(".CB").show();
+                }
+                else if(msg.indexOf("CE")>=0 || msg.indexOf("CIVIL")>=0) {
+                    $(".hide").hide();
+                    $(".CE").show();
+                }
+                else  {
+                    msg = msg.split(" ");
+                    var flag=0;
+                    var x=0;
+                    var arrayLength = msg.length;
+                    if(arrayLength>1)
+                    {
+                        for (var i = 0; i < arrayLength-1; i=i+2) {
+                            msg[x] = msg[i]+' '+msg[i+1];
+                            x=x+1;
+                        }    
+                    }
+                    for (var i = 0; i < arrayLength; i++) {
+                        var hasClass = document.getElementsByClassName(msg[i]);
+                        if(hasClass.length>0)
+                        {
+                            if(flag==0){
+                                $(".hide").hide();
+                                $("."+msg[i]).show();
+                                flag=1;
+                            }
+                            else
+                            {
+                                $("."+msg[i]).show();
+                            }
+
+                        }   
+                    }
+                }
+                setTimeout(  function( ){start();},5000 );
+            });
+            }
+            speak("Which department you want to view");
+            setTimeout(  function( ){start();},3000 );
+
+        </script>
+
+    </body>
+    </html>

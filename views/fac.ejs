@@ -1,0 +1,402 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>
+    <% timing.forEach(function(row) { %>
+    <%= row.name %>
+  </title>
+  <script type="text/javascript" src="js/converting.js"></script>
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    #footer3 {
+      position:absolute;
+      left :84%;
+      top:6%;
+      margin:0;
+      padding:0;
+      width:100%;
+    }
+    #footer2 {
+      position:absolute;
+      left :4%;
+      top:3%;
+      margin:0;
+      padding:0;
+      width:100%;
+    }
+    #footer4 {
+      position:absolute;
+      left :1%;
+      margin:0;
+      padding:0;
+      width:100%;
+    }
+
+    div.container {
+      display:inline-block;
+    }
+    #back{
+      background-color: rgba(100,100,100,0.6);
+      color: blue;
+      border-radius: 50%;
+    }
+
+    a.but{
+      display: table;
+      width: 100px;
+      height: 100px;
+      top: 45%;
+      left: 1%;
+    }
+
+    #prof7, #prof6 {
+      margin-left: 10px;
+      margin-right: 50px;
+    }
+    #ch{
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+
+    p {
+      text-align:center;
+    }
+
+
+  </style>
+</head>
+
+<body>
+<% var coma=','%>
+  <a href="/computer" class="but fa" style="position: fixed; font-size: 45px; text-align: center  ;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+  <div  id="footer3" style="float: left;"><IMG HEIGHT="120" WIDTH="120" SRC="images/iitp.png"></div>
+  <div  id="footer2" style="float: left;"><IMG HEIGHT="240" WIDTH="240" SRC="images/cse_faculty/<%=row.name%>.jpg" ></div>
+  <br>
+  <center> <font size="4"><h1 style="color: black;"><div id="trn1"> <%= row.name %> </div></h1> </font>
+    <div id="trn2"><%= row.desig %> </div><br>
+    <div id="trn3"><%= row.phd %></div><br> 
+    <div id="trn4"><%= row.Ph %></div> <br>
+    <div id="trn5"><%= row.Fax %></div> <br> 
+    <div id="trn6"><%= row.email %>
+  </div>
+  </center>
+  <br><br><br><br><br><br><font size="4">
+  <div  id="footer4" style="float: left;">
+    <div id='prof1' class='aaa'>
+      <strong><div id="trn7"> Research Areas: </div></strong> <ul>
+      <li><div id="trn8"><%= row.research %> </div></li>
+    </ul> 
+  </div> <br>
+  <div id='prof2' class='aaa'>
+    <strong><div id="trn9"> Number of Ph.D Students :</div></strong> <br>
+    <div class="image123"><br>
+     <% var j=10 %>
+     <% if(row.stud1!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud1%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud1%></p>
+    </div><% j++; } %>
+     <% if(row.stud2!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud2%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud2%></p>
+    </div><% j++; } %>
+     <% if(row.stud3!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud3%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud3%></p>
+    </div><% j++; } %>
+     <% if(row.stud4!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud4%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud4%></p>
+    </div><% j++; } %>
+     <% if(row.stud5!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud5%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud5%></p>
+    </div><% j++; } %>
+     <% if(row.stud6!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud6%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud6%></p>
+    </div><% j++; } %>
+     <% if(row.stud7!="-") { %>
+     <div class="container">
+      <img src="images/<%=row.stud7%>.jpg" height="100" width="100"/>
+      <p id="trn<%=j%>"><%=row.stud7%></p>
+    </div><% j++; } %>
+
+ </div></div><br>
+ <div id='prof3' class='aaa'>
+  <strong><div id="trn<%=j%>"> Professional Experience: </div></strong> 
+  <ul>
+      <%  j++ %>
+      <%  if(row.exp1!="-") { %>
+    <li id="trn<%=j%>"><%=row.exp1%></li>
+        <% j++; } %>
+      <%  if(row.exp2!="-") { %>
+    <li id="trn<%=j%>"><%=row.exp2%></li>
+        <% j++; } %>
+      <%  if(row.exp3!="-") { %>
+    <li id="trn<%=j%>"><%=row.exp3%></li>
+        <% j++; } %>
+      <%  if(row.exp4!="-") { %>
+    <li id="trn<%=j%>"><%=row.exp4%></li>
+        <% j++; } %>
+      <%  if(row.exp5!="-") { %>
+    <li id="trn<%=j%>"><%=row.exp5%></li>
+        <% j++; } %>
+  </ul>  
+</div>
+
+<div id='prof4' class='aaa'>
+  <strong><div id="trn<%=j%>">Teaching: </div></strong> 
+  <ul>
+    <%  j++ %>
+    <%  if(row.teach1!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach1%></li>
+    <% j++; } %>
+    <%  if(row.teach2!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach2%></li>
+    <% j++; } %>
+    <%  if(row.teach3!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach3%></li>
+    <% j++; } %>
+    <%  if(row.teach4!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach4%></li>
+    <% j++; } %>
+    <%  if(row.teach5!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach5%></li>
+    <% j++; } %>
+    <%  if(row.teach6!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach6%></li>
+    <% j++; } %>
+    <%  if(row.teach7!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach7%></li>
+    <% j++; } %>
+    <%  if(row.teach8!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach8%></li>
+    <% j++; } %>
+    <%  if(row.teach9!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach9%></li>
+    <% j++; } %>
+    <%  if(row.teach10!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach10%></li>
+    <% j++; } %>
+    <%  if(row.teach11!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach11%></li>
+    <% j++; } %>
+    <%  if(row.teach12!="-") { %>
+    <li id="trn<%=j%>"><%=row.teach12%></li>
+    <% j++; } %> 
+  </ul>  
+</div>
+<br> 
+
+<div id='prof5' class='aaa'>
+  <strong><div id="trn<%=j%>"> Awards & Honours: </div></strong> 
+  <ul>
+    <%  j++ %>
+    <%  if(row.awards1!="-") { %>
+    <li id="trn<%=j%>"><%=row.awards1%></li>
+    <% j++; } %>
+    <%  if(row.awards2!="-") { %>
+    <li id="trn<%=j%>"><%=row.awards2%></li>
+    <% j++; } %>
+    <%  if(row.awards3!="-") { %>
+    <li id="trn<%=j%>"><%=row.awards3%></li>
+    <% j++; } %>
+    <%  if(row.awards4!="-") { %>
+    <li id="trn<%=j%>"><%=row.awards4%></li>
+    <% j++; } %>
+    <%  if(row.awards5!="-") { %>
+    <li id="trn<%=j%>"><%=row.awards5%></li>
+    <% j++; } %>
+  </ul>  
+</div>
+<div id='prof6' class='aaa'>
+  <strong><div id="trn<%=j%>"> Invited Talk: </div></strong> 
+  <ul>
+    <%  j++; %>
+    <%  if(row.talk1!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk1%></li>
+    <% j++; } %>
+    <%  if(row.talk2!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk2%></li>
+    <% j++; } %>
+    <%  if(row.talk3!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk3%></li>
+    <% j++; } %>
+    <%  if(row.talk4!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk4%></li>
+    <% j++; } %>
+    <%  if(row.talk5!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk5%></li>
+    <% j++; } %>
+    <%  if(row.talk6!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk6%></li>
+    <% j++; } %>
+    <%  if(row.talk7!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk7%></li>
+    <% j++; } %>
+    <%  if(row.talk8!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk8%></li>
+    <% j++; } %>
+    <%  if(row.talk9!="-") { %>
+    <li id="trn<%=j%>"><%=row.talk9%></li>
+    <% j++; } %>
+  </ul>  
+</div>
+<div id='prof7' class='aaa'>
+  <strong><div id="trn<%=j%>"> Journal Publications: </div></strong> 
+  <ul>
+    <%  j++; %>
+    <%  if(row.pub1!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub1%></li>
+    <% j++; }%>
+    <%  if(row.pub2!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub2%></li>
+    <% j++; }%>
+    <%  if(row.pub3!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub3%></li>
+    <% j++; }%>
+    <%  if(row.pub4!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub4%></li>
+    <% j++; }%>
+    <%  if(row.pub5!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub5%></li>
+    <% j++; }%>
+    <%  if(row.pub6!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub6%></li>
+    <% j++; }%>
+    <%  if(row.pub7!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub7%></li>
+    <% j++; }%>
+    <%  if(row.pub8!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub8%></li>
+    <% j++; }%>
+    <%  if(row.pub9!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub9%></li>
+    <% j++; }%>
+    <%  if(row.pub10!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub10%></li>
+    <% j++; }%>
+    <%  if(row.pub11!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub11%></li>
+    <% j++; }%>
+    <%  if(row.pub12!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub12%></li>
+    <% j++; }%>
+    <%  if(row.pub13!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub13%></li>
+    <% j++; }%>
+    <%  if(row.pub14!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub14%></li>
+    <% j++; }%>
+    <%  if(row.pub15!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub15%></li>
+    <% j++; }%>
+    <%  if(row.pub16!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub16%></li>
+    <% j++; }%>
+    <%  if(row.pub17!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub17%></li>
+    <% j++; }%>
+    <%  if(row.pub18!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub18%></li>
+    <% j++; }%>
+    <%  if(row.pub19!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub19%></li>
+    <% j++; }%>
+    <%  if(row.pub20!="-") { %>
+    <li id="trn<%=j%>"><%=row.pub20%></li>
+    <% }%>
+  </ul>  
+</div>
+</div> 
+
+
+</font>
+
+<script type="text/javascript">
+  var j = <%=j%>;
+  console.log(name);
+  if(gloablLangTranslate != "en")
+  {
+    translate("trn1");
+    translate("trn2");
+    translate("trn3");
+    translate("trn4");
+    translate("trn5");
+    translate("trn7");
+    translate("trn8");
+    translate("trn9");
+    for(var i=10;i<=j;++i)
+    {
+       var trn = "trn"+i;
+       translate(trn);
+    }
+  }
+  function start() {
+    console.log("before start");
+    startConverting(null,function(msg) {
+      //  console.log("abc");
+
+
+
+      msg = msg.toUpperCase();
+      if(msg.indexOf("BACK")>=0 || msg.indexOf("PREVIOUS PAGE")>=0)
+        $("#ch").click();
+      if(msg.indexOf("DONE")>=0 || msg.indexOf("FINISH")>=0 || msg.indexOf("TERMINATE")>=0 || msg.indexOf("END")>=0)
+        window.location.href = '/';
+      if(msg.indexOf("RESEARCH")>=0) {
+        $(".aaa").hide();
+        $("#prof1").show();
+      } else if(msg.indexOf("STUDENTS")>=0) {
+        $(".aaa").hide();
+        $("#prof2").show();
+        
+      }else if(msg.indexOf("PROFESSIONAL")>=0) {
+        $(".aaa").hide();
+        $("#prof3").show();
+        
+      }else if(msg.indexOf("TEACHING")>=0) {
+        $(".aaa").hide();
+        $("#prof4").show();
+        
+      }else if(msg.indexOf("AWARDS")>=0) {
+        $(".aaa").hide();
+        $("#prof5").show();
+        
+      }else if(msg.indexOf("INVITED")>=0) {
+        $(".aaa").hide();
+        $("#prof6").show();
+        
+      }else if(msg.indexOf("JOURNAL")>=0) {
+        $(".aaa").hide();
+        $("#prof7").show();
+        
+      }
+
+
+      else {
+        alert("Hi");
+      }
+
+      setTimeout(  function( ){start();},5000 );
+
+
+    });
+  }
+  start();
+
+</script>
+
+<% })%>
+</body>
+</html>

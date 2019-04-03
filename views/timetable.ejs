@@ -1,0 +1,759 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title><%= title %></title>
+  <style type="text/css">
+    body {
+      background-color: black;
+      color: white;
+    }
+    .list{
+      margin: auto;
+    }
+    .list th {
+      text-align: left;
+      background: darkslategrey;
+      height: 50px;
+      padding: 10px;
+    }
+    .list tr,td {
+      padding: 10px;
+    }
+    .list tr:nth-child(odd){background-color: dimgrey;}
+    .list tr:nth-child(even){background-color: slategray;}
+
+    #logo {
+      width: 100px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    #back{
+      background-color: rgba(100,100,100,0.8);
+      color: blue;
+      border-radius: 50%;
+    }
+    a.but{
+      display: table;
+      width: 100px;
+      height: 100px;
+      top: 45%;
+      left: 1%;
+    }
+
+    #ch{
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+    @charset "UTF-8";
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.42em;
+      color:#A7A1AE;
+      background-color:#1F2739;
+    }
+    #back{
+      background-color: rgba(100,100,100,0.8);
+      color: blue;
+      border-radius: 50%;
+    }
+
+    a.but{
+     display: table;
+     width: 100px;
+     height: 100px;
+     top: 45%;
+     left: 1%;
+   }
+
+   #ch{
+     display: table-cell;
+     vertical-align: middle;
+   }
+   h1 {
+    font-size:3em; 
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+  }
+
+  h2 {
+    font-size:1em; 
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+  }
+
+  h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FB667A;
+    text-decoration: none;
+  }
+
+  .blue { color: #185875; }
+  .yellow { color: #FFF842; }
+
+  .container th h1 {
+   font-weight: bold;
+   font-size: 1em;
+   text-align: left;
+   color: #185875;
+ }
+
+ .container td {
+   font-weight: normal;
+   font-size: 1em;
+   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+   box-shadow: 0 2px 2px -2px #0E1119;
+ }
+ #back{
+  background-color: rgba(100,100,100,0.8);
+  color: blue;
+  border-radius: 50%;
+}
+
+a.but{
+ display: table;
+ width: 100px;
+ height: 100px;
+ top: 45%;
+ left: 1%;
+}
+
+#ch{
+ display: table-cell;
+ vertical-align: middle;
+}
+.container {
+ text-align: left;
+ overflow: hidden;
+ width: 80%;
+ margin: 0 auto;
+ display: table;
+ padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+ padding-bottom: 2%;
+ padding-top: 2%;
+ padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+ background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+ background-color: #2C3446;
+}
+
+.container th {
+ background-color: #1F2739;
+}
+
+.container td:first-child { color: #A7A1AE; }
+
+.container tr:hover {
+ background-color: #464A52;
+ -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+ -moz-box-shadow: 0 6px 6px -6px #0E1119;
+ box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+  .container td:nth-child(4),
+  .container th:nth-child(4) { display: none; }
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+  @charset "UTF-8";
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#1F2739;
+  }
+
+  h1 {
+    font-size:3em; 
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+  }
+
+  h2 {
+    font-size:1em; 
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+  }
+
+  h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FB667A;
+    text-decoration: none;
+  }
+
+  .blue { color: #185875; }
+  .yellow { color: #FFF842; }
+
+  .container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #185875;
+  }
+
+  .container td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+  }
+  #back{
+    background-color: rgba(100,100,100,0.8);
+    color: blue;
+    border-radius: 50%;
+  }
+
+  a.but{
+   display: table;
+   width: 100px;
+   height: 100px;
+   top: 45%;
+   left: 1%;
+ }
+
+ #ch{
+   display: table-cell;
+   vertical-align: middle;
+ }
+ .container {
+  text-align: left;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+  padding-bottom: 2%;
+  padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+  background-color: #2C3446;
+}
+
+.container th {
+  background-color: #1F2739;
+}
+
+.container td:first-child { color: #A7A1AE; }
+
+.container tr:hover {
+ background-color: #464A52;
+ -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+ -moz-box-shadow: 0 6px 6px -6px #0E1119;
+ box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+  .container td:nth-child(4),
+  .container th:nth-child(4) { display: none; }
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/converting.js"></script>
+</head>
+
+<body>
+  <a href="/timetables" class="but fa" style="position: fixed; font-size: 45px; text-align: center;  z-index: 50;" id="back"><div id="ch">&#xf060;</div></a><br>
+  <h1 style="display: table; margin: auto; padding: 20px"><%= title %></h1>
+
+  <table class='CSE hide list container' cellpadding="0" cellspacing="0" border="0">
+    <div class="tbl-header">
+      <thead>
+       <tr style="color:white;"><th colspan="9" style="text-align:center;"">Computer Science and Engineering</th></tr></thead></div>
+       <div class="tbl-header">
+        <thead><tr style="color:white;"><th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th><th>10:00-11:00</th><th>11:00-12:00</th><th>12:00-13:00</th><th>14:00-15:00</th><th>15:00-16:00</th><th>16:00-17:00</th></tr></thead></div>
+        <tbody>
+          <% timetable.forEach(function(row) { %>
+          <%if (row.dept=="CSE") { %>
+          <tr class='CSE <%= row.day %> hide1'>
+            <td><%= row.day %></td>
+            <td><div class='CSE <%= row.day %> 8t9 hide2 <%= row.s1 %> <%= row.s1n %> <%= row.fac1 %> <%= row.room1 %>'><%= row.s1 %> (<%= row.room1 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 9t10 hide2 <%= row.s2 %> <%= row.s2n %> <%= row.fac2 %> <%= row.room2 %>'><%= row.s2 %> (<%= row.room2 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 10t11 hide2 <%= row.s3 %> <%= row.s3n %> <%= row.fac3 %> <%= row.room3 %>'><%= row.s3 %> (<%= row.room3 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 11t12 hide2 <%= row.s4 %> <%= row.s4n %> <%= row.fac4 %> <%= row.room4 %>'><%= row.s4 %> (<%= row.room4 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 12t1 hide2 <%= row.s5 %> <%= row.s5n %> <%= row.fac5 %> <%= row.room5 %>'><%= row.s5 %> (<%= row.room5 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 2t3 hide2 <%= row.s6 %> <%= row.s6n %> <%= row.fac6 %> <%= row.room6 %>'><%= row.s6 %> (<%= row.room6 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 3t4 hide2 <%= row.s7 %> <%= row.s7n %> <%= row.fac7 %> <%= row.room7 %>'><%= row.s7 %> (<%= row.room7 %>)</div></td>
+            <td><div class='CSE <%= row.day %> 4t5 hide2 <%= row.s8 %> <%= row.s8n %> <%= row.fac8 %> <%= row.room8 %>'><%= row.s8 %> (<%= row.room8 %>)</div></td>
+          </tr>
+          <% } %>
+          <% }); %>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <table class='ME hide list container' cellpadding="0" cellspacing="0" border="0">
+       <div class="tbl-header">
+        <thead>
+         <tr style="color:white;"><th colspan="9" style="text-align:center;"">Mechanical Engineering</th></tr></thead></div>
+
+         <div class="tbl-header">
+          <thead>
+           <tr style="color:white;"><th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th><th>10:00-11:00</th><th>11:00-12:00</th><th>12:00-13:00</th><th>14:00-15:00</th><th>15:00-16:00</th><th>16:00-17:00</th></tr></thead></div>
+           <tbody>
+            <% timetable.forEach(function(row) { %>
+            <%if (row.dept=="ME") { %>
+            <tr class='ME <%= row.day %> hide1'>
+              <td><%= row.day %></td>
+              <td><div class='ME <%= row.day %> 8t9 hide2 <%= row.s1 %> <%= row.s1n %> <%= row.fac1 %> <%= row.room1 %>'><%= row.s1 %> (<%= row.room1 %>)</div></td>
+              <td><div class='ME <%= row.day %> 9t10 hide2 <%= row.s2 %> <%= row.s2n %> <%= row.fac2 %> <%= row.room2 %>'><%= row.s2 %> (<%= row.room2 %>)</div></td>
+              <td><div class='ME <%= row.day %> 10t11 hide2 <%= row.s3 %> <%= row.s3n %> <%= row.fac3 %> <%= row.room3 %>'><%= row.s3 %> (<%= row.room2 %>)</div></td>
+              <td><div class='ME <%= row.day %> 11t12 hide2 <%= row.s4 %> <%= row.s4n %> <%= row.fac4 %> <%= row.room4 %>'><%= row.s4 %> (<%= row.room4 %>)</div></td>
+              <td><div class='ME <%= row.day %> 12t1 hide2 <%= row.s5 %> <%= row.s5n %> <%= row.fac5 %> <%= row.room5 %>'><%= row.s5 %> (<%= row.room5 %>)</div></td>
+              <td><div class='ME <%= row.day %> 2t3 hide2 <%= row.s6 %> <%= row.s6n %> <%= row.fac6 %> <%= row.room6 %>'><%= row.s6 %> (<%= row.room6 %>)</div></td>
+              <td><div class='ME <%= row.day %> 3t4 hide2 <%= row.s7 %> <%= row.s7n %> <%= row.fac7 %> <%= row.room7 %>'><%= row.s7 %> (<%= row.room7 %>)</div></td>
+              <td><div class='ME <%= row.day %> 4t5 hide2 <%= row.s8 %> <%= row.s8n %> <%= row.fac8 %> <%= row.room8 %>'><%= row.s8 %> (<%= row.room8 %>)</div></td>
+            </tr>
+            <% } %>
+            <% }); %>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <table class='EE hide container' cellpadding="0" cellspacing="0" border="0">
+         <div class="tbl-header">
+          <thead>
+           <tr style="color:white;"><th colspan="9" style="text-align:center;"">Electrical Engineering</th></tr></thead></div>
+           <div class="tbl-header">
+            <thead>
+             <tr style="color:white;">
+              <th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th><th>10:00-11:00</th><th>11:00-12:00</th><th>12:00-13:00</th><th>14:00-15:00</th><th>15:00-16:00</th><th>16:00-17:00</th></tr>
+            </thead></div>
+            <tbody>
+              <% timetable.forEach(function(row) { %>
+              <%if (row.dept=="EE") { %>
+              <tr class='ME <%= row.day %> hide1'>
+                <td><%= row.day %></td>
+                <td><div class='EE <%= row.day %> 8t9 hide2 <%= row.s1 %> <%= row.s1n %> <%= row.fac1 %> <%= row.room1 %>'><%= row.s1 %>  (<%= row.room1 %>)</div></td>
+                <td><div class='EE <%= row.day %> 9t10 hide2 <%= row.s2 %> <%= row.s2n %> <%= row.fac2 %> <%= row.room2 %>'><%= row.s2 %>  (<%= row.room2 %>)</div></td>
+                <td><div class='EE <%= row.day %> 10t11 hide2 <%= row.s3 %> <%= row.s3n %> <%= row.fac3 %> <%= row.room3 %>'><%= row.s3 %>  (<%= row.room3 %>)</div></td>
+                <td><div class='EE <%= row.day %> 11t12 hide2 <%= row.s4 %> <%= row.s4n %> <%= row.fac4 %> <%= row.room4 %>'><%= row.s4 %>  (<%= row.room4 %>)</div></td>
+                <td><div class='EE <%= row.day %> 12t1 hide2 <%= row.s5 %> <%= row.s5n %> <%= row.fac5 %> <%= row.room5 %>'><%= row.s5 %>  (<%= row.room5 %>)</div></td>
+                <td><div class='EE <%= row.day %> 2t3 hide2 <%= row.s6 %> <%= row.s6n %> <%= row.fac6 %> <%= row.room6 %>'><%= row.s6 %>  (<%= row.room6 %>)</div></td>
+                <td><div class='EE <%= row.day %> 3t4 hide2 <%= row.s7 %> <%= row.s7n %> <%= row.fac7 %> <%= row.room7 %>'><%= row.s7 %>  (<%= row.room7 %>)</div></td>
+                <td><div class='EE <%= row.day %> 4t5 hide2 <%= row.s8 %> <%= row.s8n %><%= row.fac8 %> <%= row.room8 %>'><%= row.s8 %>  (<%= row.room8 %>)</div></td>
+              </tr>
+              <% } %>
+              <% }); %>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          <table class='CE hide list container' cellpadding="0" cellspacing="0" border="0">
+           <div class="tbl-header" bgcolor="#212F3C">
+            <thead>
+             <tr style="color:white;"><th colspan="9" style="text-align:center;"">Civil Engineering</th></tr></thead></div>
+
+             <div class="tbl-header">
+              <thead>
+               <tr style="color:white;"><th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th><th>10:00-11:00</th><th>11:00-12:00</th><th>12:00-13:00</th><th>14:00-15:00</th><th>15:00-16:00</th><th>16:00-17:00</th></tr></thead></div>
+               <tbody>
+                <% timetable.forEach(function(row) { %>
+                <%if (row.dept=="CE") { %>
+                <tr class='CE <%= row.day %> hide1'>
+                  <td><%= row.day %></td>
+                  <td><div class='CE <%= row.day %> 8t9 hide2  <%= row.s1 %> <%= row.s1n %> <%= row.fac1 %> <%= row.room1 %>'><%= row.s1 %>  (<%= row.room1 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 9t10 hide2 <%= row.s2 %> <%= row.s2n %> <%= row.fac2 %> <%= row.room2 %>'><%= row.s2 %>  (<%= row.room2 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 10t11 hide2 <%= row.s3 %> <%= row.s3n %> <%= row.fac3 %> <%= row.room3 %>'><%= row.s3 %>  (<%= row.room3 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 11t12 hide2 <%= row.s4 %> <%= row.s4n %> <%= row.fac4 %> <%= row.room4 %>'><%= row.s4 %>  (<%= row.room4 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 12t1 hide2 <%= row.s5 %> <%= row.s5n %> <%= row.fac5 %> <%= row.room5 %>'><%= row.s5 %>  (<%= row.room5 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 2t3 hide2 <%= row.s6 %> <%= row.s6n %> <%= row.fac6 %> <%= row.room6 %>'><%= row.s6 %>  (<%= row.room6 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 3t4 hide2 <%= row.s7 %> <%= row.s7n %> <%= row.fac7 %> <%= row.room7 %>'><%= row.s7 %>  (<%= row.room7 %>)</div></td>
+                  <td><div class='CE <%= row.day %> 4t5 hide2 <%= row.s8 %> <%= row.s8n %> <%= row.fac8 %> <%= row.room8 %>'><%= row.s8 %>  (<%= row.room8 %>)</div></td>
+                </tr>
+                <% } %>
+                <% }); %>
+              </tbody>
+            </table>
+            <br>
+            <br>
+            <table class='CB hide list container' cellpadding="0" cellspacing="0" border="0">
+             <div class="tbl-header">
+              <thead>
+               <tr style="color:white;">
+                <th colspan="9" style="text-align:center;"">Chemical and Biochemical Engineering</th></tr></thead></div>
+                <div class="tbl-header">
+                  <thead>
+                   <tr style="color:white;">
+                    <th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th><th>10:00-11:00</th><th>11:00-12:00</th><th>12:00-13:00</th><th>14:00-15:00</th><th>15:00-16:00</th><th>16:00-17:00</th></tr></thead></div>
+                    <tbody>
+                      <% timetable.forEach(function(row) { %>
+                      <%if (row.dept=="CB") { %>
+                      <tr class='ME <%= row.day %> hide1'>
+                        <td><%= row.day %></td>
+                        <td><div class='CB <%= row.day %> 8t9 hide2 <%= row.s1 %> <%= row.s1n %> <%= row.fac1 %> <%= row.room1 %>'><%= row.s1 %>  (<%= row.room1 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 9t10 hide2 <%= row.s2 %> <%= row.s2n %> <%= row.fac2 %> <%= row.room2 %>'><%= row.s2 %>  (<%= row.room2 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 10t11 hide2 <%= row.s3 %> <%= row.s3n %> <%= row.fac3 %> <%= row.room3 %>'><%= row.s3 %>  (<%= row.room3 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 11t12 hide2 <%= row.s4 %> <%= row.s4n %> <%= row.fac4 %> <%= row.room4 %>'><%= row.s4 %>  (<%= row.room4 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 12t1 hide2 <%= row.s5 %> <%= row.s5n %> <%= row.fac5 %> <%= row.room5 %>'><%= row.s5 %>  (<%= row.room5 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 2t3 hide2 <%= row.s6 %> <%= row.s6n %> <%= row.fac6 %> <%= row.room6 %>'><%= row.s6 %>  (<%= row.room6 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 3t4 hide2 <%= row.s7 %> <%= row.s7n %> <%= row.fac7 %> <%= row.room7 %>'><%= row.s7 %>  (<%= row.room7 %>)</div></td>
+                        <td><div class='CB <%= row.day %> 4t5 hide2 <%= row.s8 %> <%= row.s8n %> <%= row.fac8 %> <%= row.room8 %>'><%= row.s8 %>  (<%= row.room8 %>)</div></td>
+                      </tr>
+                      <% } %>
+                      <% }); %>
+                    </tbody>
+                  </table>
+                  <img src="../images/iitp.png"/ id="logo">
+
+                  <script type="text/javascript">
+                    function start() {
+                      var flag=0;
+                      if(gloablLangTranslate=="hi")
+                      {
+                        flag=1;
+                      }
+                      changelang("en-US");
+                      console.log("before start");
+                      startConverting(null,function(msg) {
+
+                        msg = msg.toUpperCase();
+                        msg = msg.split(" ");
+                        console.log(msg);
+                        if(msg.indexOf("ALL")>=0) {
+                          $(".hide1").show();
+                          $(".hide").show();
+                          $(".hide2").show();
+                        }
+                        if(msg.indexOf("BACK")>=0)
+                          $("#back").click();
+                        var arr=["BRANCH","TIME","DAY","CLASSROOM","NAME","NUMBER","CODE","COURSE","FACULTY"]
+                        var i1T ="-1";
+                        if(msg.indexOf("BRANCH")>=0){
+                          var branch=msg[msg.indexOf("BRANCH")+1];    
+                          if(branch=="CS" || branch=="COMPUTER") {
+                            i1T=".CSE";
+                          }
+                          else if(branch=="EE" || branch=="ELECTRICAL") {
+                            i1T=".EE";
+                          }
+                          else if(branch=="ME" || branch=="MECHANICAL") {
+                            i1T=".ME";
+                          }
+                          else if(branch=="CB" || branch=="CHEMICAL") {
+                            i1T=".CB"
+                          }
+                          else if(branch=="CE" || branch=="CIVIL") {
+                            i1T=".CE"
+                          }
+                        }
+                        var i2T ="-1";
+                        if(msg.indexOf("DAY")>=0)
+                        {
+                          var day = msg[msg.indexOf("DAY")+1];
+                          if(day=="MONDAY"){
+                            i2T = ".monday";
+                          }
+                          else if(day=="TUESDAY"){
+                            i2T=".tuesday"
+                          }
+                          else if(day=="WEDNESDAY") {
+                            i2T=".wednesday"
+                          }
+                          else if(day=="THURSDAY") {
+                            i2T=".thursday"
+                          }
+                          else if(day=="FRIDAY") {
+                            i2T=".friday"
+                          }
+                        }
+                        var i3T ="-1";
+                        if(msg.indexOf("TIME")>=0)
+                        {
+                          var i=0;
+                          var time = "";
+                          for(i=msg.indexOf("TIME")+1;i<msg.length && arr.indexOf(msg[i])<0;i++)
+                          {
+                            time += msg[i]; 
+                            console.log(time);
+                          }
+                          console.log(time);
+                          if(time=="EIGHTTONINE" || time=="829" || time=="8TO9") {
+                            i3T=".8t9"
+                          }
+                          else if(time=="NINETOTEN" || time=="9210" || time=="9TO10") {
+                            i3T=".9t10";
+                          }
+                          else if(time=="TENTOELEVEN" || time=="10211" || time=="10TO11") {
+                            i3T=".10t11";
+                          }
+                          else if(time=="ELEVENTOTWELVE" || time=="11212" || time=="11TO12") {
+                            i3T=".11t12";
+                          }
+                          else if(time=="TWELVETOONE" || time=="1221"|| time=="12TO1") {
+                            i3T=".12t1";
+                          }
+                          else if(time=="TWOTOTHREE" || time=="223" || time=="2TO3") {
+                            i3T=".2t3";
+                          }
+                          else if(time=="THREETOFOUR" || time=="324" || time=="3TO4") {
+                            i3T=".3t4";
+                          }
+                          else if(time=="FOURTOFIVE" || time=="4TO5" || time=="425") {
+                            i3T=".4t5";
+                          }
+                          console.log(time);
+                        }
+                        if(msg.indexOf("NAME")>=0)
+                        {
+                          var i=0;
+                          var name = "";
+                          for(i=msg.indexOf("NAME")+1;i<msg.length && arr.indexOf(msg[i])<0;i++)
+                          {
+                            name += msg[i]; 
+                            console.log(name);
+                          }
+                          var hasClass = document.getElementsByClassName(name);
+                          if(hasClass.length>0)
+                          {
+                            if(i3T=="-1")
+                            {
+                              i3T = "."+name;    
+                            }
+                            else
+                            {
+                              i3T+= ("."+name);
+                            }
+
+                          }
+                          console.log(i3T);
+                        }
+                        if(msg.indexOf("FACULTY")>=0)
+                        {
+                          var i=0;
+                          var name = "";
+                          for(i=msg.indexOf("FACULTY")+1;i<msg.length && arr.indexOf(msg[i])<0;i++)
+                          {
+                            name += msg[i]; 
+                            console.log(name);
+                          }
+                          var hasClass = document.getElementsByClassName(name);
+                          if(hasClass.length>0)
+                          {
+                            if(i3T=="-1")
+                            {
+                              i3T = "."+name;    
+                            }
+                            else
+                            {
+                              i3T+= ("."+name);
+                            }
+
+                          }
+                          console.log(i3T);
+                        }
+                        if(msg.indexOf("CODE")>=0)
+                        {
+                          var i=0;
+                          var number = "";
+                          for(i=msg.indexOf("CODE")+1;i<msg.length && arr.indexOf(msg[i])<0;i++)
+                          {
+                            number += msg[i]; 
+                            console.log(number);
+                          }
+                          var hasClass = document.getElementsByClassName(number);
+                          if(hasClass.length>0)
+                          {
+                            if(i3T=="-1")
+                            {
+                              i3T = "."+number;    
+                            }
+                            else
+                            {
+                              i3T+= ("."+number);
+                            }
+                          }
+                          console.log(i3T);
+                        }
+                        if(msg.indexOf("NUMBER")>=0)
+                        {
+                          var i=0;
+                          var number = "";
+                          for(i=msg.indexOf("NUMBER")+1;i<msg.length && arr.indexOf(msg[i])<0;i++)
+                          {
+                            number += msg[i]; 
+                            console.log(number);
+                          }
+                          var hasClass = document.getElementsByClassName(number);
+                          if(hasClass.length>0)
+                          {
+                            if(i3T=="-1")
+                            {
+                              i3T = "."+number;    
+                            }
+                            else
+                            {
+                              i3T+= ("."+number);
+                            }
+                          }
+                          console.log(i3T);
+                        }
+                        if(msg.indexOf("ROOM")>=0)
+
+                          console.log("listened class");
+                        var i=0;
+                        var number = "";
+                        for(i=msg.indexOf("ROOM")+1;i<msg.length && arr.indexOf(msg[i])<0;i++){
+                          {
+                            number += msg[i]; 
+                            console.log(number);
+                          }
+                          var hasClass = document.getElementsByClassName(number);
+                          if(hasClass.length>0)
+                          {
+                            if(i3T=="-1")
+                            {
+                              i3T = "."+number;    
+                            }
+                            else
+                            {
+                              i3T+= ("."+number);
+                            }
+                          }
+                          console.log("tish is"+i3T);
+                        }
+                        if(msg.indexOf("CLASSROOM")>=0)
+                        var i=0;
+                        var number = "";
+                        for(i=msg.indexOf("CLASSROOM")+1;i<msg.length && arr.indexOf(msg[i])<0;i++){
+                          {
+                            number += msg[i]; 
+                          }
+                          var hasClass = document.getElementsByClassName(number);
+                          if(hasClass.length>0)
+                          {
+                            if(i3T=="-1")
+                            {
+                              i3T = "."+number;    
+                            }
+                            else
+                            {
+                              i3T+= ("."+number);
+                            }
+                          }
+                        }
+                        if(i2T !="-1" || i1T != "-1"){
+                          if(i1T!='-1'){
+                           $(".hide").hide();
+                           $(i1T).show();
+                         }
+                         if(i2T!='-1'){
+                          $(".hide1").hide();
+                          if(i1T!='-1'){
+                            $(i1T+i2T).show();
+                          }
+                          else{
+                            $(i2T).show();
+                          }
+                        }
+                        if(i3T!="-1"){
+                          $(".hide2").hide();
+                          if(i1T!='-1' && i2T!='-1'){
+                            $(i1T+i2T+i3T).show();
+                          }
+                          else if(i1T!='-1'){
+                            $(i1T+i3T).show();
+                          }
+                          else if(i2T!='-1'){
+                            $(i3T+i3T).show();
+                          }
+                          else{
+                            $(i3T).show();
+                          }
+                        }
+                      }
+                      else if(i3T!="-1"){
+                        $(".hide2").hide();
+                        $(i3T).show();
+                      }
+
+  setTimeout(  function( ){start();},5000 );
+  console.log(msg);
+});
+if(flag==1)
+{
+  changelang("hi");
+}
+}
+start();
+</script>
+
+</body>
+</html>
